@@ -1,0 +1,40 @@
+---
+title: ಸೆಟಪ್
+---
+
+## ನಿಮ್ಮ ಸಾಧನದೊಂದಿಗೆ ಪೇರಿಂಗ್
+
+ಸಾಧನದ ಡೆವಲಪರ್ ಸೇವೆಗಳಿಗೆ ಕನೆಕ್ಟ್ ಆಗಲು, Swipt ಆ್ಯಪ್ ನಿಮ್ಮ ಸಾಧನದೊಂದಿಗೆ ಪೇರ್ ಆಗಬೇಕು.
+
+ನೀವು Swipt CLI ಬಳಸಿ Swipt ಆ್ಯಪ್ ಅನ್ನು ಸೈಡ್‌ಲೋಡ್ ಮಾಡಿದ್ದರೆ, ಪೇರಿಂಗ್ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸೆಟಪ್ ಆಗುತ್ತದೆ. ಇಲ್ಲದಿದ್ದರೆ, ಪೇರ್ ಮಾಡಲು ಆ್ಯಪ್‌ನಲ್ಲಿನ ಸೂಚನೆಗಳನ್ನು ಅನುಸರಿಸಿ:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone ಪೇರಿಂಗ್ ಸ್ಕ್ರೀನ್](/setup/images/pairing-iPhone-kn-light.webp "light")
+    ![iPhone ಪೇರಿಂಗ್ ಸ್ಕ್ರೀನ್](/setup/images/pairing-iPhone-kn-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad ಪೇರಿಂಗ್ ಸ್ಕ್ರೀನ್](/setup/images/pairing-iPad-kn-light.webp "light")
+    ![iPad ಪೇರಿಂಗ್ ಸ್ಕ್ರೀನ್](/setup/images/pairing-iPad-kn-dark.webp "dark")
+
+  </div>
+</div>
+
+ಪೇರಿಂಗ್ ಪೂರ್ಣಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗದಿದ್ದರೆ, ದಯವಿಟ್ಟು ಸಮಸ್ಯೆಯನ್ನು ನಮಗೆ ವರದಿ ಮಾಡಿ. ಪರ್ಯಾಯವಾಗಿ, ನೀವು ಇತರ ಸಾಫ್ಟ್‌ವೇರ್‌ನಿಂದ ಪೇರಿಂಗ್ ಫೈಲ್ ಅನ್ನು ಇಂಪೋರ್ಟ್ ಮಾಡಬಹುದು, ಉದಾಹರಣೆಗೆ:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## ಲೂಪ್‌ಬ್ಯಾಕ್ VPN
+
+ಡೆವಲಪರ್ ಸೇವೆಗಳಿಗೆ ಕನೆಕ್ಟ್ ಆಗಲು Swipt ಆ್ಯಪ್‌ಗೆ ಲೂಪ್‌ಬ್ಯಾಕ್ VPN ಅಗತ್ಯವಿದೆ. ಆ್ಯಪ್‌ನಲ್ಲಿನ ಸೂಚನೆಗಳನ್ನು ಅನುಸರಿಸಿ [LocalDevVPN](https://apps.apple.com/app/id6755608044) ಅಥವಾ [sing-box](https://sing-box.sagernet.org) ಆ್ಯಪ್ ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ ಆನ್ ಮಾಡಿ. sing-box ಆ್ಯಪ್‌ಗಾಗಿ [ಉದಾಹರಣೆ ಪ್ರೊಫೈಲ್](/setup/LocalDevVPN.json) ಅನ್ನು ಇಂಪೋರ್ಟ್ ಮಾಡಬೇಕು.
+
+## ಸ್ವಯಂಚಾಲಿತ ಅನ್‌ಲಾಕ್
+
+ನಿಮ್ಮ ಪಾಸ್‌ಕೋಡ್ ಅನ್ನು ಸೇವ್ ಮಾಡಿ, ಇದರಿಂದ ಸಾಧನ ಲಾಕ್ ಆಗಿರುವಾಗ Swipt ಆ್ಯಪ್ ಅದನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅನ್‌ಲಾಕ್ ಮಾಡಬಹುದು.
+
+ನಿರ್ದಿಷ್ಟವಾಗಿ ಹೇಳುವುದಾದರೆ, Swipt API/MCP ಅನ್ನು ಪ್ರಾರಂಭಿಸಲು Swipt CLI ನಿಮ್ಮ ಸಾಧನವನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಬಹುದು, ಮತ್ತು ಸಾಧನವನ್ನು ಆಪರೇಟ್ ಮಾಡಲು Swipt CLI, MCP ಮತ್ತು ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಲಾದ Swiplet ನಿಮ್ಮ ಸಾಧನವನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಬಹುದು.

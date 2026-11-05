@@ -1,0 +1,40 @@
+---
+title: Configurazione
+---
+
+## Abbinamento con il dispositivo
+
+Swipt deve essere abbinato al dispositivo per connettersi ai suoi servizi per sviluppatori.
+
+Se hai eseguito il sideloading di Swipt con Swipt CLI, l’abbinamento viene configurato automaticamente. In caso contrario, segui le istruzioni nell’app per eseguire l’abbinamento:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Schermata di abbinamento di iPhone](/setup/images/pairing-iPhone-it-light.webp "light")
+    ![Schermata di abbinamento di iPhone](/setup/images/pairing-iPhone-it-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Schermata di abbinamento di iPad](/setup/images/pairing-iPad-it-light.webp "light")
+    ![Schermata di abbinamento di iPad](/setup/images/pairing-iPad-it-dark.webp "dark")
+
+  </div>
+</div>
+
+Se non riesci a completare l’abbinamento, segnalaci il problema. In alternativa, puoi importare un file di abbinamento da altri software, tra cui:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN di loopback
+
+Swipt ha bisogno di una VPN di loopback per connettersi ai servizi per sviluppatori. Segui le istruzioni nell’app per scaricare e attivare [LocalDevVPN](https://apps.apple.com/app/id6755608044) o [sing-box](https://sing-box.sagernet.org). Per sing-box devi importare il [profilo di esempio](/setup/LocalDevVPN.json).
+
+## Sblocco automatico
+
+Salva il codice per consentire a Swipt di sbloccare automaticamente il dispositivo quando è bloccato.
+
+Nello specifico, Swipt CLI può sbloccare il dispositivo per avviare Swipt API/MCP, mentre Swipt CLI, MCP e gli Swiplet installati possono sbloccare il dispositivo per utilizzarlo.

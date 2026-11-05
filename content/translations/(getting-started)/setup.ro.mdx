@@ -1,0 +1,40 @@
+---
+title: Configurare
+---
+
+## Asocierea cu dispozitivul
+
+Aplicația Swipt trebuie să se asocieze cu dispozitivul pentru a se conecta la serviciile pentru dezvoltatori ale acestuia.
+
+Dacă ați instalat aplicația Swipt prin sideloading cu Swipt CLI, asocierea este configurată automat. În caz contrar, urmați instrucțiunile din aplicație pentru a realiza asocierea:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Ecran de asociere pe iPhone](/setup/images/pairing-iPhone-ro-light.webp "light")
+    ![Ecran de asociere pe iPhone](/setup/images/pairing-iPhone-ro-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Ecran de asociere pe iPad](/setup/images/pairing-iPad-ro-light.webp "light")
+    ![Ecran de asociere pe iPad](/setup/images/pairing-iPad-ro-dark.webp "dark")
+
+  </div>
+</div>
+
+Dacă asocierea nu poate fi finalizată, raportați-ne problema. Alternativ, puteți importa un fișier de asociere din alte programe, inclusiv:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN de loopback
+
+Aplicația Swipt are nevoie de un VPN de loopback pentru a se conecta la serviciile pentru dezvoltatori. Urmați instrucțiunile din aplicație pentru a descărca și a activa [LocalDevVPN](https://apps.apple.com/app/id6755608044) sau [sing-box](https://sing-box.sagernet.org). Pentru sing-box, trebuie să importați [profilul exemplu](/setup/LocalDevVPN.json).
+
+## Deblocare automată
+
+Salvați codul de acces pentru ca aplicația Swipt să vă poată debloca automat dispozitivul atunci când este blocat.
+
+Mai exact, Swipt CLI poate debloca dispozitivul pentru a porni Swipt API/MCP, iar Swipt CLI, MCP și Swiplet-urile instalate pot debloca dispozitivul pentru a-l opera.

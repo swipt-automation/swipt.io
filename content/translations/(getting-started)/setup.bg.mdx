@@ -1,0 +1,40 @@
+---
+title: Първоначална настройка
+---
+
+## Сдвояване с устройството
+
+Swipt трябва да се сдвои с устройството, за да се свързва с услугите му за разработчици.
+
+Ако сте инсталирали Swipt чрез странично зареждане със Swipt CLI, сдвояването се настройва автоматично. В противен случай следвайте указанията в приложението, за да извършите сдвояването:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Екран за сдвояване на iPhone](/setup/images/pairing-iPhone-bg-light.webp "light")
+    ![Екран за сдвояване на iPhone](/setup/images/pairing-iPhone-bg-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Екран за сдвояване на iPad](/setup/images/pairing-iPad-bg-light.webp "light")
+    ![Екран за сдвояване на iPad](/setup/images/pairing-iPad-bg-dark.webp "dark")
+
+  </div>
+</div>
+
+Ако сдвояването не може да завърши, съобщете ни за проблема. Можете също да импортирате файл за сдвояване от друг софтуер, включително:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Loopback VPN
+
+Swipt се нуждае от loopback VPN, за да се свързва с услугите за разработчици. Следвайте указанията в приложението, за да изтеглите и включите [LocalDevVPN](https://apps.apple.com/app/id6755608044) или [sing-box](https://sing-box.sagernet.org). За sing-box трябва да импортирате [примерния профил](/setup/LocalDevVPN.json).
+
+## Автоматично отключване
+
+Запазете кода, за да може Swipt автоматично да отключва устройството, когато е заключено.
+
+По-конкретно, Swipt CLI може да отключва устройството, за да стартира Swipt API/MCP, а Swipt CLI, MCP и инсталираните Swiplet могат да отключват устройството, за да го управляват.

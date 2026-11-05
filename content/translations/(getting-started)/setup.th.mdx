@@ -1,0 +1,40 @@
+---
+title: การตั้งค่าครั้งแรก
+---
+
+## จับคู่กับอุปกรณ์ของคุณ
+
+Swipt ต้องจับคู่กับอุปกรณ์ของคุณเพื่อเชื่อมต่อกับบริการนักพัฒนาของอุปกรณ์
+
+หากคุณไซด์โหลด Swipt ด้วย Swipt CLI ระบบจะตั้งค่าการจับคู่ให้โดยอัตโนมัติ ไม่เช่นนั้นให้ทำตามคำแนะนำในแอปเพื่อจับคู่:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![หน้าจอการจับคู่ของ iPhone](/setup/images/pairing-iPhone-th-light.webp "light")
+    ![หน้าจอการจับคู่ของ iPhone](/setup/images/pairing-iPhone-th-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![หน้าจอการจับคู่ของ iPad](/setup/images/pairing-iPad-th-light.webp "light")
+    ![หน้าจอการจับคู่ของ iPad](/setup/images/pairing-iPad-th-dark.webp "dark")
+
+  </div>
+</div>
+
+หากจับคู่ไม่สำเร็จ โปรดรายงานปัญหาให้เราทราบ หรือคุณสามารถนำเข้าไฟล์จับคู่จากซอฟต์แวร์อื่นได้ เช่น:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN ลูปแบ็ค
+
+Swipt ต้องใช้ VPN ลูปแบ็คเพื่อเชื่อมต่อกับบริการนักพัฒนา ทำตามคำแนะนำในแอปเพื่อดาวน์โหลดและเปิด [LocalDevVPN](https://apps.apple.com/app/id6755608044) หรือ [sing-box](https://sing-box.sagernet.org) สำหรับ sing-box คุณต้องนำเข้า[โปรไฟล์ตัวอย่าง](/setup/LocalDevVPN.json)
+
+## ปลดล็อคอัตโนมัติ
+
+บันทึกรหัสของคุณเพื่อให้ Swipt สามารถปลดล็อคอุปกรณ์ของคุณโดยอัตโนมัติเมื่ออุปกรณ์ล็อคอยู่
+
+กล่าวคือ Swipt CLI สามารถปลดล็อคอุปกรณ์ของคุณเพื่อเริ่ม Swipt API/MCP และ Swipt CLI และ MCP รวมถึง Swiplet ที่ติดตั้งไว้สามารถปลดล็อคอุปกรณ์ของคุณเพื่อควบคุมอุปกรณ์ได้

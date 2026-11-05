@@ -1,0 +1,40 @@
+---
+title: Configuration
+---
+
+## Jumelage avec votre appareil
+
+Swipt doit se jumeler avec votre appareil pour se connecter à ses services de développeur.
+
+Si vous avez installé Swipt par sideloading avec Swipt CLI, le jumelage est configuré automatiquement. Sinon, suivez les instructions affichées dans l’app pour effectuer le jumelage :
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Écran de jumelage de l’iPhone](/setup/images/pairing-iPhone-fr-light.webp "light")
+    ![Écran de jumelage de l’iPhone](/setup/images/pairing-iPhone-fr-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Écran de jumelage de l’iPad](/setup/images/pairing-iPad-fr-light.webp "light")
+    ![Écran de jumelage de l’iPad](/setup/images/pairing-iPad-fr-dark.webp "dark")
+
+  </div>
+</div>
+
+Si le jumelage ne peut pas aboutir, signalez-nous le problème. Vous pouvez aussi importer un fichier de jumelage provenant d’un autre logiciel, notamment :
+
+- [Jitterbug](https://github.com/osy/Jitterbug) : `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice) : `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios) : `selfIdentity.plist`
+
+## VPN de bouclage
+
+Swipt a besoin d’un VPN de bouclage pour se connecter aux services de développeur. Suivez les instructions affichées dans l’app pour télécharger et activer [LocalDevVPN](https://apps.apple.com/app/id6755608044) ou [sing-box](https://sing-box.sagernet.org). Pour sing-box, vous devez importer le [profil d’exemple](/setup/LocalDevVPN.json).
+
+## Déverrouillage automatique
+
+Enregistrez votre code pour que Swipt puisse déverrouiller automatiquement votre appareil lorsqu’il est verrouillé.
+
+Plus précisément, Swipt CLI peut déverrouiller votre appareil pour démarrer Swipt API/MCP, et Swipt CLI, MCP et les Swiplets installés peuvent déverrouiller votre appareil pour l’utiliser.

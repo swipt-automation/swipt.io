@@ -1,0 +1,40 @@
+---
+title: Postavljanje
+---
+
+## Uparivanje s uređajem
+
+Aplikacija Swipt mora se upariti s vašim uređajem kako bi se povezala s njegovim uslugama za programere.
+
+Ako ste aplikaciju Swipt instalirali bočnim učitavanjem pomoću alata Swipt CLI, uparivanje se postavlja automatski. U suprotnom slijedite upute u aplikaciji za uparivanje:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Zaslon za uparivanje na iPhoneu](/setup/images/pairing-iPhone-hr-light.webp "light")
+    ![Zaslon za uparivanje na iPhoneu](/setup/images/pairing-iPhone-hr-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Zaslon za uparivanje na iPadu](/setup/images/pairing-iPad-hr-light.webp "light")
+    ![Zaslon za uparivanje na iPadu](/setup/images/pairing-iPad-hr-dark.webp "dark")
+
+  </div>
+</div>
+
+Ako uparivanje nije moguće dovršiti, prijavite nam problem. Možete i importirati datoteku za uparivanje iz drugog softvera, uključujući:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN povratne petlje
+
+Aplikaciji Swipt potreban je VPN povratne petlje za povezivanje s uslugama za programere. Slijedite upute u aplikaciji kako biste preuzeli i uključili [LocalDevVPN](https://apps.apple.com/app/id6755608044) ili [sing-box](https://sing-box.sagernet.org). Za sing-box morate importirati [primjer profila](/setup/LocalDevVPN.json).
+
+## Automatsko otključavanje
+
+Spremite šifru kako bi aplikacija Swipt mogla automatski otključati vaš uređaj kad je zaključan.
+
+Točnije, Swipt CLI može otključati vaš uređaj za pokretanje usluge Swipt API/MCP, a Swipt CLI, MCP i instalirani Swipleti mogu otključati vaš uređaj kako bi njime upravljali.

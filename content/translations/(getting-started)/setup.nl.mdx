@@ -1,0 +1,40 @@
+---
+title: Configuratie
+---
+
+## Koppelen met je apparaat
+
+Swipt moet met je apparaat koppelen om verbinding te maken met de ontwikkelaarsdiensten op het apparaat.
+
+Als je Swipt via sideloading met de Swipt CLI hebt geïnstalleerd, wordt de koppeling automatisch ingesteld. Volg anders de instructies in de app om te koppelen:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Koppelscherm op de iPhone](/setup/images/pairing-iPhone-nl-light.webp "light")
+    ![Koppelscherm op de iPhone](/setup/images/pairing-iPhone-nl-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Koppelscherm op de iPad](/setup/images/pairing-iPad-nl-light.webp "light")
+    ![Koppelscherm op de iPad](/setup/images/pairing-iPad-nl-dark.webp "dark")
+
+  </div>
+</div>
+
+Als het koppelen niet lukt, meld het probleem dan bij ons. Je kunt ook een koppelbestand uit andere software importeren, waaronder:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Loopback-VPN
+
+Swipt heeft een loopback-VPN nodig om verbinding te maken met ontwikkelaarsdiensten. Volg de instructies in de app om [LocalDevVPN](https://apps.apple.com/app/id6755608044) of [sing-box](https://sing-box.sagernet.org) te downloaden en te activeren. Voor sing-box moet je het [voorbeeldprofiel](/setup/LocalDevVPN.json) importeren.
+
+## Automatische ontgrendeling
+
+Bewaar je toegangscode zodat Swipt je apparaat automatisch kan ontgrendelen wanneer het vergrendeld is.
+
+Concreet kan de Swipt CLI je apparaat ontgrendelen om de Swipt API/MCP te starten, en kunnen de Swipt CLI, MCP en geïnstalleerde Swiplets je apparaat ontgrendelen om het te bedienen.

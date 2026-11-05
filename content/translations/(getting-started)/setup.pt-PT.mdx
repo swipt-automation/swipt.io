@@ -1,0 +1,40 @@
+---
+title: Configuração inicial
+---
+
+## Emparelhar com o dispositivo
+
+O Swipt tem de emparelhar com o seu dispositivo para se ligar aos respetivos serviços de programador.
+
+Se tiver feito o sideload do Swipt com a Swipt CLI, o emparelhamento é configurado automaticamente. Caso contrário, siga as instruções na aplicação para emparelhar:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Ecrã de emparelhamento do iPhone](/setup/images/pairing-iPhone-pt-PT-light.webp "light")
+    ![Ecrã de emparelhamento do iPhone](/setup/images/pairing-iPhone-pt-PT-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Ecrã de emparelhamento do iPad](/setup/images/pairing-iPad-pt-PT-light.webp "light")
+    ![Ecrã de emparelhamento do iPad](/setup/images/pairing-iPad-pt-PT-dark.webp "dark")
+
+  </div>
+</div>
+
+Se não for possível concluir o emparelhamento, comunique-nos o problema. Em alternativa, pode importar um ficheiro de emparelhamento de outro software, incluindo:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN de loopback
+
+O Swipt precisa de uma VPN de loopback para se ligar aos serviços de programador. Siga as instruções na aplicação para descarregar e ativar o [LocalDevVPN](https://apps.apple.com/app/id6755608044) ou o [sing-box](https://sing-box.sagernet.org). O sing-box requer a importação do [perfil de exemplo](/setup/LocalDevVPN.json).
+
+## Desbloqueio automático
+
+Guarde o código para que o Swipt possa desbloquear automaticamente o seu dispositivo quando este estiver bloqueado.
+
+Especificamente, a Swipt CLI pode desbloquear o seu dispositivo para iniciar a Swipt API/MCP, e a Swipt CLI, o MCP e os Swiplets instalados podem desbloquear o seu dispositivo para o operar.

@@ -1,0 +1,40 @@
+---
+title: Začetna nastavitev
+---
+
+## Seznanjanje z napravo
+
+Aplikacija Swipt se mora seznaniti z vašo napravo, da se lahko poveže z njenimi storitvami za razvijalce.
+
+Če ste aplikacijo Swipt stransko naložili z orodjem Swipt CLI, se seznanjanje nastavi samodejno. V nasprotnem primeru za seznanjanje upoštevajte navodila v aplikaciji:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Zaslon za seznanjanje v iPhonu](/setup/images/pairing-iPhone-sl-light.webp "light")
+    ![Zaslon za seznanjanje v iPhonu](/setup/images/pairing-iPhone-sl-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Zaslon za seznanjanje v iPadu](/setup/images/pairing-iPad-sl-light.webp "light")
+    ![Zaslon za seznanjanje v iPadu](/setup/images/pairing-iPad-sl-dark.webp "dark")
+
+  </div>
+</div>
+
+Če seznanjanja ni mogoče dokončati, nam sporočite težavo. Lahko pa uvozite datoteko za seznanjanje iz druge programske opreme, na primer:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN povratne zanke
+
+Aplikacija Swipt za povezavo s storitvami za razvijalce potrebuje VPN povratne zanke. Upoštevajte navodila v aplikaciji in prenesite ter vklopite aplikacijo [LocalDevVPN](https://apps.apple.com/app/id6755608044) ali [sing-box](https://sing-box.sagernet.org). Za aplikacijo sing-box morate uvoziti [vzorčni profil](/setup/LocalDevVPN.json).
+
+## Samodejno odklepanje
+
+Shranite kodo, da lahko aplikacija Swipt samodejno odklene vašo napravo, ko je zaklenjena.
+
+Natančneje, Swipt CLI lahko odklene vašo napravo za zagon storitve Swipt API/MCP, Swipt CLI, MCP in nameščeni Swipleti pa lahko odklenejo vašo napravo za njeno upravljanje.

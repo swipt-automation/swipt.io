@@ -1,0 +1,40 @@
+---
+title: Бастапқы баптау
+---
+
+## Құрылғымен жұптау
+
+Құрылғының әзірлеуші қызметтеріне қосылу үшін Swipt онымен жұпталуы керек.
+
+Swipt қолданбасын Swipt CLI арқылы App Store дүкенінен тыс орнатқан болсаңыз, жұптау автоматты түрде бапталады. Әйтпесе жұптау үшін қолданбадағы нұсқауларды орындаңыз:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone жұптау экраны](/setup/images/pairing-iPhone-kk-light.webp "light")
+    ![iPhone жұптау экраны](/setup/images/pairing-iPhone-kk-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad жұптау экраны](/setup/images/pairing-iPad-kk-light.webp "light")
+    ![iPad жұптау экраны](/setup/images/pairing-iPad-kk-dark.webp "dark")
+
+  </div>
+</div>
+
+Жұптауды аяқтау мүмкін болмаса, мәселе туралы бізге хабарлаңыз. Немесе басқа бағдарламалық құралдан жұптау файлын импорттай аласыз, соның ішінде:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Loopback VPN
+
+Әзірлеуші қызметтеріне қосылу үшін Swipt қолданбасына loopback VPN қажет. Қолданбадағы нұсқауларды орындап, [LocalDevVPN](https://apps.apple.com/app/id6755608044) немесе [sing-box](https://sing-box.sagernet.org) қолданбасын жүктеп алыңыз және қосыңыз. sing-box үшін [үлгі профильді](/setup/LocalDevVPN.json) импорттау керек.
+
+## Құлыпты автоматты түрде ашу
+
+Құрылғы құлыпталған кезде Swipt оның құлпын автоматты түрде аша алуы үшін құпия кодты сақтаңыз.
+
+Атап айтқанда, Swipt CLI құрылғының құлпын ашып, Swipt API/MCP қызметін іске қоса алады, ал Swipt CLI, MCP және орнатылған Swiplet құрылғының құлпын ашып, оны басқара алады.

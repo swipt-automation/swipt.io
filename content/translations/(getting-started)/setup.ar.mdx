@@ -1,0 +1,40 @@
+---
+title: الإعداد
+---
+
+## الإقران مع جهازك
+
+يحتاج Swipt إلى الإقران مع جهازك للاتصال بخدمات المطور عليه.
+
+إذا تم تحميل Swipt جانبيًا باستخدام Swipt CLI، فسيتم إعداد الإقران تلقائيًا. وإلا فيرجى اتباع التعليمات في التطبيق لإتمام الإقران:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![شاشة الإقران على iPhone](/setup/images/pairing-iPhone-ar-light.webp "light")
+    ![شاشة الإقران على iPhone](/setup/images/pairing-iPhone-ar-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![شاشة الإقران على iPad](/setup/images/pairing-iPad-ar-light.webp "light")
+    ![شاشة الإقران على iPad](/setup/images/pairing-iPad-ar-dark.webp "dark")
+
+  </div>
+</div>
+
+إذا تعذر إكمال الإقران، فيرجى إبلاغنا بالمشكلة. وبدلاً من ذلك، يمكنك استيراد ملف إقران من برامج أخرى، منها:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## شبكة VPN للاسترجاع
+
+يحتاج Swipt إلى شبكة VPN للاسترجاع للاتصال بخدمات المطور. يرجى اتباع التعليمات في التطبيق لتنزيل [LocalDevVPN](https://apps.apple.com/app/id6755608044) أو [sing-box](https://sing-box.sagernet.org) وتشغيله. يتطلب sing-box استيراد [ملف التعريف النموذجي](/setup/LocalDevVPN.json).
+
+## فتح القفل التلقائي
+
+يرجى حفظ رمز الدخول ليتمكن Swipt من فتح قفل جهازك تلقائيًا عندما يكون مقفلاً.
+
+وتحديدًا، يمكن لـ Swipt CLI فتح قفل جهازك لبدء Swipt API/MCP، ويمكن لكل من Swipt CLI وMCP وتطبيقات Swiplet المثبتة فتح قفل جهازك لتشغيله.

@@ -1,0 +1,40 @@
+---
+title: Penyiapan
+---
+
+## Pasangkan dengan Perangkat Anda
+
+Swipt perlu dipasangkan dengan perangkat Anda agar dapat terhubung ke layanan pengembangnya.
+
+Jika Anda melakukan sideload Swipt dengan Swipt CLI, pemasangan akan disiapkan secara otomatis. Jika tidak, ikuti instruksi di app untuk memasangkan:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Layar pemasangan iPhone](/setup/images/pairing-iPhone-id-light.webp "light")
+    ![Layar pemasangan iPhone](/setup/images/pairing-iPhone-id-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Layar pemasangan iPad](/setup/images/pairing-iPad-id-light.webp "light")
+    ![Layar pemasangan iPad](/setup/images/pairing-iPad-id-dark.webp "dark")
+
+  </div>
+</div>
+
+Jika pemasangan tidak dapat diselesaikan, laporkan masalahnya kepada kami. Atau, Anda dapat mengimpor file pemasangan dari perangkat lunak lain, termasuk:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN Loopback
+
+Swipt memerlukan VPN loopback agar dapat terhubung ke layanan pengembang. Ikuti instruksi di app untuk mengunduh dan menyalakan [LocalDevVPN](https://apps.apple.com/app/id6755608044) atau [sing-box](https://sing-box.sagernet.org). Untuk sing-box, Anda perlu mengimpor [profil contoh](/setup/LocalDevVPN.json).
+
+## Buka Kunci Otomatis
+
+Simpan kode sandi Anda agar Swipt dapat membuka kunci perangkat Anda secara otomatis saat terkunci.
+
+Secara khusus, Swipt CLI dapat membuka kunci perangkat Anda untuk memulai Swipt API/MCP, dan Swipt CLI, MCP, serta Swiplet yang terinstal dapat membuka kunci perangkat Anda untuk mengoperasikannya.

@@ -1,0 +1,40 @@
+---
+title: Konfiguracja
+---
+
+## Parowanie z urządzeniem
+
+Aplikacja Swipt musi sparować się z Twoim urządzeniem, aby łączyć się z jego usługami deweloperskimi.
+
+Jeśli aplikacja Swipt została zainstalowana przez sideloading za pomocą Swipt CLI, parowanie konfiguruje się automatycznie. W przeciwnym razie postępuj zgodnie z instrukcjami w aplikacji, aby wykonać parowanie:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Ekran parowania na iPhonie](/setup/images/pairing-iPhone-pl-light.webp "light")
+    ![Ekran parowania na iPhonie](/setup/images/pairing-iPhone-pl-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Ekran parowania na iPadzie](/setup/images/pairing-iPad-pl-light.webp "light")
+    ![Ekran parowania na iPadzie](/setup/images/pairing-iPad-pl-dark.webp "dark")
+
+  </div>
+</div>
+
+Jeśli nie można ukończyć parowania, zgłoś nam problem. Możesz też zaimportować plik parowania z innego oprogramowania, na przykład:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN pętli zwrotnej
+
+Aplikacja Swipt potrzebuje VPN pętli zwrotnej, aby łączyć się z usługami deweloperskimi. Postępuj zgodnie z instrukcjami w aplikacji, aby pobrać i włączyć aplikację [LocalDevVPN](https://apps.apple.com/app/id6755608044) lub [sing-box](https://sing-box.sagernet.org). W przypadku aplikacji sing-box musisz zaimportować [przykładowy profil](/setup/LocalDevVPN.json).
+
+## Automatyczne odblokowywanie
+
+Zachowaj swój kod, aby aplikacja Swipt mogła automatycznie odblokowywać Twoje urządzenie, gdy jest zablokowane.
+
+Dokładniej rzecz biorąc, Swipt CLI może odblokować Twoje urządzenie, aby uruchomić Swipt API/MCP, a Swipt CLI, MCP i zainstalowane Swiplety mogą odblokować Twoje urządzenie, aby je obsługiwać.

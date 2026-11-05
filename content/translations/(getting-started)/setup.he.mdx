@@ -1,0 +1,40 @@
+---
+title: הגדרה ראשונית
+---
+
+## קישור למכשיר
+
+כדי להתחבר לשירותי המפתחים של המכשיר, יש לקשר אותו ל-Swipt.
+
+אם Swipt הותקן בהתקנה צדדית באמצעות Swipt CLI, הקישור מוגדר אוטומטית. אחרת, כדי לבצע את הקישור יש לפעול לפי ההוראות ביישום:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![מסך הקישור ב-iPhone](/setup/images/pairing-iPhone-he-light.webp "light")
+    ![מסך הקישור ב-iPhone](/setup/images/pairing-iPhone-he-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![מסך הקישור ב-iPad](/setup/images/pairing-iPad-he-light.webp "light")
+    ![מסך הקישור ב-iPad](/setup/images/pairing-iPad-he-dark.webp "dark")
+
+  </div>
+</div>
+
+אם לא ניתן להשלים את הקישור, יש לדווח לנו על הבעיה. לחלופין, אפשר לייבא קובץ קישור מתוכנות אחרות, כולל:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN מסוג לולאה חוזרת
+
+כדי להתחבר לשירותי המפתחים, Swipt זקוק ל-VPN מסוג לולאה חוזרת. יש לפעול לפי ההוראות ביישום כדי להוריד ולהפעיל את [LocalDevVPN](https://apps.apple.com/app/id6755608044) או את [sing-box](https://sing-box.sagernet.org). עבור sing-box, יש לייבא את [הפרופיל לדוגמה](/setup/LocalDevVPN.json).
+
+## ביטול נעילה אוטומטי
+
+יש לשמור את קוד הגישה כדי ש-Swipt יוכל לבטל את נעילת המכשיר באופן אוטומטי כשהוא נעול.
+
+באופן ספציפי, Swipt CLI יכול לבטל את נעילת המכשיר כדי להפעיל את Swipt API/MCP, ו-Swipt CLI, MCP ו-Swiplet מותקנים יכולים לבטל את נעילת המכשיר כדי לתפעל אותו.

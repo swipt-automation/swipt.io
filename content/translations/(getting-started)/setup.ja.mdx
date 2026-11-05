@@ -1,0 +1,40 @@
+---
+title: セットアップ
+---
+
+## デバイスとのペアリング
+
+デバイスのデベロッパサービスに接続するには、Swiptをデバイスとペアリングする必要があります。
+
+Swipt CLIを使ってSwiptをサイドロードした場合、ペアリングは自動的に設定されます。それ以外の場合は、アプリ内の指示に従ってペアリングしてください:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhoneのペアリング画面](/setup/images/pairing-iPhone-ja-light.webp "light")
+    ![iPhoneのペアリング画面](/setup/images/pairing-iPhone-ja-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPadのペアリング画面](/setup/images/pairing-iPad-ja-light.webp "light")
+    ![iPadのペアリング画面](/setup/images/pairing-iPad-ja-dark.webp "dark")
+
+  </div>
+</div>
+
+ペアリングを完了できない場合は、問題をご報告ください。または、次のような他のソフトウェアのペアリングファイルを読み込むこともできます:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## ループバックVPN
+
+デベロッパサービスに接続するには、SwiptにループバックVPNが必要です。アプリ内の指示に従って、[LocalDevVPN](https://apps.apple.com/app/id6755608044)または[sing-box](https://sing-box.sagernet.org)をダウンロードしてオンにしてください。sing-boxの場合は、[サンプルプロファイル](/setup/LocalDevVPN.json)を読み込む必要があります。
+
+## 自動ロック解除
+
+パスコードを保存すると、デバイスがロックされているときにSwiptが自動的にロックを解除できます。
+
+具体的には、Swipt CLIはSwipt API/MCPを起動するためにデバイスのロックを解除でき、Swipt CLI、MCP、およびインストール済みのSwipletはデバイスを操作するためにロックを解除できます。

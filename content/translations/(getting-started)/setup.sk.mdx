@@ -1,0 +1,40 @@
+---
+title: Úvodné nastavenie
+---
+
+## Spárovanie so zariadením
+
+Apka Swipt sa musí spárovať s vaším zariadením, aby sa mohla pripojiť k jeho vývojárskym službám.
+
+Ak ste apku Swipt nainštalovali sideloadingom pomocou Swipt CLI, spárovanie sa nastaví automaticky. V opačnom prípade vykonajte spárovanie podľa pokynov v apke:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Obrazovka spárovania na iPhone](/setup/images/pairing-iPhone-sk-light.webp "light")
+    ![Obrazovka spárovania na iPhone](/setup/images/pairing-iPhone-sk-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Obrazovka spárovania na iPade](/setup/images/pairing-iPad-sk-light.webp "light")
+    ![Obrazovka spárovania na iPade](/setup/images/pairing-iPad-sk-dark.webp "dark")
+
+  </div>
+</div>
+
+Ak sa spárovanie nedá dokončiť, nahláste nám problém. Prípadne môžete importovať párovací súbor z iného softvéru, napríklad:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Loopback VPN
+
+Apka Swipt potrebuje na pripojenie k vývojárskym službám loopback VPN. Podľa pokynov v apke si stiahnite a zapnite apku [LocalDevVPN](https://apps.apple.com/app/id6755608044) alebo [sing-box](https://sing-box.sagernet.org). Pri apke sing-box musíte importovať [vzorový profil](/setup/LocalDevVPN.json).
+
+## Automatické odomykanie
+
+Uložte si kód, aby apka Swipt mohla automaticky odomknúť vaše zariadenie, keď je zamknuté.
+
+Konkrétne môže Swipt CLI odomknúť vaše zariadenie, aby spustilo Swipt API/MCP, a Swipt CLI, MCP a nainštalované Swiplety môžu odomknúť vaše zariadenie, aby ho mohli ovládať.

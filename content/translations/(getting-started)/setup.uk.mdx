@@ -1,0 +1,40 @@
+---
+title: Початкове налаштування
+---
+
+## Створення пари з пристроєм
+
+Програмі Swipt потрібно створити пару з пристроєм, щоб підключатися до його служб розробника.
+
+Якщо ви виконали стороннє встановлення програми Swipt за допомогою Swipt CLI, пару буде налаштовано автоматично. В іншому разі створіть пару, дотримуючись вказівок у програмі:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Екран створення пари на iPhone](/setup/images/pairing-iPhone-uk-light.webp "light")
+    ![Екран створення пари на iPhone](/setup/images/pairing-iPhone-uk-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Екран створення пари на iPad](/setup/images/pairing-iPad-uk-light.webp "light")
+    ![Екран створення пари на iPad](/setup/images/pairing-iPad-uk-dark.webp "dark")
+
+  </div>
+</div>
+
+Якщо створити пару не вдається, повідомте нас про проблему. Також можна імпортувати файл створення пари з іншого програмного забезпечення, зокрема:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN зворотної петлі
+
+Програмі Swipt потрібен VPN зворотної петлі, щоб підключатися до служб розробника. Дотримуйтеся вказівок у програмі, щоб завантажити й увімкнути [LocalDevVPN](https://apps.apple.com/app/id6755608044) або [sing-box](https://sing-box.sagernet.org). Для sing-box потрібно імпортувати [зразок профілю](/setup/LocalDevVPN.json).
+
+## Автоматичне розмикання
+
+Збережіть код допуску, щоб програма Swipt могла автоматично розмикати пристрій, коли його замкнено.
+
+Зокрема, Swipt CLI може розмикати пристрій, щоб запустити службу Swipt API/MCP, а Swipt CLI, MCP і встановлені Swiplet можуть розмикати пристрій, щоб керувати ним.

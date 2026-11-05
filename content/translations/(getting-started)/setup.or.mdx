@@ -1,0 +1,40 @@
+---
+title: ସେଟ୍‌ଅପ୍
+---
+
+## ଆପଣଙ୍କ ଡିଭାଇସ୍ ସହ ପେୟାର୍ କରନ୍ତୁ
+
+ଡିଭାଇସ୍‌ର ଡେଭଲପର୍ ସେବା ସହ ସଂଯୋଗ କରିବା ପାଇଁ Swipt କୁ ଆପଣଙ୍କ ଡିଭାଇସ୍ ସହ ପେୟାର୍ କରିବା ଆବଶ୍ୟକ।
+
+ଯଦି ଆପଣ Swipt CLI ସହ Swipt କୁ ସାଇଡ୍‌ଲୋଡ୍ କରିଛନ୍ତି, ତେବେ ପେୟାରିଂ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ସେଟ୍ ଅପ୍ ହୁଏ। ନଚେତ୍, ପେୟାର୍ କରିବା ପାଇଁ ଆପ୍‌ରେ ଥିବା ନିର୍ଦ୍ଦେଶାବଳୀ ଅନୁସରଣ କରନ୍ତୁ:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone ପେୟାରିଂ ସ୍କ୍ରିନ୍](/setup/images/pairing-iPhone-or-light.webp "light")
+    ![iPhone ପେୟାରିଂ ସ୍କ୍ରିନ୍](/setup/images/pairing-iPhone-or-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad ପେୟାରିଂ ସ୍କ୍ରିନ୍](/setup/images/pairing-iPad-or-light.webp "light")
+    ![iPad ପେୟାରିଂ ସ୍କ୍ରିନ୍](/setup/images/pairing-iPad-or-dark.webp "dark")
+
+  </div>
+</div>
+
+ଯଦି ପେୟାରିଂ ସମାପ୍ତ ହୋଇପାରୁନାହିଁ, ତେବେ ଦୟାକରି ଆମକୁ ସମସ୍ୟା ବିଷୟରେ ଜଣାନ୍ତୁ। ବିକଳ୍ପ ଭାବରେ, ଆପଣ ଅନ୍ୟ ସଫ୍ଟୱେୟାରରୁ ପେୟାରିଂ ଫାଇଲ୍ ଇମ୍ପୋର୍ଟ୍ କରିପାରିବେ, ଯେପରିକି:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## ଲୁପ୍‌ବ୍ୟାକ୍ VPN
+
+ଡେଭଲପର୍ ସେବା ସହ ସଂଯୋଗ କରିବା ପାଇଁ Swipt କୁ ଲୁପ୍‌ବ୍ୟାକ୍ VPN ଆବଶ୍ୟକ। ଆପ୍‌ରେ ଥିବା ନିର୍ଦ୍ଦେଶାବଳୀ ଅନୁସରଣ କରି [LocalDevVPN](https://apps.apple.com/app/id6755608044) କିମ୍ବା [sing-box](https://sing-box.sagernet.org) ଡାଉନ୍‌ଲୋଡ୍ କରି ଚାଲୁ କରନ୍ତୁ। sing-box ପାଇଁ [ଉଦାହରଣ ପ୍ରୋଫାଇଲ୍](/setup/LocalDevVPN.json) ଇମ୍ପୋର୍ଟ୍ କରିବାକୁ ହେବ।
+
+## ସ୍ୱୟଂଚାଳିତ ଅନଲକ୍
+
+ଆପଣଙ୍କ ପାସ୍‌କୋଡ୍ ସେଭ୍ କରନ୍ତୁ, ଯାହାଫଳରେ ଡିଭାଇସ୍ ଲକ୍ ଥିବା ବେଳେ Swipt ଏହାକୁ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଅନଲକ୍ କରିପାରିବ।
+
+ନିର୍ଦ୍ଦିଷ୍ଟ ଭାବରେ, Swipt API/MCP ଆରମ୍ଭ କରିବା ପାଇଁ Swipt CLI ଆପଣଙ୍କ ଡିଭାଇସ୍ ଅନଲକ୍ କରିପାରିବ, ଏବଂ ଡିଭାଇସ୍ ପରିଚାଳନା କରିବା ପାଇଁ Swipt CLI, MCP ଓ ଇନ୍‌ଷ୍ଟଲ୍ ହୋଇଥିବା Swiplet ଆପଣଙ୍କ ଡିଭାଇସ୍ ଅନଲକ୍ କରିପାରିବେ।

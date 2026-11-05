@@ -1,0 +1,40 @@
+---
+title: സജ്ജീകരണം
+---
+
+## നിങ്ങളുടെ ഡിവൈസുമായി പെയർ ചെയ്യൂ
+
+ഡിവൈസിലെ ഡെവലപ്പർ സർവീസുകളിലേക്ക് കണക്റ്റ് ചെയ്യാൻ Swipt നിങ്ങളുടെ ഡിവൈസുമായി പെയർ ചെയ്യേണ്ടതുണ്ട്.
+
+Swipt CLI ഉപയോഗിച്ച് നിങ്ങൾ Swipt സൈഡ്ലോഡ് ചെയ്തെങ്കിൽ, പെയറിങ് ഓട്ടോമാറ്റിക്കായി സജ്ജീകരിക്കപ്പെടും. അല്ലെങ്കിൽ, പെയർ ചെയ്യാൻ ആപ്പിലെ നിർദ്ദേശങ്ങൾ പിന്തുടരൂ:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone പെയറിങ് സ്ക്രീൻ](/setup/images/pairing-iPhone-ml-light.webp "light")
+    ![iPhone പെയറിങ് സ്ക്രീൻ](/setup/images/pairing-iPhone-ml-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad പെയറിങ് സ്ക്രീൻ](/setup/images/pairing-iPad-ml-light.webp "light")
+    ![iPad പെയറിങ് സ്ക്രീൻ](/setup/images/pairing-iPad-ml-dark.webp "dark")
+
+  </div>
+</div>
+
+പെയറിങ് പൂർത്തിയാക്കാൻ കഴിയുന്നില്ലെങ്കിൽ, ദയവായി പ്രശ്നം ഞങ്ങളെ അറിയിക്കൂ. പകരമായി, മറ്റ് സോഫ്റ്റ്‌വെയറുകളിൽ നിന്ന് ഒരു പെയറിങ് ഫയൽ ഇംപോർട്ട് ചെയ്യാം, ഉദാഹരണത്തിന്:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## ലൂപ്പ്ബാക്ക് VPN
+
+ഡെവലപ്പർ സർവീസുകളിലേക്ക് കണക്റ്റ് ചെയ്യാൻ Swipt-ന് ഒരു ലൂപ്പ്ബാക്ക് VPN ആവശ്യമാണ്. ആപ്പിലെ നിർദ്ദേശങ്ങൾ പിന്തുടർന്ന് [LocalDevVPN](https://apps.apple.com/app/id6755608044) അല്ലെങ്കിൽ [sing-box](https://sing-box.sagernet.org) ഡൗൺലോഡ് ചെയ്ത് ഓണാക്കൂ. sing-box-ന് [ഉദാഹരണ പ്രൊഫൈൽ](/setup/LocalDevVPN.json) ഇംപോർട്ട് ചെയ്യേണ്ടതുണ്ട്.
+
+## ഓട്ടോമാറ്റിക് അൺലോക്ക്
+
+നിങ്ങളുടെ പാസ്‌കോഡ് സേവ് ചെയ്യൂ, അങ്ങനെ ഡിവൈസ് ലോക്ക് ചെയ്തിരിക്കുമ്പോൾ Swipt-ന് അത് ഓട്ടോമാറ്റിക്കായി അൺലോക്ക് ചെയ്യാനാകും.
+
+കൃത്യമായി പറഞ്ഞാൽ, Swipt API/MCP ആരംഭിക്കാൻ Swipt CLI-ക്ക് നിങ്ങളുടെ ഡിവൈസ് അൺലോക്ക് ചെയ്യാനാകും, ഡിവൈസ് പ്രവർത്തിപ്പിക്കാൻ Swipt CLI, MCP, ഇൻസ്റ്റാൾ ചെയ്ത Swiplet എന്നിവയ്ക്ക് നിങ്ങളുടെ ഡിവൈസ് അൺലോക്ക് ചെയ്യാനാകും.

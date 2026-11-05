@@ -1,0 +1,40 @@
+---
+title: Konfigurering
+---
+
+## Parkoppla med enheten
+
+Swipt måste parkopplas med enheten för att kunna ansluta till dess utvecklartjänster.
+
+Om du har sidladdat Swipt med Swipt CLI konfigureras parkopplingen automatiskt. Följ annars anvisningarna i appen för att parkoppla:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Parkopplingsskärm på iPhone](/setup/images/pairing-iPhone-sv-light.webp "light")
+    ![Parkopplingsskärm på iPhone](/setup/images/pairing-iPhone-sv-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Parkopplingsskärm på iPad](/setup/images/pairing-iPad-sv-light.webp "light")
+    ![Parkopplingsskärm på iPad](/setup/images/pairing-iPad-sv-dark.webp "dark")
+
+  </div>
+</div>
+
+Om det inte går att slutföra parkopplingen kan du rapportera problemet till oss. Du kan också importera en parkopplingsfil från annan programvara, till exempel:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Loopback-VPN
+
+Swipt behöver ett loopback-VPN för att ansluta till utvecklartjänster. Följ anvisningarna i appen för att hämta och slå på [LocalDevVPN](https://apps.apple.com/app/id6755608044) eller [sing-box](https://sing-box.sagernet.org). För sing-box måste du importera [exempelprofilen](/setup/LocalDevVPN.json).
+
+## Automatisk upplåsning
+
+Spara lösenkoden så att Swipt kan låsa upp enheten automatiskt när den är låst.
+
+Mer specifikt kan Swipt CLI låsa upp enheten för att starta Swipt API/MCP, och Swipt CLI, MCP och installerade Swiplets kan låsa upp enheten för att styra den.

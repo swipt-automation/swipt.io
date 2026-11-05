@@ -1,0 +1,40 @@
+---
+title: Αρχική ρύθμιση
+---
+
+## Ζευγοποίηση με τη συσκευή σας
+
+Το Swipt πρέπει να ζευγοποιηθεί με τη συσκευή σας για να συνδεθεί στις υπηρεσίες προγραμματιστή της.
+
+Αν εγκαταστήσατε το Swipt με πλευρική φόρτωση μέσω του Swipt CLI, η ζευγοποίηση ρυθμίζεται αυτόματα. Διαφορετικά, ακολουθήστε τις οδηγίες στην εφαρμογή για να κάνετε ζευγοποίηση:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Οθόνη ζευγοποίησης στο iPhone](/setup/images/pairing-iPhone-el-light.webp "light")
+    ![Οθόνη ζευγοποίησης στο iPhone](/setup/images/pairing-iPhone-el-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Οθόνη ζευγοποίησης στο iPad](/setup/images/pairing-iPad-el-light.webp "light")
+    ![Οθόνη ζευγοποίησης στο iPad](/setup/images/pairing-iPad-el-dark.webp "dark")
+
+  </div>
+</div>
+
+Αν δεν είναι δυνατή η ολοκλήρωση της ζευγοποίησης, αναφέρετέ μας το πρόβλημα. Εναλλακτικά, μπορείτε να εισαγάγετε ένα αρχείο ζευγοποίησης από άλλο λογισμικό, όπως:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN loopback
+
+Το Swipt χρειάζεται ένα VPN loopback για να συνδεθεί στις υπηρεσίες προγραμματιστή. Ακολουθήστε τις οδηγίες στην εφαρμογή για να κάνετε λήψη και να ενεργοποιήσετε το [LocalDevVPN](https://apps.apple.com/app/id6755608044) ή το [sing-box](https://sing-box.sagernet.org). Για το sing-box, πρέπει να εισαγάγετε το [δείγμα προφίλ](/setup/LocalDevVPN.json).
+
+## Αυτόματο ξεκλείδωμα
+
+Αποθηκεύστε τον κωδικό σας ώστε το Swipt να μπορεί να ξεκλειδώνει αυτόματα τη συσκευή σας όταν είναι κλειδωμένη.
+
+Συγκεκριμένα, το Swipt CLI μπορεί να ξεκλειδώνει τη συσκευή σας για να ξεκινήσει το Swipt API/MCP, ενώ το Swipt CLI, το MCP και τα εγκατεστημένα Swiplet μπορούν να ξεκλειδώνουν τη συσκευή σας για να τη χειρίζονται.

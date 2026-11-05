@@ -1,0 +1,40 @@
+---
+title: Thiết lập
+---
+
+## Ghép đôi với thiết bị của bạn
+
+Swipt cần ghép đôi với thiết bị của bạn để kết nối với các dịch vụ nhà phát triển của thiết bị.
+
+Nếu bạn đã sideload Swipt bằng Swipt CLI, quá trình ghép đôi sẽ được thiết lập tự động. Nếu không, hãy làm theo hướng dẫn trong ứng dụng để ghép đôi:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Màn hình ghép đôi trên iPhone](/setup/images/pairing-iPhone-vi-light.webp "light")
+    ![Màn hình ghép đôi trên iPhone](/setup/images/pairing-iPhone-vi-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Màn hình ghép đôi trên iPad](/setup/images/pairing-iPad-vi-light.webp "light")
+    ![Màn hình ghép đôi trên iPad](/setup/images/pairing-iPad-vi-dark.webp "dark")
+
+  </div>
+</div>
+
+Nếu không thể hoàn tất ghép đôi, vui lòng báo cáo sự cố cho chúng tôi. Ngoài ra, bạn có thể nhập tệp ghép đôi từ phần mềm khác, bao gồm:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN loopback
+
+Swipt cần một VPN loopback để kết nối với các dịch vụ nhà phát triển. Hãy làm theo hướng dẫn trong ứng dụng để tải xuống và bật [LocalDevVPN](https://apps.apple.com/app/id6755608044) hoặc [sing-box](https://sing-box.sagernet.org). Với sing-box, bạn cần nhập [hồ sơ mẫu](/setup/LocalDevVPN.json).
+
+## Tự động mở khóa
+
+Hãy lưu mật mã để Swipt có thể tự động mở khóa thiết bị của bạn khi thiết bị bị khóa.
+
+Cụ thể, Swipt CLI có thể mở khóa thiết bị của bạn để khởi động Swipt API/MCP, còn Swipt CLI, MCP và các Swiplet đã cài đặt có thể mở khóa thiết bị của bạn để thao tác trên thiết bị.

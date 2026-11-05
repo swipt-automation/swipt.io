@@ -1,0 +1,40 @@
+---
+title: सेटअप
+---
+
+## तुमच्या डिव्हाइसशी पेअर करा
+
+डिव्हाइसच्या डेव्हलपर सेवांशी कनेक्ट होण्यासाठी Swipt ला तुमच्या डिव्हाइसशी पेअर करणे आवश्यक आहे.
+
+तुम्ही Swipt CLI वापरून Swipt साइडलोड केले असल्यास, पेअरिंग आपोआप सेट केले जाते. अन्यथा, पेअर करण्यासाठी ॲपमधील सूचनांचे पालन करा :
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone चा पेअरिंग स्क्रीन](/setup/images/pairing-iPhone-mr-light.webp "light")
+    ![iPhone चा पेअरिंग स्क्रीन](/setup/images/pairing-iPhone-mr-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad चा पेअरिंग स्क्रीन](/setup/images/pairing-iPad-mr-light.webp "light")
+    ![iPad चा पेअरिंग स्क्रीन](/setup/images/pairing-iPad-mr-dark.webp "dark")
+
+  </div>
+</div>
+
+पेअरिंग पूर्ण करता येत नसल्यास, कृपया आम्हाला समस्येची माहिती द्या. पर्यायाने, तुम्ही इतर सॉफ्टवेअरमधून पेअरिंग फाइल इंपोर्ट करू शकता, जसे की :
+
+- [Jitterbug](https://github.com/osy/Jitterbug) : `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice) : `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios) : `selfIdentity.plist`
+
+## लूपबॅक VPN
+
+डेव्हलपर सेवांशी कनेक्ट होण्यासाठी Swipt ला लूपबॅक VPN ची आवश्यकता आहे. ॲपमधील सूचनांचे पालन करून [LocalDevVPN](https://apps.apple.com/app/id6755608044) किंवा [sing-box](https://sing-box.sagernet.org) डाउनलोड करा आणि सुरू करा. sing-box साठी तुम्हाला [उदाहरण प्रोफाइल](/setup/LocalDevVPN.json) इंपोर्ट करावे लागेल.
+
+## स्वयंचलित अनलॉक
+
+तुमचा पासकोड जतन करा, जेणेकरून डिव्हाइस लॉक असताना Swipt ते आपोआप अनलॉक करू शकेल.
+
+विशेषतः, Swipt API/MCP सुरू करण्यासाठी Swipt CLI तुमचे डिव्हाइस अनलॉक करू शकते आणि डिव्हाइस ऑपरेट करण्यासाठी Swipt CLI, MCP आणि इंस्टॉल केलेले Swiplet तुमचे डिव्हाइस अनलॉक करू शकतात.

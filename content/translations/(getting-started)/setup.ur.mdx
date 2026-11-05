@@ -1,0 +1,40 @@
+---
+title: سیٹ اپ
+---
+
+## اپنی ڈیوائس کے ساتھ پیئر کریں
+
+ڈیوائس کی ڈیولپر سروسز سے کنکٹ ہونے کے لیے Swipt کا آپ کی ڈیوائس کے ساتھ پیئر ہونا ضروری ہے۔
+
+اگر آپ نے Swipt کو Swipt CLI کے ذریعے سائیڈ لوڈ کیا ہے تو پیئرنگ خودکار طور پر سیٹ اپ ہو جاتی ہے۔ بصورت دیگر، پیئر کرنے کے لیے ایپ میں دی گئی ہدایات پر عمل کریں:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone پیئرنگ اسکرین](/setup/images/pairing-iPhone-ur-light.webp "light")
+    ![iPhone پیئرنگ اسکرین](/setup/images/pairing-iPhone-ur-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad پیئرنگ اسکرین](/setup/images/pairing-iPad-ur-light.webp "light")
+    ![iPad پیئرنگ اسکرین](/setup/images/pairing-iPad-ur-dark.webp "dark")
+
+  </div>
+</div>
+
+اگر پیئرنگ مکمل نہیں ہو پاتی تو براہ کرم ہمیں مسئلے کی اطلاع دیں۔ متبادل طور پر، آپ دیگر سافٹ ویئر سے پیئرنگ فائل امپورٹ کر سکتے ہیں، بشمول:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## لوپ بیک VPN
+
+ڈیولپر سروسز سے کنکٹ ہونے کے لیے Swipt کو لوپ بیک VPN درکار ہے۔ ایپ میں دی گئی ہدایات پر عمل کرتے ہوئے [LocalDevVPN](https://apps.apple.com/app/id6755608044) یا [sing-box](https://sing-box.sagernet.org) ڈاؤنلوڈ کر کے آن کریں۔ sing-box کے لیے آپ کو [نمونہ پروفائل](/setup/LocalDevVPN.json) امپورٹ کرنا ہو گا۔
+
+## خودکار ان لاک
+
+اپنا پاس کوڈ محفوظ کریں تاکہ ڈیوائس لاک ہونے پر Swipt اسے خودکار طور پر ان لاک کر سکے۔
+
+خاص طور پر، Swipt CLI آپ کی ڈیوائس کو ان لاک کر کے Swipt API/MCP شروع کر سکتا ہے، اور Swipt CLI، MCP اور انسٹال شدہ Swiplet آپ کی ڈیوائس کو ان لاک کر کے اسے آپریٹ کر سکتے ہیں۔

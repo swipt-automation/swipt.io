@@ -1,0 +1,40 @@
+---
+title: Sąranka
+---
+
+## Susiejimas su įrenginiu
+
+„Swipt” turi susisieti su jūsų įrenginiu, kad galėtų prisijungti prie jo kūrėjo paslaugų.
+
+Jei „Swipt” įdiegėte šoniniu įkėlimu naudodami „Swipt CLI”, susiejimas nustatomas automatiškai. Kitu atveju susiekite vykdydami programoje pateikiamus nurodymus:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![„iPhone” susiejimo ekranas](/setup/images/pairing-iPhone-lt-light.webp "light")
+    ![„iPhone” susiejimo ekranas](/setup/images/pairing-iPhone-lt-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![„iPad” susiejimo ekranas](/setup/images/pairing-iPad-lt-light.webp "light")
+    ![„iPad” susiejimo ekranas](/setup/images/pairing-iPad-lt-dark.webp "dark")
+
+  </div>
+</div>
+
+Jei susieti nepavyksta, praneškite mums apie problemą. Taip pat galite importuoti susiejimo failą iš kitos programinės įrangos, pavyzdžiui:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Grįžtamojo ryšio VPN
+
+Programai „Swipt” reikia grįžtamojo ryšio VPN, kad galėtų prisijungti prie kūrėjo paslaugų. Vykdykite programoje pateikiamus nurodymus, kad atsisiųstumėte ir įjungtumėte „[LocalDevVPN](https://apps.apple.com/app/id6755608044)” arba „[sing-box](https://sing-box.sagernet.org)”. Naudojant „sing-box”, reikia importuoti [pavyzdinį profilį](/setup/LocalDevVPN.json).
+
+## Automatinis atrakinimas
+
+Išsaugokite prieigos kodą, kad „Swipt” galėtų automatiškai atrakinti jūsų įrenginį, kai jis užrakintas.
+
+Konkrečiai, „Swipt CLI” gali atrakinti jūsų įrenginį, kad paleistų „Swipt API/MCP”, o „Swipt CLI”, MCP ir įdiegtos „Swiplet” programos gali atrakinti jūsų įrenginį, kad galėtų jį valdyti.

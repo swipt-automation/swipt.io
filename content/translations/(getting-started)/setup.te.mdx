@@ -1,0 +1,40 @@
+---
+title: సెటప్
+---
+
+## మీ డివైజ్‌తో పెయిర్ చేయండి
+
+డివైజ్‌లోని డెవలపర్ సర్వీస్‌లకు కనెక్ట్ కావడానికి Swipt మీ డివైజ్‌తో పెయిర్ కావాలి.
+
+మీరు Swipt CLIతో Swiptను సైడ్‌లోడ్ చేసి ఉంటే, పెయిరింగ్ ఆటోమేటిక్‌గా సెటప్ అవుతుంది. లేదంటే, పెయిర్ చేయడానికి యాప్‌లోని సూచనలను అనుసరించండి:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone పెయిరింగ్ స్క్రీన్](/setup/images/pairing-iPhone-te-light.webp "light")
+    ![iPhone పెయిరింగ్ స్క్రీన్](/setup/images/pairing-iPhone-te-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad పెయిరింగ్ స్క్రీన్](/setup/images/pairing-iPad-te-light.webp "light")
+    ![iPad పెయిరింగ్ స్క్రీన్](/setup/images/pairing-iPad-te-dark.webp "dark")
+
+  </div>
+</div>
+
+పెయిరింగ్‌ను పూర్తి చేయడం సాధ్యం కాకపోతే, దయచేసి సమస్యను మాకు రిపోర్ట్ చేయండి. ప్రత్యామ్నాయంగా, ఇతర సాఫ్ట్‌వేర్ నుండి పెయిరింగ్ ఫైల్‌ను ఇంపోర్ట్ చేయవచ్చు, ఉదాహరణకు:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## లూప్‌బ్యాక్ VPN
+
+డెవలపర్ సర్వీస్‌లకు కనెక్ట్ కావడానికి Swiptకు లూప్‌బ్యాక్ VPN అవసరం. యాప్‌లోని సూచనలను అనుసరించి [LocalDevVPN](https://apps.apple.com/app/id6755608044) లేదా [sing-box](https://sing-box.sagernet.org) యాప్‌ను డౌన్‌లోడ్ చేసి ఆన్ చేయండి. sing-box కోసం [ఉదాహరణ ప్రొఫైల్‌ను](/setup/LocalDevVPN.json) ఇంపోర్ట్ చేయాలి.
+
+## ఆటోమేటిక్ అన్‌లాక్
+
+మీ పాస్‌కోడ్‌ను సేవ్ చేయండి, తద్వారా డివైజ్ లాక్ అయి ఉన్నప్పుడు Swipt దాన్ని ఆటోమేటిక్‌గా అన్‌లాక్ చేయగలదు.
+
+ప్రత్యేకంగా చెప్పాలంటే, Swipt API/MCPని ప్రారంభించడానికి Swipt CLI మీ డివైజ్‌ను అన్‌లాక్ చేయగలదు, డివైజ్‌ను ఆపరేట్ చేయడానికి Swipt CLI, MCP, ఇన్‌స్టాల్ చేసిన Swiplet మీ డివైజ్‌ను అన్‌లాక్ చేయగలవు.

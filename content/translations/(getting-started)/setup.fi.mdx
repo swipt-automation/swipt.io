@@ -1,0 +1,40 @@
+---
+title: Käyttöönotto
+---
+
+## Parin muodostaminen laitteen kanssa
+
+Swiptin on tehtävä pari laitteen kanssa, jotta se voi muodostaa yhteyden laitteen kehittäjäpalveluihin.
+
+Jos asensit Swiptin sivulatauksella Swipt CLI:n avulla, pari määritetään automaattisesti. Muussa tapauksessa muodosta pari apin ohjeiden mukaan:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhonen parinmuodostusnäyttö](/setup/images/pairing-iPhone-fi-light.webp "light")
+    ![iPhonen parinmuodostusnäyttö](/setup/images/pairing-iPhone-fi-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPadin parinmuodostusnäyttö](/setup/images/pairing-iPad-fi-light.webp "light")
+    ![iPadin parinmuodostusnäyttö](/setup/images/pairing-iPad-fi-dark.webp "dark")
+
+  </div>
+</div>
+
+Jos parin muodostaminen ei onnistu, ilmoita ongelmasta meille. Voit myös tuoda parinmuodostustiedoston muista ohjelmistoista, kuten:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Loopback-VPN
+
+Swipt tarvitsee loopback-VPN:n, jotta se voi muodostaa yhteyden kehittäjäpalveluihin. Lataa ja ota käyttöön [LocalDevVPN](https://apps.apple.com/app/id6755608044) tai [sing-box](https://sing-box.sagernet.org) apin ohjeiden mukaan. Jos käytät sing-boxia, sinun on tuotava [esimerkkiprofiili](/setup/LocalDevVPN.json).
+
+## Automaattinen lukituksen avaus
+
+Tallenna pääsykoodi, niin Swipt voi avata laitteen lukituksen automaattisesti, kun laite on lukittu.
+
+Tarkemmin sanottuna Swipt CLI voi avata laitteen lukituksen, jotta se voi käynnistää Swipt API/MCP:n, ja Swipt CLI, MCP ja asennetut Swipletit voivat avata laitteen lukituksen, jotta ne voivat käyttää laitetta.

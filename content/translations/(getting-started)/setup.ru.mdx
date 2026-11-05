@@ -1,0 +1,40 @@
+---
+title: Начальная настройка
+---
+
+## Создание пары с устройством
+
+Чтобы подключаться к службам разработчика на устройстве, приложению Swipt нужно создать с ним пару.
+
+Если приложение Swipt установлено через сайдлоадинг с помощью Swipt CLI, пара будет настроена автоматически. В противном случае создайте пару, следуя инструкциям в приложении:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Экран создания пары на iPhone](/setup/images/pairing-iPhone-ru-light.webp "light")
+    ![Экран создания пары на iPhone](/setup/images/pairing-iPhone-ru-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Экран создания пары на iPad](/setup/images/pairing-iPad-ru-light.webp "light")
+    ![Экран создания пары на iPad](/setup/images/pairing-iPad-ru-dark.webp "dark")
+
+  </div>
+</div>
+
+Если создать пару не удается, сообщите нам о проблеме. Вы также можете импортировать файл пары из другого ПО, например:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Петлевой VPN
+
+Для подключения к службам разработчика приложению Swipt нужен петлевой VPN. Следуйте инструкциям в приложении, чтобы скачать и включить [LocalDevVPN](https://apps.apple.com/app/id6755608044) или [sing-box](https://sing-box.sagernet.org). Для sing-box потребуется импортировать [пример профиля](/setup/LocalDevVPN.json).
+
+## Автоматическая разблокировка
+
+Сохраните код-пароль, чтобы приложение Swipt могло автоматически разблокировать устройство, когда оно заблокировано.
+
+В частности, Swipt CLI может разблокировать устройство, чтобы запустить службу Swipt API/MCP, а Swipt CLI, MCP и установленные Swiplet могут разблокировать устройство, чтобы управлять им.

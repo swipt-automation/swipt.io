@@ -1,0 +1,40 @@
+---
+title: Kezdeti beállítás
+---
+
+## Párosítás az eszközzel
+
+A Swipt appot párosítani kell az eszközzel, hogy csatlakozhasson annak fejlesztői szolgáltatásaihoz.
+
+Ha a Swipt appot a Swipt CLI-vel telepítette oldalról, a rendszer automatikusan beállítja a párosítást. Ellenkező esetben kövesse az appban megjelenő utasításokat a párosításhoz:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Párosítási képernyő iPhone-on](/setup/images/pairing-iPhone-hu-light.webp "light")
+    ![Párosítási képernyő iPhone-on](/setup/images/pairing-iPhone-hu-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Párosítási képernyő iPaden](/setup/images/pairing-iPad-hu-light.webp "light")
+    ![Párosítási képernyő iPaden](/setup/images/pairing-iPad-hu-dark.webp "dark")
+
+  </div>
+</div>
+
+Ha a párosítás nem hajtható végre, jelezze nekünk a problémát. Másik lehetőségként importálhat párosítási fájlt más szoftverekből, például:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Visszacsatolási VPN
+
+A Swipt appnak visszacsatolási VPN-re van szüksége a fejlesztői szolgáltatásokhoz való csatlakozáshoz. Az appban megjelenő utasításokat követve töltse le és kapcsolja be a [LocalDevVPN](https://apps.apple.com/app/id6755608044) vagy a [sing-box](https://sing-box.sagernet.org) appot. A sing-box használatához importálnia kell a [példaprofilt](/setup/LocalDevVPN.json).
+
+## Automatikus feloldás
+
+Mentse a jelkódját, hogy a Swipt app automatikusan feloldhassa az eszközét, amikor az zárolva van.
+
+Pontosabban a Swipt CLI feloldhatja az eszközt a Swipt API/MCP elindításához, a Swipt CLI, az MCP és a telepített Swipletek pedig feloldhatják az eszközt annak kezeléséhez.

@@ -1,0 +1,40 @@
+---
+title: ਸੈੱਟਅੱਪ
+---
+
+## ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਨਾਲ ਜੋੜਾਬੱਧ ਕਰਨਾ
+
+ਡਿਵਾਈਸ ਦੀਆਂ ਡਿਵੈਲਪਰ ਸੇਵਾਵਾਂ ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਲਈ Swipt ਦਾ ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਨਾਲ ਜੋੜਾਬੱਧ ਹੋਣਾ ਲੋੜੀਂਦਾ ਹੈ।
+
+ਜੇਕਰ ਤੁਸੀਂ Swipt CLI ਨਾਲ Swipt ਨੂੰ ਸਾਈਡਲੋਡ ਕੀਤਾ ਹੈ, ਤਾਂ ਜੋੜਾਬੱਧ ਕਰਨਾ ਸਵੈਚਲਿਤ ਤੌਰ 'ਤੇ ਸੈੱਟਅੱਪ ਹੋ ਜਾਂਦਾ ਹੈ। ਨਹੀਂ ਤਾਂ, ਜੋੜਾਬੱਧ ਕਰਨ ਲਈ ਐਪ ਵਿੱਚ ਦਿੱਤੇ ਨਿਰਦੇਸ਼ਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone ਦੀ ਜੋੜਾਬੱਧ ਕਰਨ ਵਾਲੀ ਸਕ੍ਰੀਨ](/setup/images/pairing-iPhone-pa-light.webp "light")
+    ![iPhone ਦੀ ਜੋੜਾਬੱਧ ਕਰਨ ਵਾਲੀ ਸਕ੍ਰੀਨ](/setup/images/pairing-iPhone-pa-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad ਦੀ ਜੋੜਾਬੱਧ ਕਰਨ ਵਾਲੀ ਸਕ੍ਰੀਨ](/setup/images/pairing-iPad-pa-light.webp "light")
+    ![iPad ਦੀ ਜੋੜਾਬੱਧ ਕਰਨ ਵਾਲੀ ਸਕ੍ਰੀਨ](/setup/images/pairing-iPad-pa-dark.webp "dark")
+
+  </div>
+</div>
+
+ਜੇਕਰ ਜੋੜਾਬੱਧ ਕਰਨਾ ਪੂਰਾ ਨਹੀਂ ਹੋ ਸਕਦਾ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ ਸਾਨੂੰ ਸਮੱਸਿਆ ਦੀ ਰਿਪੋਰਟ ਕਰੋ। ਵਿਕਲਪਕ ਤੌਰ 'ਤੇ, ਤੁਸੀਂ ਹੋਰ ਸਾਫ਼ਟਵੇਅਰ ਤੋਂ ਜੋੜਾਬੱਧ ਕਰਨ ਦੀ ਫ਼ਾਈਲ ਇੰਪੋਰਟ ਕਰ ਸਕਦੇ ਹੋ, ਜਿਵੇਂ ਕਿ:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## ਲੂਪਬੈਕ VPN
+
+ਡਿਵੈਲਪਰ ਸੇਵਾਵਾਂ ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਲਈ Swipt ਨੂੰ ਲੂਪਬੈਕ VPN ਦੀ ਲੋੜ ਹੈ। ਐਪ ਵਿੱਚ ਦਿੱਤੇ ਨਿਰਦੇਸ਼ਾਂ ਦੀ ਪਾਲਣਾ ਕਰਕੇ [LocalDevVPN](https://apps.apple.com/app/id6755608044) ਜਾਂ [sing-box](https://sing-box.sagernet.org) ਡਾਊਨਲੋਡ ਕਰੋ ਅਤੇ ਚਾਲੂ ਕਰੋ। sing-box ਲਈ ਤੁਹਾਨੂੰ [ਉਦਾਹਰਨ ਪ੍ਰੋਫ਼ਾਈਲ](/setup/LocalDevVPN.json) ਇੰਪੋਰਟ ਕਰਨੀ ਪਵੇਗੀ।
+
+## ਸਵੈਚਲਿਤ ਅਣਲਾਕ
+
+ਆਪਣਾ ਪਾਸਕੋਡ ਰੱਖਿਅਤ ਕਰੋ, ਤਾਂ ਜੋ ਡਿਵਾਈਸ ਲਾਕ ਹੋਣ 'ਤੇ Swipt ਇਸਨੂੰ ਸਵੈਚਲਿਤ ਤੌਰ 'ਤੇ ਅਣਲਾਕ ਕਰ ਸਕੇ।
+
+ਖ਼ਾਸ ਤੌਰ 'ਤੇ, Swipt CLI ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਨੂੰ ਅਣਲਾਕ ਕਰਕੇ Swipt API/MCP ਸ਼ੁਰੂ ਕਰ ਸਕਦਾ ਹੈ, ਅਤੇ Swipt CLI, MCP ਅਤੇ ਇੰਸਟਾਲ ਕੀਤੇ Swiplet ਤੁਹਾਡੇ ਡਿਵਾਈਸ ਨੂੰ ਅਣਲਾਕ ਕਰਕੇ ਇਸਨੂੰ ਚਲਾ ਸਕਦੇ ਹਨ।

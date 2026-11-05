@@ -1,0 +1,40 @@
+---
+title: Einrichtung
+---
+
+## Mit deinem Gerät koppeln
+
+Swipt muss mit deinem Gerät gekoppelt werden, um sich mit dessen Entwicklerdiensten zu verbinden.
+
+Wenn du Swipt per Sideloading mit der Swipt CLI installiert hast, wird die Kopplung automatisch eingerichtet. Folge andernfalls den Anweisungen in der App, um die Kopplung durchzuführen:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone-Kopplungsbildschirm](/setup/images/pairing-iPhone-de-light.webp "light")
+    ![iPhone-Kopplungsbildschirm](/setup/images/pairing-iPhone-de-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad-Kopplungsbildschirm](/setup/images/pairing-iPad-de-light.webp "light")
+    ![iPad-Kopplungsbildschirm](/setup/images/pairing-iPad-de-dark.webp "dark")
+
+  </div>
+</div>
+
+Wenn die Kopplung nicht abgeschlossen werden kann, melde uns das Problem. Alternativ kannst du eine Kopplungsdatei aus anderer Software importieren, darunter:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Loopback-VPN
+
+Swipt benötigt ein Loopback-VPN, um sich mit den Entwicklerdiensten zu verbinden. Folge den Anweisungen in der App, um [LocalDevVPN](https://apps.apple.com/app/id6755608044) oder [sing-box](https://sing-box.sagernet.org) herunterzuladen und zu aktivieren. Für sing-box musst du das [Beispielprofil](/setup/LocalDevVPN.json) importieren.
+
+## Automatische Entsperrung
+
+Sichere deinen Code, damit Swipt dein Gerät automatisch entsperren kann, wenn es gesperrt ist.
+
+Genauer gesagt kann die Swipt CLI dein Gerät entsperren, um die Swipt API/MCP zu starten, und die Swipt CLI, MCP und installierte Swiplets können dein Gerät entsperren, um es zu bedienen.

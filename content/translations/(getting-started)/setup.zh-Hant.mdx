@@ -1,0 +1,40 @@
+---
+title: 初始設定
+---
+
+## 與裝置配對
+
+Swipt 需要與你的裝置配對，才能連線至裝置的開發者服務。
+
+如果你使用 Swipt CLI 側載 Swipt，配對會自動設定完成；否則，請依照 App 內的指示完成配對：
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone 配對畫面](/setup/images/pairing-iPhone-zh-Hant-light.webp "light")
+    ![iPhone 配對畫面](/setup/images/pairing-iPhone-zh-Hant-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad 配對畫面](/setup/images/pairing-iPad-zh-Hant-light.webp "light")
+    ![iPad 配對畫面](/setup/images/pairing-iPad-zh-Hant-dark.webp "dark")
+
+  </div>
+</div>
+
+如果無法完成配對，請向我們回報問題。或者，你也可以輸入來自其他軟體的配對檔案，包括：
+
+- [Jitterbug](https://github.com/osy/Jitterbug)：`.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice)：`ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios)：`selfIdentity.plist`
+
+## 回送 VPN
+
+Swipt 需要回送 VPN 才能連線至開發者服務。請依照 App 內的指示下載並開啟 [LocalDevVPN](https://apps.apple.com/app/id6755608044) 或 [sing-box](https://sing-box.sagernet.org)（sing-box 需要輸入[範例設定檔](/setup/LocalDevVPN.json)）。
+
+## 自動解鎖
+
+儲存你的密碼，讓 Swipt 能在裝置鎖定時自動解鎖。
+
+具體來說，Swipt CLI 可以解鎖裝置以啟動 Swipt API/MCP；Swipt CLI、MCP 和已安裝的 Swiplet 可以解鎖裝置以進行操作。

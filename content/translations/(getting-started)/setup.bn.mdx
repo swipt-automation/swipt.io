@@ -1,0 +1,40 @@
+---
+title: সেটআপ
+---
+
+## আপনার ডিভাইসের সাথে পেয়ার করুন
+
+ডিভাইসের ডেভেলপার পরিষেবাগুলির সাথে কানেক্ট করতে আপনার ডিভাইসটিকে Swipt-এর সাথে পেয়ার করা প্রয়োজন।
+
+আপনি যদি Swipt CLI দিয়ে Swipt সাইডলোড করে থাকেন, তাহলে পেয়ারিং স্বয়ংক্রিয়ভাবে সেট আপ হয়ে যায়। অন্যথায়, পেয়ার করতে অ্যাপের নির্দেশাবলি অনুসরণ করুন:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![iPhone-এর পেয়ারিং স্ক্রিন](/setup/images/pairing-iPhone-bn-light.webp "light")
+    ![iPhone-এর পেয়ারিং স্ক্রিন](/setup/images/pairing-iPhone-bn-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![iPad-এর পেয়ারিং স্ক্রিন](/setup/images/pairing-iPad-bn-light.webp "light")
+    ![iPad-এর পেয়ারিং স্ক্রিন](/setup/images/pairing-iPad-bn-dark.webp "dark")
+
+  </div>
+</div>
+
+পেয়ারিং সম্পন্ন করা না গেলে আমাদের কাছে সমস্যাটি রিপোর্ট করুন। এছাড়া, আপনি অন্য সফটওয়্যার থেকেও পেয়ারিং ফাইল ইমপোর্ট করতে পারেন, যেমন:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## লুপব্যাক VPN
+
+ডেভেলপার পরিষেবাগুলির সাথে কানেক্ট করতে Swipt-এর জন্য একটি লুপব্যাক VPN প্রয়োজন। অ্যাপের নির্দেশাবলি অনুসরণ করে [LocalDevVPN](https://apps.apple.com/app/id6755608044) বা [sing-box](https://sing-box.sagernet.org) ডাউনলোড করে চালু করুন। sing-box-এর জন্য [নমুনা প্রোফাইল](/setup/LocalDevVPN.json) ইমপোর্ট করতে হবে।
+
+## স্বয়ংক্রিয় আনলক
+
+আপনার পাসকোড সেভ করুন, যাতে ডিভাইস লক থাকলে Swipt সেটি স্বয়ংক্রিয়ভাবে আনলক করতে পারে।
+
+নির্দিষ্টভাবে বললে, Swipt API/MCP চালু করার জন্য Swipt CLI আপনার ডিভাইস আনলক করতে পারে, এবং ডিভাইস চালানোর জন্য Swipt CLI, MCP ও ইনস্টল করা Swiplet আপনার ডিভাইস আনলক করতে পারে।

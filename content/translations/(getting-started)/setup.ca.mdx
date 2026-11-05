@@ -1,0 +1,40 @@
+---
+title: Configuració inicial
+---
+
+## Enllaç amb el dispositiu
+
+L’app Swipt s’ha d’enllaçar amb el teu dispositiu per connectar-se als seus serveis de desenvolupador.
+
+Si has instal·lat Swipt mitjançant càrrega lateral amb la Swipt CLI, l’enllaç es configura automàticament. Si no, segueix les instruccions de l’app per fer l’enllaç:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Pantalla d’enllaç de l’iPhone](/setup/images/pairing-iPhone-ca-light.webp "light")
+    ![Pantalla d’enllaç de l’iPhone](/setup/images/pairing-iPhone-ca-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Pantalla d’enllaç de l’iPad](/setup/images/pairing-iPad-ca-light.webp "light")
+    ![Pantalla d’enllaç de l’iPad](/setup/images/pairing-iPad-ca-dark.webp "dark")
+
+  </div>
+</div>
+
+Si no es pot completar l’enllaç, comunica’ns el problema. També pots importar un arxiu d’enllaç d’altre programari, com ara:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN de bucle local
+
+L’app Swipt necessita una VPN de bucle local per connectar-se als serveis de desenvolupador. Segueix les instruccions de l’app per descarregar i activar [LocalDevVPN](https://apps.apple.com/app/id6755608044) o [sing-box](https://sing-box.sagernet.org). Per a sing-box, has d’importar el [perfil d’exemple](/setup/LocalDevVPN.json).
+
+## Desbloqueig automàtic
+
+Desa el codi perquè l’app Swipt pugui desbloquejar automàticament el dispositiu quan estigui bloquejat.
+
+Concretament, la Swipt CLI pot desbloquejar el dispositiu per iniciar Swipt API/MCP, i la Swipt CLI, MCP i els Swiplets instal·lats poden desbloquejar el dispositiu per fer-lo servir.

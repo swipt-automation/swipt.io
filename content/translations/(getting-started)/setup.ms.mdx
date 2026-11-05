@@ -1,0 +1,40 @@
+---
+title: Persediaan
+---
+
+## Berpasangan dengan Peranti Anda
+
+Swipt perlu berpasangan dengan peranti anda untuk menyambung ke perkhidmatan pembangunnya.
+
+Jika anda telah memuat sisi Swipt dengan Swipt CLI, perpasangan disediakan secara automatik. Jika tidak, ikuti arahan dalam app untuk berpasangan:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Skrin perpasangan iPhone](/setup/images/pairing-iPhone-ms-light.webp "light")
+    ![Skrin perpasangan iPhone](/setup/images/pairing-iPhone-ms-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Skrin perpasangan iPad](/setup/images/pairing-iPad-ms-light.webp "light")
+    ![Skrin perpasangan iPad](/setup/images/pairing-iPad-ms-dark.webp "dark")
+
+  </div>
+</div>
+
+Jika perpasangan tidak dapat diselesaikan, sila laporkan isu ini kepada kami. Sebagai alternatif, anda boleh mengimport fail pasangan daripada perisian lain, termasuk:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## VPN Gelung Balik
+
+Swipt memerlukan VPN gelung balik untuk menyambung ke perkhidmatan pembangun. Ikuti arahan dalam app untuk memuat turun dan menghidupkan [LocalDevVPN](https://apps.apple.com/app/id6755608044) atau [sing-box](https://sing-box.sagernet.org). Untuk sing-box, anda perlu mengimport [profil contoh](/setup/LocalDevVPN.json).
+
+## Buka Kunci Automatik
+
+Simpan kod laluan anda supaya Swipt boleh membuka kunci peranti anda secara automatik apabila ia dikunci.
+
+Secara khususnya, Swipt CLI boleh membuka kunci peranti anda untuk memulakan Swipt API/MCP, dan Swipt CLI, MCP serta Swiplet yang dipasang boleh membuka kunci peranti anda untuk mengendalikannya.

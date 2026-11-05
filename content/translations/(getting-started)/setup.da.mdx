@@ -1,0 +1,40 @@
+---
+title: Opsætning
+---
+
+## Dan par med din enhed
+
+Swipt skal danne par med din enhed for at oprette forbindelse til enhedens udviklertjenester.
+
+Parringen konfigureres automatisk, hvis du har sideloadet Swipt med Swipt CLI. Følg ellers instruktionerne i appen for at danne par:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+
+    ![Parringsskærm på iPhone](/setup/images/pairing-iPhone-da-light.webp "light")
+    ![Parringsskærm på iPhone](/setup/images/pairing-iPhone-da-dark.webp "dark")
+
+  </div>
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+
+    ![Parringsskærm på iPad](/setup/images/pairing-iPad-da-light.webp "light")
+    ![Parringsskærm på iPad](/setup/images/pairing-iPad-da-dark.webp "dark")
+
+  </div>
+</div>
+
+Rapporter problemet til os, hvis parringen ikke kan fuldføres. Du kan også importere en parringsfil fra anden software, herunder:
+
+- [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+- [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+- [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Loopback-VPN
+
+Swipt skal bruge et loopback-VPN for at oprette forbindelse til udviklertjenester. Følg instruktionerne i appen for at hente og aktivere [LocalDevVPN](https://apps.apple.com/app/id6755608044) eller [sing-box](https://sing-box.sagernet.org). Til sing-box skal du importere [eksempelprofilen](/setup/LocalDevVPN.json).
+
+## Automatisk oplåsning
+
+Gem din adgangskode, så Swipt automatisk kan låse din enhed op, når den er låst.
+
+Swipt CLI kan nærmere bestemt låse din enhed op for at starte Swipt API/MCP, og Swipt CLI, MCP og installerede Swiplets kan låse din enhed op for at betjene den.
