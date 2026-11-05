@@ -8,7 +8,7 @@ export const navigation: Record<
   },
   "(getting-started)": {
     defaultOpen: true,
-    pages: ["index", "setup"],
+    pages: ["index", "setup", "agents"],
     titles: {
       en: "Getting Started",
       "zh-Hans": "开始使用",

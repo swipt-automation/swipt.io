@@ -1,0 +1,40 @@
+---
+title: Használat ügynökökkel
+---
+
+## Skills telepítése
+
+#### Claude Code
+
+A Claude Code-ban:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+A Claude Code CLI-jal:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+A Beállítások > Bővítmények részben:
+
+- Válassza a Hozzáadás > Piactér hozzáadása > Hozzáadás tárolóból lehetőséget, majd adja meg a `https://github.com/swipt-automation/skills` címet.
+- Váltson a Felfedezés lapra, keressen rá a Swiptre, majd válassza a Hozzáadás lehetőséget.
+
+#### Egyéb környezetek
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## A CLI és az MCP használata
+
+Ha a Swipt appot a `swipt sideload install` paranccsal telepítette, a helyi API már be van kapcsolva, és a helyi hálózaton lévő ügynökök használhatják az eszközét.
+
+Ha a Swiptet csak MCP-t támogató appokban, például a Claude-ban vagy a ChatGPT-ben szeretné használni, a Swipt appban nyissa meg a Fejlesztő > API > Cloudflare részt, és válassza a Quick Tunnel lehetőséget, így bejelentkezés nélkül közzétehet egy nyilvános MCP-szervert.

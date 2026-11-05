@@ -1,0 +1,40 @@
+---
+title: ఏజెంట్‌లతో ఉపయోగించడం
+---
+
+## Skillsను ఇన్‌స్టాల్ చేయండి
+
+#### Claude Code
+
+Claude Codeలో:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+Claude Code CLIతో:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+‘సెట్టింగ్స్’ > ‘ప్లగిన్‌లు’లో:
+
+- ‘జోడించండి’ > ‘మార్కెట్‌ప్లేస్‌ను జోడించండి’ > ‘రిపోజిటరీ నుండి జోడించండి’ని ఎంచుకుని, ఆపై `https://github.com/swipt-automation/skills`ను ఎంటర్ చేయండి.
+- ‘డిస్కవర్’కు మారి, Swipt కోసం సెర్చ్ చేసి, ఆపై ‘జోడించండి’ని ఎంచుకోండి.
+
+#### ఇతర ఎన్విరాన్‌మెంట్‌లు
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## CLI, MCPలను ఉపయోగించండి
+
+మీరు `swipt sideload install`తో Swiptను ఇన్‌స్టాల్ చేసి ఉంటే, లోకల్ API ఇప్పటికే ఆన్ అయి ఉంటుంది, మీ లోకల్ నెట్‌వర్క్‌లోని ఏజెంట్‌లు మీ డివైజ్‌ను ఉపయోగించగలవు.
+
+Claude లేదా ChatGPT వంటి MCPకి మాత్రమే సపోర్ట్ చేసే యాప్‌లలో Swiptను ఉపయోగించడానికి, Swiptలో ‘డెవలపర్’ > ‘API’ > ‘Cloudflare’కు వెళ్లి ‘Quick Tunnel’ను ఎంచుకోండి. దీంతో సైన్ ఇన్ చేయకుండానే పబ్లిక్ MCP సర్వర్‌ను పబ్లిష్ చేయవచ్చు.

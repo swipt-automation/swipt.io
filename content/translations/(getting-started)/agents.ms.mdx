@@ -1,0 +1,40 @@
+---
+title: Gunakan dengan Ejen
+---
+
+## Pasang Skills
+
+#### Claude Code
+
+Dalam Claude Code:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+Dengan Claude Code CLI:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+Dalam Seting > Plugin:
+
+- Pilih Tambah > Tambah Pasaran > Tambah daripada Repositori, kemudian masukkan `https://github.com/swipt-automation/skills`.
+- Tukar ke Teroka, cari Swipt, kemudian pilih Tambah.
+
+#### Persekitaran Lain
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## Gunakan CLI dan MCP
+
+Jika anda memasang Swipt dengan `swipt sideload install`, API setempat sudah pun dihidupkan dan ejen dalam rangkaian setempat anda boleh menggunakan peranti anda.
+
+Untuk menggunakan Swipt dalam app yang hanya menyokong MCP, seperti Claude atau ChatGPT, pergi ke Pembangun > API > Cloudflare dalam Swipt dan pilih Quick Tunnel untuk menerbitkan pelayan MCP awam tanpa perlu mendaftar masuk.

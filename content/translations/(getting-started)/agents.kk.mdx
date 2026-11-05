@@ -1,0 +1,40 @@
+---
+title: Агенттермен пайдалану
+---
+
+## Дағдыларды орнату
+
+#### Claude Code
+
+Claude Code ішінде:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+Claude Code CLI арқылы:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+«Параметрлер» > «Плагиндер» бөлімінде:
+
+- «Қосу» > «Маркетплейс қосу» > «Репозиторийден қосу» тармағын таңдап, `https://github.com/swipt-automation/skills` мекенжайын енгізіңіз.
+- «Шолу» қойындысына ауысып, Swipt деп іздеңіз, содан кейін «Қосу» түймесін таңдаңыз.
+
+#### Басқа орталар
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## CLI және MCP пайдалану
+
+Swipt қолданбасын `swipt sideload install` арқылы орнатқан болсаңыз, жергілікті API әлдеқашан қосулы, ал жергілікті желіңіздегі агенттер құрылғыңызды пайдалана алады.
+
+Swipt қолданбасын Claude немесе ChatGPT сияқты тек MCP қолдайтын қолданбаларда пайдалану үшін Swipt ішінде «Әзірлеуші» > API > Cloudflare бөліміне өтіп, Quick Tunnel опциясын таңдаңыз. Осылайша жүйеге кірмей-ақ жалпыға қолжетімді MCP серверін жариялай аласыз.

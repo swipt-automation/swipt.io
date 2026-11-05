@@ -1,0 +1,40 @@
+---
+title: 搭配 Agent 使用
+---
+
+## 安裝 Skills
+
+#### Claude Code
+
+在 Claude Code 中：
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+使用 Claude Code CLI：
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+在「設定」>「外掛程式」中：
+
+- 選擇「加入」>「加入市集」>「從儲存庫加入」，然後輸入 `https://github.com/swipt-automation/skills`。
+- 切換至「探索」，搜尋 Swipt，然後選擇「加入」。
+
+#### 其他環境
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## 使用 CLI 和 MCP
+
+如果你使用 `swipt sideload install` 安裝 Swipt，本機 API 已經開啟，區域網路中的 Agent 即可使用你的裝置。
+
+如要在 Claude 或 ChatGPT 等僅支援 MCP 的 App 中使用 Swipt，請在 Swipt 的「開發者」>「API」>「Cloudflare」中選擇 Quick Tunnel，不必登入即可發布公開的 MCP 伺服器。

@@ -1,0 +1,40 @@
+---
+title: Χρήση με πράκτορες
+---
+
+## Εγκατάσταση δεξιοτήτων
+
+#### Claude Code
+
+Στο Claude Code:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+Με το Claude Code CLI:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+Στις «Ρυθμίσεις» > «Πρόσθετα»:
+
+- Επιλέξτε «Προσθήκη» > «Προσθήκη αγοράς» > «Προσθήκη από αποθετήριο» και, στη συνέχεια, εισαγάγετε το `https://github.com/swipt-automation/skills`.
+- Μεταβείτε στην «Ανακάλυψη», αναζητήστε το Swipt και, στη συνέχεια, επιλέξτε «Προσθήκη».
+
+#### Άλλα περιβάλλοντα
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## Χρήση του CLI και του MCP
+
+Αν εγκαταστήσατε το Swipt με την εντολή `swipt sideload install`, το τοπικό API είναι ήδη ενεργοποιημένο και οι πράκτορες στο τοπικό σας δίκτυο μπορούν να χρησιμοποιούν τη συσκευή σας.
+
+Για να χρησιμοποιήσετε το Swipt σε εφαρμογές που υποστηρίζουν μόνο MCP, όπως το Claude ή το ChatGPT, μεταβείτε στο Swipt στις επιλογές «Προγραμματιστής» > «API» > «Cloudflare» και επιλέξτε Quick Tunnel για να δημοσιεύσετε έναν δημόσιο διακομιστή MCP χωρίς σύνδεση.

@@ -1,0 +1,40 @@
+---
+title: الاستخدام مع الوكلاء
+---
+
+## تثبيت المهارات
+
+#### Claude Code
+
+في Claude Code:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+باستخدام Claude Code CLI:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+في "الإعدادات" > "المكونات الإضافية":
+
+- يرجى اختيار "إضافة" > "إضافة سوق" > "إضافة من مستودع"، ثم إدخال `https://github.com/swipt-automation/skills`
+- يرجى الانتقال إلى "استكشاف" والبحث عن Swipt، ثم اختيار "إضافة"
+
+#### بيئات أخرى
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## استخدام CLI و MCP
+
+إذا تم تثبيت Swipt باستخدام `swipt sideload install`، فإن واجهة API المحلية مفعّلة بالفعل، ويمكن للوكلاء على الشبكة المحلية استخدام جهازك.
+
+لاستخدام Swipt في التطبيقات التي تدعم MCP فقط، مثل Claude أو ChatGPT، يرجى الانتقال إلى "المطور" > "API" > "Cloudflare" في Swipt واختيار Quick Tunnel لنشر خادم MCP عام دون تسجيل الدخول.

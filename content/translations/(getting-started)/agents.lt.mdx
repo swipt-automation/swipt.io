@@ -1,0 +1,40 @@
+---
+title: Naudojimas su agentais
+---
+
+## „Skills” diegimas
+
+#### Claude Code
+
+Programoje „Claude Code”:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+Naudojant „Claude Code CLI”:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+Skiltyje „Nustatymai” > „Papildiniai”:
+
+- Pasirinkite „Pridėti” > „Pridėti prekyvietę” > „Pridėti iš saugyklos”, tada įveskite `https://github.com/swipt-automation/skills`.
+- Perjunkite į „Atrasti”, ieškokite „Swipt”, tada pasirinkite „Pridėti”.
+
+#### Kitos aplinkos
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## CLI ir MCP naudojimas
+
+Jei „Swipt” įdiegėte naudodami `swipt sideload install`, vietinė API jau įjungta, o jūsų vietiniame tinkle esantys agentai gali naudoti jūsų įrenginį.
+
+Norėdami naudoti „Swipt” programose, kurios palaiko tik MCP, pavyzdžiui, „Claude” ar „ChatGPT”, programoje „Swipt” eikite į „Kūrėjas” > „API” > „Cloudflare” ir pasirinkite „Quick Tunnel” – taip be prisijungimo paskelbsite viešą MCP serverį.

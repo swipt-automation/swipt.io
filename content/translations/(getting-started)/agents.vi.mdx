@@ -1,0 +1,40 @@
+---
+title: Sử dụng với agent
+---
+
+## Cài đặt Skills
+
+#### Claude Code
+
+Trong Claude Code:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+Với Claude Code CLI:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+Trong Cài đặt > Plugin:
+
+- Chọn Thêm > Thêm marketplace > Thêm từ kho lưu trữ, sau đó nhập `https://github.com/swipt-automation/skills`.
+- Chuyển sang Khám phá, tìm kiếm Swipt, sau đó chọn Thêm.
+
+#### Môi trường khác
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## Sử dụng CLI và MCP
+
+Nếu bạn đã cài đặt Swipt bằng `swipt sideload install`, API cục bộ đã được bật sẵn và các agent trong mạng cục bộ có thể sử dụng thiết bị của bạn.
+
+Để sử dụng Swipt trong các ứng dụng chỉ hỗ trợ MCP, chẳng hạn như Claude hoặc ChatGPT, hãy đi tới Nhà phát triển > API > Cloudflare trong Swipt và chọn Quick Tunnel để xuất bản một máy chủ MCP công khai mà không cần đăng nhập.

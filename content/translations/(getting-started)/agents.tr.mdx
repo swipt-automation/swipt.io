@@ -1,0 +1,40 @@
+---
+title: Ajanlarla kullanım
+---
+
+## Skills yükleme
+
+#### Claude Code
+
+Claude Code’da:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+Claude Code CLI ile:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+Ayarlar > Eklentiler bölümünde:
+
+- Ekle > Pazar Yeri Ekle > Depodan Ekle’yi seçin, ardından `https://github.com/swipt-automation/skills` adresini girin.
+- Keşfet’e geçin, Swipt’i arayın, ardından Ekle’yi seçin.
+
+#### Diğer ortamlar
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## CLI ve MCP’yi kullanma
+
+Swipt’i `swipt sideload install` ile yüklediyseniz yerel API zaten açıktır ve yerel ağınızdaki ajanlar aygıtınızı kullanabilir.
+
+Swipt’i Claude veya ChatGPT gibi yalnızca MCP’yi destekleyen uygulamalarda kullanmak için Swipt’te Geliştirici > API > Cloudflare bölümüne gidin ve Quick Tunnel’ı seçin. Böylece giriş yapmadan herkese açık bir MCP sunucusu yayımlayabilirsiniz.

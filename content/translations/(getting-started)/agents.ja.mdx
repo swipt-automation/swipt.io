@@ -1,0 +1,40 @@
+---
+title: エージェントで使用
+---
+
+## スキルのインストール
+
+#### Claude Code
+
+Claude Codeの場合:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+Claude Code CLIの場合:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+“設定”＞“プラグイン”で:
+
+- “追加”＞“マーケットプレイスを追加”＞“リポジトリから追加”を選択し、`https://github.com/swipt-automation/skills`を入力します。
+- “見つける”に切り替えてSwiptを検索し、“追加”を選択します。
+
+#### その他の環境
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## CLIとMCPの使用
+
+`swipt sideload install`でSwiptをインストールした場合は、ローカルAPIがすでにオンになっているため、ローカルネットワーク上のエージェントからデバイスを使用できます。
+
+ClaudeやChatGPTなど、MCPのみに対応しているアプリでSwiptを使用するには、Swiptの“デベロッパ”＞“API”＞“Cloudflare”でQuick Tunnelを選択します。サインインせずにパブリックMCPサーバを公開できます。

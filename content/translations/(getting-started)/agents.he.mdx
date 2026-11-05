@@ -1,0 +1,40 @@
+---
+title: שימוש עם סוכנים
+---
+
+## התקנת מיומנויות
+
+#### Claude Code
+
+ב-Claude Code:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+באמצעות Claude Code CLI:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+ב״הגדרות״ > ״תוספים״:
+
+- יש לבחור ״הוספה״ > ״הוספת מרקטפלייס״ > ״הוספה ממאגר״ ולאחר מכן להזין את `https://github.com/swipt-automation/skills`.
+- יש לעבור אל ״גילוי״, לחפש את Swipt ולאחר מכן לבחור ״הוספה״.
+
+#### סביבות אחרות
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## שימוש ב-CLI וב-MCP
+
+אם Swipt הותקן באמצעות `swipt sideload install`, ה-API המקומי כבר מופעל, וסוכנים ברשת המקומית יכולים להשתמש במכשיר.
+
+כדי להשתמש ב-Swipt ביישומים שתומכים רק ב-MCP, כמו Claude או ChatGPT, יש לעבור אל ״מפתחים״ > ״API״ > ״Cloudflare״ ב-Swipt ולבחור Quick Tunnel, וכך לפרסם שרת MCP ציבורי ללא התחברות.

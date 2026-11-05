@@ -1,0 +1,40 @@
+---
+title: Gunakan dengan Agen
+---
+
+## Instal Skills
+
+#### Claude Code
+
+Di Claude Code:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+Dengan Claude Code CLI:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+Di Pengaturan > Plugin:
+
+- Pilih Tambahkan > Tambahkan Marketplace > Tambahkan dari Repositori, lalu masukkan `https://github.com/swipt-automation/skills`.
+- Beralih ke Temukan, cari Swipt, lalu pilih Tambahkan.
+
+#### Lingkungan Lainnya
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## Gunakan CLI dan MCP
+
+Jika Anda menginstal Swipt dengan `swipt sideload install`, API lokal sudah aktif, dan agen di jaringan lokal Anda dapat menggunakan perangkat Anda.
+
+Untuk menggunakan Swipt di app yang hanya mendukung MCP, seperti Claude atau ChatGPT, buka Pengembang > API > Cloudflare di Swipt, lalu pilih Quick Tunnel untuk memublikasikan server MCP publik tanpa perlu masuk.

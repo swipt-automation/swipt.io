@@ -1,0 +1,40 @@
+---
+title: ایجنٹ کے ساتھ استعمال کریں
+---
+
+## مہارتیں انسٹال کریں
+
+#### Claude Code
+
+Claude Code میں:
+
+```shell
+/plugin marketplace add swipt-automation/skills
+/plugin install swipt@swipt-skills
+```
+
+Claude Code CLI کے ذریعے:
+
+```shell
+claude plugin marketplace add swipt-automation/skills
+claude plugin install swipt@swipt-skills
+```
+
+#### Claude
+
+“سیٹنگز” > “پلگ ان” میں:
+
+- “شامل کریں” > “مارکیٹ پلیس شامل کریں” > “ریپوزیٹری سے شامل کریں” منتخب کریں، پھر `https://github.com/swipt-automation/skills` درج کریں۔
+- “دریافت کریں” پر سوئچ کریں، Swipt تلاش کریں، پھر “شامل کریں” منتخب کریں۔
+
+#### دیگر ماحول
+
+```shell
+npx skills add swipt-automation/skills
+```
+
+## CLI اور MCP استعمال کریں
+
+اگر آپ نے Swipt کو `swipt sideload install` کے ذریعے انسٹال کیا ہے تو مقامی API پہلے سے آن ہے، اور آپ کے مقامی نیٹ ورک پر موجود ایجنٹ آپ کی ڈیوائس استعمال کر سکتے ہیں۔
+
+Claude یا ChatGPT جیسی ان ایپس میں Swipt استعمال کرنے کے لیے جو صرف MCP کو سپورٹ کرتی ہیں، Swipt میں “ڈیولپر” > “API” > “Cloudflare” پر جائیں اور سائن اِن کیے بغیر عوامی MCP سرور شائع کرنے کے لیے Quick Tunnel منتخب کریں۔
