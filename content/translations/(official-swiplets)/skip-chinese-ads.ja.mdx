@@ -1,0 +1,32 @@
+---
+title: 中国アプリの広告をスキップ
+---
+
+`中国アプリの広告をスキップ`は、スプラッシュ広告をスキップする高速なイベント駆動型のSwipletです。
+
+## スクリーンショット
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0 flex-1">
+
+    ![設定](/swiplets/skip-chinese-ads/settings.webp)
+
+  </div>
+  <div className="min-w-0 flex-1">
+
+    ![記録](/swiplets/skip-chinese-ads/activity.webp)
+
+  </div>
+</div>
+
+## インストール
+
+このSwipletをアプリ内でインストールするには、`Swiplet - 追加 - 公式Swiplet - 中国アプリの広告をスキップ`に移動します。Swipletパッケージを[GitHubリリース](https://github.com/swipt-automation/official-swiplets/releases/tag/nightly)からダウンロードしてインストールすることもできます。
+
+## 仕組み
+
+`ipatool`と`unfairplay`を使ってアプリを一括でダウンロード、復号、リバースエンジニアリングし、中国本土のApp Storeで人気のアプリの大多数に対応しました。
+
+また、中国の広告SDKを多数特定しました。まだ対応していないアプリでも、`あいまいスキップ`をオンにすると広告を認識でき、次回はより速くスキップできます。
+
+アプリが正しく動作しない場合やまだ対応していない場合は、[お知らせください](https://github.com/swipt-automation/official-swiplets/issues)。[official-swiplets](https://github.com/swipt-automation/official-swiplets)に直接プルリクエストを作成することもできます。

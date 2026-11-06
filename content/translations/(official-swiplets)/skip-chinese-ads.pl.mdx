@@ -1,0 +1,32 @@
+---
+title: Pomijanie reklam w chińskich aplikacjach
+---
+
+`Pomijanie reklam w chińskich aplikacjach` to szybki, oparty na zdarzeniach Swiplet, który pomija reklamy na ekranie startowym.
+
+## Zrzuty ekranu
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0 flex-1">
+
+    ![Ustawienia](/swiplets/skip-chinese-ads/settings.webp)
+
+  </div>
+  <div className="min-w-0 flex-1">
+
+    ![Historia](/swiplets/skip-chinese-ads/activity.webp)
+
+  </div>
+</div>
+
+## Instalowanie
+
+Aby zainstalować ten Swiplet w aplikacji, przejdź do `Swiplety - Dodaj - Oficjalne Swiplety - Pomijanie reklam w chińskich aplikacjach`. Możesz też pobrać i zainstalować pakiet Swipleta z [wydania na GitHubie](https://github.com/swipt-automation/official-swiplets/releases/tag/nightly).
+
+## Jak to działa
+
+Użyliśmy narzędzi `ipatool` i `unfairplay`, aby hurtowo pobierać, odszyfrowywać i poddawać inżynierii wstecznej aplikacje, dzięki czemu dodaliśmy obsługę zdecydowanej większości popularnych aplikacji z App Store w Chinach kontynentalnych.
+
+Zidentyfikowaliśmy też wiele chińskich reklamowych pakietów SDK. W aplikacjach, które nie są jeszcze obsługiwane, po włączeniu opcji `Przybliżone pomijanie` reklamy nadal mogą być rozpoznawane i następnym razem pomijane szybciej.
+
+Jeśli aplikacja nie działa prawidłowo lub nie jest jeszcze obsługiwana, [daj nam znać](https://github.com/swipt-automation/official-swiplets/issues). Możesz też bezpośrednio otworzyć pull request w repozytorium [official-swiplets](https://github.com/swipt-automation/official-swiplets).

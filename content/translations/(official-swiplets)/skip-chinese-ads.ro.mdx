@@ -1,0 +1,32 @@
+---
+title: Omite reclamele aplicațiilor chinezești
+---
+
+`Omite reclamele aplicațiilor chinezești` este un Swiplet rapid, bazat pe evenimente, care omite reclamele afișate la pornirea aplicațiilor.
+
+## Capturi de ecran
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0 flex-1">
+
+    ![Configurări](/swiplets/skip-chinese-ads/settings.webp)
+
+  </div>
+  <div className="min-w-0 flex-1">
+
+    ![Înregistrări](/swiplets/skip-chinese-ads/activity.webp)
+
+  </div>
+</div>
+
+## Instalare
+
+Pentru a instala acest Swiplet în aplicație, accesați `Swiplet-uri - Adăugați - Swiplet-uri oficiale - Omite reclamele aplicațiilor chinezești`. De asemenea, puteți descărca și instala pachetul Swiplet din [versiunea publicată pe GitHub](https://github.com/swipt-automation/official-swiplets/releases/tag/nightly).
+
+## Cum funcționează
+
+Am folosit `ipatool` și `unfairplay` pentru a descărca, decripta și analiza prin inginerie inversă aplicații în masă, adăugând astfel compatibilitate cu marea majoritate a aplicațiilor populare din App Store în China continentală.
+
+De asemenea, am identificat un număr mare de SDK-uri de publicitate chinezești. În aplicațiile care nu sunt încă compatibile, dacă activați `Omitere aproximativă`, reclamele pot fi totuși recunoscute și omise mai rapid data viitoare.
+
+Dacă o aplicație nu funcționează corect sau nu este încă compatibilă, [anunțați-ne](https://github.com/swipt-automation/official-swiplets/issues). De asemenea, puteți deschide direct un pull request în depozitul [official-swiplets](https://github.com/swipt-automation/official-swiplets).

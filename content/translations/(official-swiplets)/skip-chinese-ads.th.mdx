@@ -1,0 +1,32 @@
+---
+title: ข้ามโฆษณาแอปจีน
+---
+
+`ข้ามโฆษณาแอปจีน` เป็น Swiplet แบบขับเคลื่อนด้วยเหตุการณ์ที่ข้ามโฆษณาเปิดแอปได้อย่างรวดเร็ว
+
+## ภาพหน้าจอ
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0 flex-1">
+
+    ![การตั้งค่า](/swiplets/skip-chinese-ads/settings.webp)
+
+  </div>
+  <div className="min-w-0 flex-1">
+
+    ![บันทึก](/swiplets/skip-chinese-ads/activity.webp)
+
+  </div>
+</div>
+
+## การติดตั้ง
+
+หากต้องการติดตั้ง Swiplet นี้ในแอป ให้ไปที่ `Swiplet - เพิ่ม - Swiplet อย่างเป็นทางการ - ข้ามโฆษณาแอปจีน` หรือจะดาวน์โหลดแพ็คเกจ Swiplet จาก [GitHub release](https://github.com/swipt-automation/official-swiplets/releases/tag/nightly) แล้วติดตั้งก็ได้
+
+## หลักการทำงาน
+
+เราใช้ `ipatool` และ `unfairplay` เพื่อดาวน์โหลด ถอดรหัส และทำวิศวกรรมย้อนกลับแอปจำนวนมาก และเพิ่มการรองรับแอปยอดนิยมส่วนใหญ่บน App Store ของจีนแผ่นดินใหญ่
+
+นอกจากนี้ เรายังระบุ SDK โฆษณาของจีนได้จำนวนมาก ในแอปที่ยังไม่รองรับ การเปิด `ข้ามแบบคร่าวๆ` ก็ยังจดจำโฆษณาได้และข้ามได้เร็วขึ้นในครั้งต่อไป
+
+หากแอปใดทำงานไม่ถูกต้องหรือยังไม่รองรับ โปรด[แจ้งให้เราทราบ](https://github.com/swipt-automation/official-swiplets/issues) คุณยังสามารถเปิด Pull Request ได้โดยตรงที่ [official-swiplets](https://github.com/swipt-automation/official-swiplets)

@@ -1,0 +1,32 @@
+---
+title: Ohita kiinalaisten appien mainokset
+---
+
+`Ohita kiinalaisten appien mainokset` on nopea, tapahtumapohjainen Swiplet, joka ohittaa käynnistysmainokset.
+
+## Kuvakaappaukset
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0 flex-1">
+
+    ![Asetukset](/swiplets/skip-chinese-ads/settings.webp)
+
+  </div>
+  <div className="min-w-0 flex-1">
+
+    ![Tapahtumat](/swiplets/skip-chinese-ads/activity.webp)
+
+  </div>
+</div>
+
+## Asennus
+
+Asenna tämä Swiplet apissa kohdasta `Swipletit - Lisää - Viralliset Swipletit - Ohita kiinalaisten appien mainokset`. Voit myös ladata ja asentaa Swiplet-paketin [GitHub-julkaisusta](https://github.com/swipt-automation/official-swiplets/releases/tag/nightly).
+
+## Näin se toimii
+
+Latasimme appeja, purimme niiden salauksen ja takaisinmallinsimme ne suuressa mittakaavassa `ipatool`- ja `unfairplay`-työkaluilla, ja näin lisäsimme tuen valtaosalle Manner-Kiinan App Storen suosituista apeista.
+
+Tunnistimme myös suuren määrän kiinalaisia mainos-SDK:ita. Apeissa, joita ei vielä tueta, voit ottaa käyttöön `Sumea ohitus` -asetuksen, jolloin mainokset tunnistetaan silti ja ohitetaan seuraavalla kerralla nopeammin.
+
+Jos appi ei toimi oikein tai sitä ei vielä tueta, [kerro siitä meille](https://github.com/swipt-automation/official-swiplets/issues). Voit myös avata pull requestin suoraan repositorioon [official-swiplets](https://github.com/swipt-automation/official-swiplets).

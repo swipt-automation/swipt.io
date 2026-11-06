@@ -1,0 +1,32 @@
+---
+title: 跳过中国广告
+---
+
+`跳过广告` 是一个事件驱动和高速的开屏广告跳过 Swiplet。
+
+## 截图
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0 flex-1">
+
+    ![设置](/swiplets/skip-chinese-ads/settings.webp)
+
+  </div>
+  <div className="min-w-0 flex-1">
+
+    ![记录](/swiplets/skip-chinese-ads/activity.webp)
+
+  </div>
+</div>
+
+## 安装
+
+通过应用内 `Swiplet - 添加 - 官方 Swiplet - 跳过广告` 可以安装此 Swiplet。此外，也可以通过 [GitHub release](https://github.com/swipt-automation/official-swiplets/releases/tag/nightly) 下载并安装 Swiplet 包。
+
+## 原理
+
+通过 `ipatool` 和 `unfairplay` 批量下载、解密和逆向，适配了中国大陆 App Store 的绝大多数常用软件；
+并且识别出了大量中国广告 SDK，在未适配的应用中，启用「模糊匹配」，也能够认出广告并在下次加速跳过。
+
+如果有应用适配异常或未适配，请[向我们反馈](https://github.com/swipt-automation/official-swiplets/issues)，您也可以直接向 [official-swiplets](https://github.com/swipt-automation/official-swiplets) 打开 Pull Request。
+

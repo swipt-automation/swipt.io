@@ -1,0 +1,32 @@
+---
+title: Ignorer les pubs des apps chinoises
+---
+
+`Ignorer les pubs des apps chinoises` est un Swiplet rapide, axé sur les événements, qui ignore les publicités affichées au lancement des apps.
+
+## Captures d’écran
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0 flex-1">
+
+    ![Réglages](/swiplets/skip-chinese-ads/settings.webp)
+
+  </div>
+  <div className="min-w-0 flex-1">
+
+    ![Historique](/swiplets/skip-chinese-ads/activity.webp)
+
+  </div>
+</div>
+
+## Installation
+
+Pour installer ce Swiplet dans l’app, allez à `Swiplets - Ajouter - Swiplets officiels - Ignorer les pubs des apps chinoises`. Vous pouvez aussi télécharger et installer le paquet du Swiplet à partir de la [version publiée sur GitHub](https://github.com/swipt-automation/official-swiplets/releases/tag/nightly).
+
+## Comment ça fonctionne
+
+Nous avons utilisé `ipatool` et `unfairplay` pour télécharger et déchiffrer des apps en lot, puis en faire l’ingénierie inverse, ce qui nous a permis de prendre en charge la vaste majorité des apps populaires de l’App Store en Chine continentale.
+
+Nous avons aussi repéré un grand nombre de SDK publicitaires chinois. Dans les apps qui ne sont pas encore prises en charge, si vous activez `Saut approximatif`, les publicités peuvent quand même être reconnues et ignorées plus rapidement la prochaine fois.
+
+Si une app ne fonctionne pas correctement ou n’est pas encore prise en charge, veuillez [nous en aviser](https://github.com/swipt-automation/official-swiplets/issues). Vous pouvez aussi ouvrir directement une demande de tirage dans [official-swiplets](https://github.com/swipt-automation/official-swiplets).

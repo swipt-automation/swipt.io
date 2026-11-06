@@ -1,0 +1,32 @@
+---
+title: Preskočiť reklamy v čínskych apkách
+---
+
+`Preskočiť reklamy v čínskych apkách` je rýchly Swiplet založený na udalostiach, ktorý preskakuje reklamy na úvodnej obrazovke.
+
+## Snímky obrazovky
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0 flex-1">
+
+    ![Nastavenia](/swiplets/skip-chinese-ads/settings.webp)
+
+  </div>
+  <div className="min-w-0 flex-1">
+
+    ![Záznamy](/swiplets/skip-chinese-ads/activity.webp)
+
+  </div>
+</div>
+
+## Inštalácia
+
+Ak chcete tento Swiplet nainštalovať v apke, prejdite do `Swiplety - Pridať - Oficiálne Swiplets - Preskočiť reklamy v čínskych apkách`. Balík Swipletu môžete tiež stiahnuť a nainštalovať z [vydania na GitHube](https://github.com/swipt-automation/official-swiplets/releases/tag/nightly).
+
+## Ako to funguje
+
+Pomocou nástrojov `ipatool` a `unfairplay` sme hromadne sťahovali, dešifrovali a spätne analyzovali apky, vďaka čomu sme pridali podporu pre drvivú väčšinu populárnych apiek v App Store v pevninskej Číne.
+
+Identifikovali sme aj veľké množstvo čínskych reklamných SDK. V apkách, ktoré ešte nie sú podporované, dokáže zapnuté `Približné preskakovanie` reklamy aj tak rozpoznať a nabudúce ich preskočiť rýchlejšie.
+
+Ak niektorá apka nefunguje správne alebo ešte nie je podporovaná, [dajte nám vedieť](https://github.com/swipt-automation/official-swiplets/issues). Môžete tiež priamo otvoriť pull request v repozitári [official-swiplets](https://github.com/swipt-automation/official-swiplets).

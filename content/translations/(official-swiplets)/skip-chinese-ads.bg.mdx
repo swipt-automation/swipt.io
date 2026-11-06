@@ -1,0 +1,32 @@
+---
+title: Пропускане на реклами в китайски приложения
+---
+
+`Пропускане на реклами в китайски приложения` е бърз Swiplet, управляван от събития, който пропуска рекламите при стартиране.
+
+## Екранни снимки
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0 flex-1">
+
+    ![Настройки](/swiplets/skip-chinese-ads/settings.webp)
+
+  </div>
+  <div className="min-w-0 flex-1">
+
+    ![Записи](/swiplets/skip-chinese-ads/activity.webp)
+
+  </div>
+</div>
+
+## Инсталиране
+
+За да инсталирате този Swiplet в приложението, отидете в `Swiplet - Добави - Официални Swiplet - Пропускане на реклами в китайски приложения`. Можете също да изтеглите и инсталирате пакета на Swiplet от [изданието в GitHub](https://github.com/swipt-automation/official-swiplets/releases/tag/nightly).
+
+## Как работи
+
+Масово изтеглихме и дешифрирахме приложения с `ipatool` и `unfairplay`, направихме им обратно инженерство и добавихме поддръжка за преобладаващата част от популярните приложения в App Store за континентален Китай.
+
+Идентифицирахме и голям брой китайски рекламни SDK. Ако включите `Приблизително пропускане`, Swiplet пак може да разпознава рекламите в приложения, които все още не се поддържат, и да ги пропуска по-бързо следващия път.
+
+Ако дадено приложение не работи правилно или все още не се поддържа, [уведомете ни](https://github.com/swipt-automation/official-swiplets/issues). Можете също директно да отворите pull request в [official-swiplets](https://github.com/swipt-automation/official-swiplets).

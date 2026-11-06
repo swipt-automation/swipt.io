@@ -1,0 +1,32 @@
+---
+title: 跳過廣告
+---
+
+`跳過廣告` 是快速的事件驅動 Swiplet，可跳過開屏廣告。
+
+## 截圖
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0 flex-1">
+
+    ![設定](/swiplets/skip-chinese-ads/settings.webp)
+
+  </div>
+  <div className="min-w-0 flex-1">
+
+    ![記錄](/swiplets/skip-chinese-ads/activity.webp)
+
+  </div>
+</div>
+
+## 安裝
+
+如要在 App 內安裝此 Swiplet，請前往 `Swiplet - 加入 - 官方 Swiplet - 跳過廣告`。你亦可以從 [GitHub 發佈版本](https://github.com/swipt-automation/official-swiplets/releases/tag/nightly) 下載並安裝 Swiplet 軟件套件。
+
+## 運作原理
+
+我們透過 `ipatool` 和 `unfairplay` 批量下載、解密及逆向工程 App，已支援中國內地 App Store 絕大部分熱門 App。
+
+我們亦識別出大量中國廣告 SDK。在尚未獲支援的 App 中，開啟 `模糊跳過` 後仍可識別廣告，並在下次更快跳過。
+
+如有 App 未能正常運作或尚未獲支援，請[向我們報告](https://github.com/swipt-automation/official-swiplets/issues)。你亦可以直接在 [official-swiplets](https://github.com/swipt-automation/official-swiplets) 開啟 Pull Request。

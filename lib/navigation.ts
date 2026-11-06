@@ -4,7 +4,7 @@ export const navigation: Record<
 > = {
   "": {
     titles: { en: "Swipt" },
-    pages: ["(getting-started)"],
+    pages: ["(getting-started)", "(official-swiplets)"],
   },
   "(getting-started)": {
     defaultOpen: true,
@@ -61,6 +61,14 @@ export const navigation: Record<
       vi: "Bắt đầu",
       "zh-HK": "開始使用",
       "zh-Hant": "開始使用",
+    },
+  },
+  "(official-swiplets)": {
+    defaultOpen: true,
+    pages: ["skip-chinese-ads", "switch-app-store-account"],
+    titles: {
+      en: "Official Swiplets",
+      "zh-Hans": "官方 Swiplet",
     },
   },
 };
