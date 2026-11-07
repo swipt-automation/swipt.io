@@ -31,7 +31,66 @@ Als het koppelen niet lukt, meld het probleem dan bij ons. Je kunt ook een koppe
 
 ## Loopback-VPN
 
-Swipt heeft een loopback-VPN nodig om verbinding te maken met ontwikkelaarsdiensten. Volg de instructies in de app om [LocalDevVPN](https://apps.apple.com/app/id6755608044) of [sing-box](https://sing-box.sagernet.org) te downloaden en te activeren. Voor sing-box moet je het [voorbeeldprofiel](/setup/LocalDevVPN.json) importeren.
+Swipt heeft een loopback-VPN nodig om verbinding te maken met ontwikkelaarsdiensten. De volgende software wordt ondersteund:
+
+#### LocalDevVPN
+
+Installeer de app via de [App Store](https://apps.apple.com/app/id6755608044) en schakel VPN in.
+
+#### sing-box
+
+Installeer de app via de [App Store](https://apps.apple.com/app/id6785326793), schrijf een correcte configuratie en schakel VPN in.
+
+Je moet `tun.loopback_address` en `tun.route_address` configureren.
+
+Voorbeeldconfiguratie:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Als je sing-box op een gateway zoals een router inzet, werkt het voor het hele lokale netwerk.
+
+#### Clash
+
+Installeer de app via de [App Store](https://apps.apple.com/app/id6794257189), schrijf een correcte configuratie en schakel VPN in.
+
+Je moet `tun.loopback-address` configureren:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Closed-source software
+
+Als je een Surge-abonnement hebt en Surge gebruikt, moet je `General.tun-included-routes` en `IP Rewrite` configureren:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+`ipv6-vif = disabled` is niet nodig voor Swipt.
+
+Voor andere Surge-achtige apps zonder openbare documentatie vraag je de ontwikkelaars hoe je ze instelt.
 
 ## Automatische ontgrendeling
 

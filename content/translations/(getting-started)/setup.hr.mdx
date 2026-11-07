@@ -31,7 +31,66 @@ Ako uparivanje nije moguće dovršiti, prijavite nam problem. Možete i importir
 
 ## VPN povratne petlje
 
-Aplikaciji Swipt potreban je VPN povratne petlje za povezivanje s uslugama za programere. Slijedite upute u aplikaciji kako biste preuzeli i uključili [LocalDevVPN](https://apps.apple.com/app/id6755608044) ili [sing-box](https://sing-box.sagernet.org). Za sing-box morate importirati [primjer profila](/setup/LocalDevVPN.json).
+Aplikaciji Swipt potreban je VPN povratne petlje za povezivanje s uslugama za programere. Podržan je sljedeći softver:
+
+#### LocalDevVPN
+
+Instalirajte aplikaciju iz trgovine [App Store](https://apps.apple.com/app/id6755608044) i uključite VPN.
+
+#### sing-box
+
+Instalirajte aplikaciju iz trgovine [App Store](https://apps.apple.com/app/id6785326793), napišite ispravnu konfiguraciju i uključite VPN.
+
+Morate konfigurirati `tun.loopback_address` i `tun.route_address`.
+
+Primjer konfiguracije:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Ako sing-box postavite na pristupnik, primjerice router, radit će za cijelu lokalnu mrežu.
+
+#### Clash
+
+Instalirajte aplikaciju iz trgovine [App Store](https://apps.apple.com/app/id6794257189), napišite ispravnu konfiguraciju i uključite VPN.
+
+Morate konfigurirati `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Softver zatvorenog koda
+
+Ako imate pretplatu na Surge i upotrebljavate ga, morate konfigurirati `General.tun-included-routes` i `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Aplikaciji Swipt nije potrebna postavka `ipv6-vif = disabled`.
+
+Za druge aplikacije nalik na Surge koje nemaju javnu dokumentaciju pitajte njihove programere kako ih konfigurirati.
 
 ## Automatsko otključavanje
 

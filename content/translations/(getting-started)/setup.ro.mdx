@@ -31,7 +31,66 @@ Dacă asocierea nu poate fi finalizată, raportați-ne problema. Alternativ, put
 
 ## VPN de loopback
 
-Aplicația Swipt are nevoie de un VPN de loopback pentru a se conecta la serviciile pentru dezvoltatori. Urmați instrucțiunile din aplicație pentru a descărca și a activa [LocalDevVPN](https://apps.apple.com/app/id6755608044) sau [sing-box](https://sing-box.sagernet.org). Pentru sing-box, trebuie să importați [profilul exemplu](/setup/LocalDevVPN.json).
+Aplicația Swipt are nevoie de un VPN de loopback pentru a se conecta la serviciile pentru dezvoltatori. Este acceptat următorul software:
+
+#### LocalDevVPN
+
+Instalați aplicația din [App Store](https://apps.apple.com/app/id6755608044) și activați VPN-ul.
+
+#### sing-box
+
+Instalați aplicația din [App Store](https://apps.apple.com/app/id6785326793), scrieți o configurație corectă și activați VPN-ul.
+
+Trebuie să configurați `tun.loopback_address` și `tun.route_address`.
+
+Exemplu de configurație:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Dacă implementați sing-box pe un gateway, cum ar fi un router, acesta va funcționa pentru întreaga rețea locală.
+
+#### Clash
+
+Instalați aplicația din [App Store](https://apps.apple.com/app/id6794257189), scrieți o configurație corectă și activați VPN-ul.
+
+Trebuie să configurați `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Software cu sursă închisă
+
+Dacă utilizați Surge cu abonament, trebuie să configurați `General.tun-included-routes` și `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Aplicația Swipt nu necesită `ipv6-vif = disabled`.
+
+Pentru alte aplicații asemănătoare cu Surge care nu au documentație publică, întrebați dezvoltatorii acestora cum se configurează.
 
 ## Deblocare automată
 

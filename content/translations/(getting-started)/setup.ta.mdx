@@ -31,7 +31,66 @@ Swipt CLI மூலம் Swiptஐ சைடுலோடு செய்தி�
 
 ## லூப்பேக் VPN
 
-டெவலப்பர் சேவைகளுடன் இணைய Swiptக்கு லூப்பேக் VPN தேவை. ஆப்பில் உள்ள வழிமுறைகளைப் பின்பற்றி [LocalDevVPN](https://apps.apple.com/app/id6755608044) அல்லது [sing-box](https://sing-box.sagernet.org) ஆப்பைப் பதிவிறக்கி ஆன் செய்யவும். sing-boxக்கு [மாதிரிச் சுயவிவரத்தை](/setup/LocalDevVPN.json) இம்போர்ட் செய்ய வேண்டும்.
+டெவலப்பர் சேவைகளுடன் இணைய Swiptக்கு லூப்பேக் VPN தேவை. பின்வரும் மென்பொருட்கள் ஆதரிக்கப்படுகின்றன:
+
+#### LocalDevVPN
+
+[App Storeஇலிருந்து](https://apps.apple.com/app/id6755608044) நிறுவி VPNஐ ஆன் செய்யவும்.
+
+#### sing-box
+
+[App Storeஇலிருந்து](https://apps.apple.com/app/id6785326793) நிறுவி, சரியான உள்ளமைவை எழுதி, VPNஐ ஆன் செய்யவும்.
+
+`tun.loopback_address`, `tun.route_address` ஆகியவற்றை அமைக்க வேண்டும்.
+
+மாதிரி உள்ளமைவு:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+ரூட்டர் போன்ற கேட்வேயில் இதை இயக்கினால், முழு உள்ளூர் நெட்வொர்க்கிற்கும் இது செயல்படும்.
+
+#### Clash
+
+[App Storeஇலிருந்து](https://apps.apple.com/app/id6794257189) நிறுவி, சரியான உள்ளமைவை எழுதி, VPNஐ ஆன் செய்யவும்.
+
+`tun.loopback-address`ஐ அமைக்க வேண்டும்:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### மூடிய மூல மென்பொருட்கள்
+
+சந்தாவுடன் Surgeஐப் பயன்படுத்தினால், `General.tun-included-routes`, `IP Rewrite` ஆகியவற்றை அமைக்க வேண்டும்:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swiptக்கு `ipv6-vif = disabled` தேவையில்லை.
+
+பொது ஆவணம் இல்லாத Surgeஐ ஒத்த பிற ஆப்களை எப்படி அமைப்பது என்பதை அவற்றின் டெவலப்பர்களிடம் கேட்கவும்.
 
 ## தானியங்கு அன்லாக்
 

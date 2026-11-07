@@ -31,7 +31,66 @@ Jeśli nie można ukończyć parowania, zgłoś nam problem. Możesz też zaimpo
 
 ## VPN pętli zwrotnej
 
-Aplikacja Swipt potrzebuje VPN pętli zwrotnej, aby łączyć się z usługami deweloperskimi. Postępuj zgodnie z instrukcjami w aplikacji, aby pobrać i włączyć aplikację [LocalDevVPN](https://apps.apple.com/app/id6755608044) lub [sing-box](https://sing-box.sagernet.org). W przypadku aplikacji sing-box musisz zaimportować [przykładowy profil](/setup/LocalDevVPN.json).
+Aplikacja Swipt potrzebuje VPN pętli zwrotnej, aby łączyć się z usługami deweloperskimi. Obsługiwane jest następujące oprogramowanie:
+
+#### LocalDevVPN
+
+Zainstaluj aplikację z [App Store](https://apps.apple.com/app/id6755608044) i włącz VPN.
+
+#### sing-box
+
+Zainstaluj aplikację z [App Store](https://apps.apple.com/app/id6785326793), napisz poprawną konfigurację i włącz VPN.
+
+Musisz skonfigurować `tun.loopback_address` i `tun.route_address`.
+
+Przykładowa konfiguracja:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Jeśli wdrożysz sing-box na bramie sieciowej, np. routerze, będzie działać w całej sieci lokalnej.
+
+#### Clash
+
+Zainstaluj aplikację z [App Store](https://apps.apple.com/app/id6794257189), napisz poprawną konfigurację i włącz VPN.
+
+Musisz skonfigurować `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Oprogramowanie o zamkniętym kodzie źródłowym
+
+Jeśli masz subskrypcję aplikacji Surge i jej używasz, musisz skonfigurować `General.tun-included-routes` i `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Aplikacja Swipt nie wymaga ustawienia `ipv6-vif = disabled`.
+
+W przypadku innych aplikacji podobnych do Surge, które nie mają publicznej dokumentacji, zapytaj ich twórców, jak to skonfigurować.
 
 ## Automatyczne odblokowywanie
 

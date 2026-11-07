@@ -31,7 +31,66 @@ Ha a párosítás nem hajtható végre, jelezze nekünk a problémát. Másik le
 
 ## Visszacsatolási VPN
 
-A Swipt appnak visszacsatolási VPN-re van szüksége a fejlesztői szolgáltatásokhoz való csatlakozáshoz. Az appban megjelenő utasításokat követve töltse le és kapcsolja be a [LocalDevVPN](https://apps.apple.com/app/id6755608044) vagy a [sing-box](https://sing-box.sagernet.org) appot. A sing-box használatához importálnia kell a [példaprofilt](/setup/LocalDevVPN.json).
+A Swipt appnak visszacsatolási VPN-re van szüksége a fejlesztői szolgáltatásokhoz való csatlakozáshoz. A következő szoftverek támogatottak:
+
+#### LocalDevVPN
+
+Telepítse az appot az [App Store-ból](https://apps.apple.com/app/id6755608044), majd kapcsolja be a VPN-t.
+
+#### sing-box
+
+Telepítse az appot az [App Store-ból](https://apps.apple.com/app/id6785326793), írjon egy helyes konfigurációt, majd kapcsolja be a VPN-t.
+
+Be kell állítania a `tun.loopback_address` és a `tun.route_address` értékét.
+
+Példakonfiguráció:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Ha a sing-boxot egy átjárón, például egy routeren futtatja, a teljes helyi hálózaton működni fog.
+
+#### Clash
+
+Telepítse az appot az [App Store-ból](https://apps.apple.com/app/id6794257189), írjon egy helyes konfigurációt, majd kapcsolja be a VPN-t.
+
+Be kell állítania a `tun.loopback-address` értékét:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Zárt forráskódú szoftverek
+
+Ha előfizetéssel használja a Surge appot, be kell állítania a `General.tun-included-routes` beállítást és az `IP Rewrite` szakaszt:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+A Swipt apphoz nem szükséges az `ipv6-vif = disabled` beállítás.
+
+Az egyéb, Surge-szerű appok esetében, amelyekhez nem érhető el nyilvános dokumentáció, kérdezze meg azok fejlesztőit a beállítás módjáról.
 
 ## Automatikus feloldás
 

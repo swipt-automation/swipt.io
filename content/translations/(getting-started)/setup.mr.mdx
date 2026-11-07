@@ -31,7 +31,66 @@ title: सेटअप
 
 ## लूपबॅक VPN
 
-डेव्हलपर सेवांशी कनेक्ट होण्यासाठी Swipt ला लूपबॅक VPN ची आवश्यकता आहे. ॲपमधील सूचनांचे पालन करून [LocalDevVPN](https://apps.apple.com/app/id6755608044) किंवा [sing-box](https://sing-box.sagernet.org) डाउनलोड करा आणि सुरू करा. sing-box साठी तुम्हाला [उदाहरण प्रोफाइल](/setup/LocalDevVPN.json) इंपोर्ट करावे लागेल.
+डेव्हलपर सेवांशी कनेक्ट होण्यासाठी Swipt ला लूपबॅक VPN ची आवश्यकता आहे. पुढील सॉफ्टवेअर समर्थित आहेत :
+
+#### LocalDevVPN
+
+[App Store](https://apps.apple.com/app/id6755608044) वरून इंस्टॉल करा आणि VPN सुरू करा.
+
+#### sing-box
+
+[App Store](https://apps.apple.com/app/id6785326793) वरून इंस्टॉल करा, योग्य कॉन्फिगरेशन लिहा आणि VPN सुरू करा.
+
+तुम्हाला `tun.loopback_address` आणि `tun.route_address` कॉन्फिगर करावे लागतील.
+
+उदाहरण कॉन्फिगरेशन :
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+राउटरसारख्या गेटवेवर हे डिप्लॉय केल्यास, ते संपूर्ण लोकल नेटवर्कसाठी काम करते.
+
+#### Clash
+
+[App Store](https://apps.apple.com/app/id6794257189) वरून इंस्टॉल करा, योग्य कॉन्फिगरेशन लिहा आणि VPN सुरू करा.
+
+तुम्हाला `tun.loopback-address` कॉन्फिगर करावे लागेल :
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### क्लोज्ड-सोर्स सॉफ्टवेअर
+
+तुम्ही सबस्क्रिप्शन घेऊन Surge वापरत असल्यास, तुम्हाला `General.tun-included-routes` आणि `IP Rewrite` कॉन्फिगर करावे लागतील :
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swipt साठी `ipv6-vif = disabled` आवश्यक नाही.
+
+सार्वजनिक दस्तऐवजीकरण उपलब्ध नसलेल्या Surge सारख्या इतर ॲप्ससाठी, कॉन्फिगरेशन कसे करायचे हे त्यांच्या डेव्हलपर्सना विचारा.
 
 ## स्वयंचलित अनलॉक
 

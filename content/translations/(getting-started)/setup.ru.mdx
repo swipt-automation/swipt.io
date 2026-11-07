@@ -31,7 +31,66 @@ title: Начальная настройка
 
 ## Петлевой VPN
 
-Для подключения к службам разработчика приложению Swipt нужен петлевой VPN. Следуйте инструкциям в приложении, чтобы скачать и включить [LocalDevVPN](https://apps.apple.com/app/id6755608044) или [sing-box](https://sing-box.sagernet.org). Для sing-box потребуется импортировать [пример профиля](/setup/LocalDevVPN.json).
+Для подключения к службам разработчика приложению Swipt нужен петлевой VPN. Поддерживается следующее ПО:
+
+#### LocalDevVPN
+
+Установите приложение из [App Store](https://apps.apple.com/app/id6755608044) и включите VPN.
+
+#### sing-box
+
+Установите приложение из [App Store](https://apps.apple.com/app/id6785326793), напишите правильную конфигурацию и включите VPN.
+
+Необходимо настроить `tun.loopback_address` и `tun.route_address`.
+
+Пример конфигурации:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Если развернуть sing-box на шлюзе, например на маршрутизаторе, он будет работать для всей локальной сети.
+
+#### Clash
+
+Установите приложение из [App Store](https://apps.apple.com/app/id6794257189), напишите правильную конфигурацию и включите VPN.
+
+Необходимо настроить `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### ПО с закрытым исходным кодом
+
+При использовании Surge по подписке необходимо настроить `General.tun-included-routes` и `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Для Swipt параметр `ipv6-vif = disabled` не требуется.
+
+Если у другого похожего на Surge приложения нет общедоступной документации, узнайте у его разработчиков, как это настроить.
 
 ## Автоматическая разблокировка
 

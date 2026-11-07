@@ -31,7 +31,66 @@ Si le jumelage ne peut pas être effectué, veuillez nous signaler le problème.
 
 ## VPN de bouclage
 
-L’app Swipt a besoin d’un VPN de bouclage pour se connecter aux services de développeur. Suivez les instructions dans l’app pour télécharger et activer [LocalDevVPN](https://apps.apple.com/app/id6755608044) ou [sing-box](https://sing-box.sagernet.org). Pour sing-box, vous devez importer le [profil d’exemple](/setup/LocalDevVPN.json).
+L’app Swipt a besoin d’un VPN de bouclage pour se connecter aux services de développeur. Les logiciels suivants sont pris en charge :
+
+#### LocalDevVPN
+
+Installez l’app à partir de l’[App Store](https://apps.apple.com/app/id6755608044) et activez le VPN.
+
+#### sing-box
+
+Installez l’app à partir de l’[App Store](https://apps.apple.com/app/id6785326793), rédigez une configuration correcte et activez le VPN.
+
+Vous devez configurer `tun.loopback_address` et `tun.route_address`.
+
+Exemple de configuration :
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Déployé sur une passerelle, comme un routeur, sing-box fonctionne pour l’ensemble du réseau local.
+
+#### Clash
+
+Installez l’app à partir de l’[App Store](https://apps.apple.com/app/id6794257189), rédigez une configuration correcte et activez le VPN.
+
+Vous devez configurer `tun.loopback-address` :
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Logiciels à code source fermé
+
+Si vous avez un abonnement à Surge et que vous l’utilisez, vous devez configurer `General.tun-included-routes` et `IP Rewrite` :
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+L’app Swipt n’a pas besoin de `ipv6-vif = disabled`.
+
+Pour les autres apps semblables à Surge qui n’ont pas de documentation publique, demandez à leurs développeurs comment les configurer.
 
 ## Déverrouillage automatique
 

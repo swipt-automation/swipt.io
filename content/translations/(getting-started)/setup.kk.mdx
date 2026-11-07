@@ -31,7 +31,66 @@ Swipt қолданбасын Swipt CLI арқылы App Store дүкенінен
 
 ## Loopback VPN
 
-Әзірлеуші қызметтеріне қосылу үшін Swipt қолданбасына loopback VPN қажет. Қолданбадағы нұсқауларды орындап, [LocalDevVPN](https://apps.apple.com/app/id6755608044) немесе [sing-box](https://sing-box.sagernet.org) қолданбасын жүктеп алыңыз және қосыңыз. sing-box үшін [үлгі профильді](/setup/LocalDevVPN.json) импорттау керек.
+Әзірлеуші қызметтеріне қосылу үшін Swipt қолданбасына loopback VPN қажет. Мына бағдарламалық құралдарға қолдау көрсетіледі:
+
+#### LocalDevVPN
+
+Қолданбаны [App Store](https://apps.apple.com/app/id6755608044) дүкенінен орнатып, VPN-ді қосыңыз.
+
+#### sing-box
+
+Қолданбаны [App Store](https://apps.apple.com/app/id6785326793) дүкенінен орнатып, дұрыс конфигурация жазыңыз және VPN-ді қосыңыз.
+
+`tun.loopback_address` және `tun.route_address` параметрлерін баптау керек.
+
+Конфигурация үлгісі:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+sing-box-ты маршрутизатор сияқты шлюзге орналастырсаңыз, ол бүкіл жергілікті желіде жұмыс істейді.
+
+#### Clash
+
+Қолданбаны [App Store](https://apps.apple.com/app/id6794257189) дүкенінен орнатып, дұрыс конфигурация жазыңыз және VPN-ді қосыңыз.
+
+`tun.loopback-address` параметрін баптау керек:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Жабық бастапқы кодты бағдарламалық құралдар
+
+Surge қолданбасын жазылыммен пайдалансаңыз, `General.tun-included-routes` және `IP Rewrite` параметрлерін баптау керек:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swipt үшін `ipv6-vif = disabled` қажет емес.
+
+Жария құжаттамасы жоқ Surge тәрізді басқа қолданбалар үшін баптау жолын олардың әзірлеушілерінен сұраңыз.
 
 ## Құлыпты автоматты түрде ашу
 

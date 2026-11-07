@@ -31,7 +31,66 @@ Wenn die Kopplung nicht abgeschlossen werden kann, melde uns das Problem. Altern
 
 ## Loopback-VPN
 
-Swipt benötigt ein Loopback-VPN, um sich mit den Entwicklerdiensten zu verbinden. Folge den Anweisungen in der App, um [LocalDevVPN](https://apps.apple.com/app/id6755608044) oder [sing-box](https://sing-box.sagernet.org) herunterzuladen und zu aktivieren. Für sing-box musst du das [Beispielprofil](/setup/LocalDevVPN.json) importieren.
+Swipt benötigt ein Loopback-VPN, um sich mit den Entwicklerdiensten zu verbinden. Folgende Software wird unterstützt:
+
+#### LocalDevVPN
+
+Installiere die App aus dem [App Store](https://apps.apple.com/app/id6755608044) und aktiviere das VPN.
+
+#### sing-box
+
+Installiere die App aus dem [App Store](https://apps.apple.com/app/id6785326793), erstelle eine korrekte Konfiguration und aktiviere das VPN.
+
+Du musst `tun.loopback_address` und `tun.route_address` konfigurieren.
+
+Beispielkonfiguration:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Wenn du sing-box auf einem Gateway wie einem Router einsetzt, funktioniert das für das gesamte lokale Netzwerk.
+
+#### Clash
+
+Installiere die App aus dem [App Store](https://apps.apple.com/app/id6794257189), erstelle eine korrekte Konfiguration und aktiviere das VPN.
+
+Du musst `tun.loopback-address` konfigurieren:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Closed-Source-Software
+
+Wenn du Surge abonniert hast und nutzt, musst du `General.tun-included-routes` und `IP Rewrite` konfigurieren:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+`ipv6-vif = disabled` ist für Swipt nicht erforderlich.
+
+Bei anderen Surge-ähnlichen Apps ohne öffentliche Dokumentation fragst du am besten die jeweiligen Entwickler, wie du sie einrichtest.
 
 ## Automatische Entsperrung
 

@@ -31,7 +31,66 @@ Swipt 需要與你的裝置配對，才能連線至裝置的開發者服務。
 
 ## 回送 VPN
 
-Swipt 需要回送 VPN 才能連線至開發者服務。請依照 App 內的指示下載並開啟 [LocalDevVPN](https://apps.apple.com/app/id6755608044) 或 [sing-box](https://sing-box.sagernet.org)（sing-box 需要輸入[範例設定檔](/setup/LocalDevVPN.json)）。
+Swipt 需要回送 VPN 才能連線至開發者服務。支援以下軟體：
+
+#### LocalDevVPN
+
+從 [App Store](https://apps.apple.com/app/id6755608044) 安裝並開啟 VPN。
+
+#### sing-box
+
+從 [App Store](https://apps.apple.com/app/id6785326793) 安裝，撰寫正確的設定，然後開啟 VPN。
+
+你需要設定 `tun.loopback_address` 和 `tun.route_address`。
+
+設定範例：
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+將其部署在路由器等閘道上，即可在整個區域網路中生效。
+
+#### Clash
+
+從 [App Store](https://apps.apple.com/app/id6794257189) 安裝，撰寫正確的設定，然後開啟 VPN。
+
+你需要設定 `tun.loopback-address`：
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### 閉源軟體
+
+如果你訂閱並使用 Surge，需要設定 `General.tun-included-routes` 和 `IP Rewrite`：
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swipt 不需要 `ipv6-vif = disabled`。
+
+至於其他沒有公開說明文件、類似 Surge 的 App，請向其開發者詢問設定方式。
 
 ## 自動解鎖
 

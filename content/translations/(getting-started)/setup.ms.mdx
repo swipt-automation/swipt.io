@@ -31,7 +31,66 @@ Jika perpasangan tidak dapat diselesaikan, sila laporkan isu ini kepada kami. Se
 
 ## VPN Gelung Balik
 
-Swipt memerlukan VPN gelung balik untuk menyambung ke perkhidmatan pembangun. Ikuti arahan dalam app untuk memuat turun dan menghidupkan [LocalDevVPN](https://apps.apple.com/app/id6755608044) atau [sing-box](https://sing-box.sagernet.org). Untuk sing-box, anda perlu mengimport [profil contoh](/setup/LocalDevVPN.json).
+Swipt memerlukan VPN gelung balik untuk menyambung ke perkhidmatan pembangun. Perisian berikut disokong:
+
+#### LocalDevVPN
+
+Pasang daripada [App Store](https://apps.apple.com/app/id6755608044) dan hidupkan VPN.
+
+#### sing-box
+
+Pasang daripada [App Store](https://apps.apple.com/app/id6785326793), tulis konfigurasi yang betul dan hidupkan VPN.
+
+Anda perlu mengkonfigurasikan `tun.loopback_address` dan `tun.route_address`.
+
+Contoh konfigurasi:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Jika anda menggunakan sing-box pada get laluan, seperti penghala, ia akan berfungsi untuk seluruh rangkaian setempat.
+
+#### Clash
+
+Pasang daripada [App Store](https://apps.apple.com/app/id6794257189), tulis konfigurasi yang betul dan hidupkan VPN.
+
+Anda perlu mengkonfigurasikan `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Perisian Sumber Tertutup
+
+Jika anda melanggan dan menggunakan Surge, anda perlu mengkonfigurasikan `General.tun-included-routes` dan `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+`ipv6-vif = disabled` tidak diperlukan untuk Swipt.
+
+Bagi app lain yang serupa dengan Surge tetapi tiada dokumentasi awam, tanya pembangunnya cara untuk mengkonfigurasikannya.
 
 ## Buka Kunci Automatik
 

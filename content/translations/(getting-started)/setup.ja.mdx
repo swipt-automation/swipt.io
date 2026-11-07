@@ -31,7 +31,66 @@ Swipt CLIを使ってSwiptをサイドロードした場合、ペアリングは
 
 ## ループバックVPN
 
-デベロッパサービスに接続するには、SwiptにループバックVPNが必要です。アプリ内の指示に従って、[LocalDevVPN](https://apps.apple.com/app/id6755608044)または[sing-box](https://sing-box.sagernet.org)をダウンロードしてオンにしてください。sing-boxの場合は、[サンプルプロファイル](/setup/LocalDevVPN.json)を読み込む必要があります。
+デベロッパサービスに接続するには、SwiptにループバックVPNが必要です。次のソフトウェアに対応しています:
+
+#### LocalDevVPN
+
+[App Store](https://apps.apple.com/app/id6755608044)からインストールし、VPNをオンにしてください。
+
+#### sing-box
+
+[App Store](https://apps.apple.com/app/id6785326793)からインストールし、正しい構成を記述して、VPNをオンにしてください。
+
+`tun.loopback_address`と`tun.route_address`を設定する必要があります。
+
+構成例:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+ルーターなどのゲートウェイにデプロイすると、ローカルネットワーク全体で機能します。
+
+#### Clash
+
+[App Store](https://apps.apple.com/app/id6794257189)からインストールし、正しい構成を記述して、VPNをオンにしてください。
+
+`tun.loopback-address`を設定する必要があります:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### クローズドソースソフトウェア
+
+Surgeのサブスクリプションに登録して使用している場合は、`General.tun-included-routes`と`IP Rewrite`を設定する必要があります:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swiptでは`ipv6-vif = disabled`は必要ありません。
+
+Surgeに似たその他のアプリで公開ドキュメントがないものについては、設定方法を各アプリのデベロッパにお問い合わせください。
 
 ## 自動ロック解除
 

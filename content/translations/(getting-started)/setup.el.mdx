@@ -31,7 +31,66 @@ title: Αρχική ρύθμιση
 
 ## VPN loopback
 
-Το Swipt χρειάζεται ένα VPN loopback για να συνδεθεί στις υπηρεσίες προγραμματιστή. Ακολουθήστε τις οδηγίες στην εφαρμογή για να κάνετε λήψη και να ενεργοποιήσετε το [LocalDevVPN](https://apps.apple.com/app/id6755608044) ή το [sing-box](https://sing-box.sagernet.org). Για το sing-box, πρέπει να εισαγάγετε το [δείγμα προφίλ](/setup/LocalDevVPN.json).
+Το Swipt χρειάζεται ένα VPN loopback για να συνδεθεί στις υπηρεσίες προγραμματιστή. Υποστηρίζεται το ακόλουθο λογισμικό:
+
+#### LocalDevVPN
+
+Εγκαταστήστε την εφαρμογή από το [App Store](https://apps.apple.com/app/id6755608044) και ενεργοποιήστε το VPN.
+
+#### sing-box
+
+Εγκαταστήστε την εφαρμογή από το [App Store](https://apps.apple.com/app/id6785326793), γράψτε μια σωστή διαμόρφωση και ενεργοποιήστε το VPN.
+
+Πρέπει να ρυθμίσετε τα `tun.loopback_address` και `tun.route_address`.
+
+Παράδειγμα διαμόρφωσης:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Αν εγκαταστήσετε το sing-box σε μια πύλη, όπως έναν δρομολογητή, θα λειτουργεί για ολόκληρο το τοπικό δίκτυο.
+
+#### Clash
+
+Εγκαταστήστε την εφαρμογή από το [App Store](https://apps.apple.com/app/id6794257189), γράψτε μια σωστή διαμόρφωση και ενεργοποιήστε το VPN.
+
+Πρέπει να ρυθμίσετε το `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Λογισμικό κλειστού κώδικα
+
+Αν έχετε συνδρομή στο Surge και το χρησιμοποιείτε, πρέπει να ρυθμίσετε τα `General.tun-included-routes` και `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Το `ipv6-vif = disabled` δεν είναι απαραίτητο για το Swipt.
+
+Για άλλες εφαρμογές παρόμοιες με το Surge που δεν διαθέτουν δημόσια τεκμηρίωση, ρωτήστε τους αντίστοιχους προγραμματιστές πώς να τις ρυθμίσετε.
 
 ## Αυτόματο ξεκλείδωμα
 

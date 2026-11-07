@@ -31,7 +31,66 @@ Jei susieti nepavyksta, praneškite mums apie problemą. Taip pat galite importu
 
 ## Grįžtamojo ryšio VPN
 
-Programai „Swipt” reikia grįžtamojo ryšio VPN, kad galėtų prisijungti prie kūrėjo paslaugų. Vykdykite programoje pateikiamus nurodymus, kad atsisiųstumėte ir įjungtumėte „[LocalDevVPN](https://apps.apple.com/app/id6755608044)” arba „[sing-box](https://sing-box.sagernet.org)”. Naudojant „sing-box”, reikia importuoti [pavyzdinį profilį](/setup/LocalDevVPN.json).
+Programai „Swipt” reikia grįžtamojo ryšio VPN, kad galėtų prisijungti prie kūrėjo paslaugų. Palaikoma ši programinė įranga:
+
+#### LocalDevVPN
+
+Įdiekite programą iš „[App Store](https://apps.apple.com/app/id6755608044)” ir įjunkite VPN.
+
+#### sing-box
+
+Įdiekite programą iš „[App Store](https://apps.apple.com/app/id6785326793)”, parašykite tinkamą konfigūraciją ir įjunkite VPN.
+
+Reikia sukonfigūruoti `tun.loopback_address` ir `tun.route_address`.
+
+Konfigūracijos pavyzdys:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Įdiegus „sing-box” tinklų sietuve, pavyzdžiui, maršruto parinktuve, jis veiks visame vietiniame tinkle.
+
+#### Clash
+
+Įdiekite programą iš „[App Store](https://apps.apple.com/app/id6794257189)”, parašykite tinkamą konfigūraciją ir įjunkite VPN.
+
+Reikia sukonfigūruoti `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Uždarojo kodo programinė įranga
+
+Jei naudojate „Surge” su prenumerata, reikia sukonfigūruoti `General.tun-included-routes` ir `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+„Swipt” nereikalauja nustatyti `ipv6-vif = disabled`.
+
+Jei naudojate kitą į „Surge” panašią programą, kuri neturi viešos dokumentacijos, paklauskite jos kūrėjų, kaip ją sukonfigūruoti.
 
 ## Automatinis atrakinimas
 

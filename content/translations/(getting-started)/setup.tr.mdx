@@ -31,7 +31,66 @@ Eşleme tamamlanamazsa sorunu bize bildirin. Alternatif olarak şunlar da dahil 
 
 ## Geri Döngü VPN’i
 
-Swipt’in geliştirici servislerine bağlanabilmesi için bir geri döngü VPN’i gerekir. Uygulamadaki yönergeleri izleyerek [LocalDevVPN](https://apps.apple.com/app/id6755608044) veya [sing-box](https://sing-box.sagernet.org) uygulamasını indirip açın. sing-box için [örnek profili](/setup/LocalDevVPN.json) içe aktarmanız gerekir.
+Swipt’in geliştirici servislerine bağlanabilmesi için bir geri döngü VPN’i gerekir. Aşağıdaki yazılımlar desteklenir:
+
+#### LocalDevVPN
+
+[App Store’dan](https://apps.apple.com/app/id6755608044) yükleyin ve VPN’i açın.
+
+#### sing-box
+
+[App Store’dan](https://apps.apple.com/app/id6785326793) yükleyin, doğru bir yapılandırma yazın ve VPN’i açın.
+
+`tun.loopback_address` ve `tun.route_address` değerlerini yapılandırmanız gerekir.
+
+Örnek yapılandırma:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+sing-box’ı yönlendirici gibi bir ağ geçidine kurarsanız tüm yerel ağda çalışır.
+
+#### Clash
+
+[App Store’dan](https://apps.apple.com/app/id6794257189) yükleyin, doğru bir yapılandırma yazın ve VPN’i açın.
+
+`tun.loopback-address` değerini yapılandırmanız gerekir:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Kapalı kaynaklı yazılımlar
+
+Surge’ü abonelikle kullanıyorsanız `General.tun-included-routes` ve `IP Rewrite` ayarlarını yapılandırmanız gerekir:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swipt için `ipv6-vif = disabled` gerekli değildir.
+
+Herkese açık belgesi bulunmayan Surge benzeri diğer uygulamaları nasıl yapılandıracağınızı geliştiricilerine sorun.
 
 ## Otomatik Kilit Açma
 

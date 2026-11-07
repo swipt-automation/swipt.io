@@ -31,7 +31,66 @@ title: الإعداد
 
 ## شبكة VPN للاسترجاع
 
-يحتاج Swipt إلى شبكة VPN للاسترجاع للاتصال بخدمات المطور. يرجى اتباع التعليمات في التطبيق لتنزيل [LocalDevVPN](https://apps.apple.com/app/id6755608044) أو [sing-box](https://sing-box.sagernet.org) وتشغيله. يتطلب sing-box استيراد [ملف التعريف النموذجي](/setup/LocalDevVPN.json).
+يحتاج Swipt إلى شبكة VPN للاسترجاع للاتصال بخدمات المطور. البرامج التالية مدعومة:
+
+#### LocalDevVPN
+
+ثبّت التطبيق من [App Store](https://apps.apple.com/app/id6755608044) ثم شغّل شبكة VPN.
+
+#### sing-box
+
+ثبّت التطبيق من [App Store](https://apps.apple.com/app/id6785326793)، واكتب إعدادات صحيحة، ثم شغّل شبكة VPN.
+
+يلزم إعداد `tun.loopback_address` و`tun.route_address`.
+
+مثال على الإعدادات:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+يمكنك نشره على بوابة، مثل الموجّه، ليعمل على مستوى الشبكة المحلية بأكملها.
+
+#### Clash
+
+ثبّت التطبيق من [App Store](https://apps.apple.com/app/id6794257189)، واكتب إعدادات صحيحة، ثم شغّل شبكة VPN.
+
+يلزم إعداد `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### البرامج مغلقة المصدر
+
+إذا كنت مشتركًا في Surge وتستخدمه، فيلزم إعداد `General.tun-included-routes` و`IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+لا يتطلب Swipt ضبط `ipv6-vif = disabled`.
+
+أما التطبيقات الأخرى المشابهة لـ Surge التي لا تتوفر لها وثائق عامة، فيرجى الاستفسار من مطوريها عن كيفية إعدادها.
 
 ## فتح القفل التلقائي
 

@@ -31,7 +31,66 @@ Aplikacija Swipt se mora seznaniti z vašo napravo, da se lahko poveže z njenim
 
 ## VPN povratne zanke
 
-Aplikacija Swipt za povezavo s storitvami za razvijalce potrebuje VPN povratne zanke. Upoštevajte navodila v aplikaciji in prenesite ter vklopite aplikacijo [LocalDevVPN](https://apps.apple.com/app/id6755608044) ali [sing-box](https://sing-box.sagernet.org). Za aplikacijo sing-box morate uvoziti [vzorčni profil](/setup/LocalDevVPN.json).
+Aplikacija Swipt za povezavo s storitvami za razvijalce potrebuje VPN povratne zanke. Podprta je naslednja programska oprema:
+
+#### LocalDevVPN
+
+Namestite aplikacijo iz trgovine [App Store](https://apps.apple.com/app/id6755608044) in vklopite VPN.
+
+#### sing-box
+
+Namestite aplikacijo iz trgovine [App Store](https://apps.apple.com/app/id6785326793), napišite pravilno konfiguracijo in vklopite VPN.
+
+Nastaviti morate `tun.loopback_address` in `tun.route_address`.
+
+Vzorčna konfiguracija:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Če sing-box namestite na prehod, kot je usmerjevalnik, bo deloval v celotnem lokalnem omrežju.
+
+#### Clash
+
+Namestite aplikacijo iz trgovine [App Store](https://apps.apple.com/app/id6794257189), napišite pravilno konfiguracijo in vklopite VPN.
+
+Nastaviti morate `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Programska oprema z zaprto izvorno kodo
+
+Če uporabljate Surge z naročnino, morate nastaviti `General.tun-included-routes` in `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Aplikacija Swipt ne potrebuje nastavitve `ipv6-vif = disabled`.
+
+Pri drugih aplikacijah, podobnih aplikaciji Surge, ki nimajo javne dokumentacije, vprašajte njihove razvijalce, kako to nastaviti.
 
 ## Samodejno odklepanje
 

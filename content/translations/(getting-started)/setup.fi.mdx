@@ -31,7 +31,66 @@ Jos parin muodostaminen ei onnistu, ilmoita ongelmasta meille. Voit myös tuoda 
 
 ## Loopback-VPN
 
-Swipt tarvitsee loopback-VPN:n, jotta se voi muodostaa yhteyden kehittäjäpalveluihin. Lataa ja ota käyttöön [LocalDevVPN](https://apps.apple.com/app/id6755608044) tai [sing-box](https://sing-box.sagernet.org) apin ohjeiden mukaan. Jos käytät sing-boxia, sinun on tuotava [esimerkkiprofiili](/setup/LocalDevVPN.json).
+Swipt tarvitsee loopback-VPN:n, jotta se voi muodostaa yhteyden kehittäjäpalveluihin. Seuraavia ohjelmistoja tuetaan:
+
+#### LocalDevVPN
+
+Asenna appi [App Storesta](https://apps.apple.com/app/id6755608044) ja ota VPN käyttöön.
+
+#### sing-box
+
+Asenna appi [App Storesta](https://apps.apple.com/app/id6785326793), kirjoita oikea määritys ja ota VPN käyttöön.
+
+Sinun on määritettävä `tun.loopback_address` ja `tun.route_address`.
+
+Esimerkkimääritys:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Kun asennat sing-boxin yhdyskäytävään, kuten reitittimeen, se toimii koko paikallisverkossa.
+
+#### Clash
+
+Asenna appi [App Storesta](https://apps.apple.com/app/id6794257189), kirjoita oikea määritys ja ota VPN käyttöön.
+
+Sinun on määritettävä `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Suljetun lähdekoodin ohjelmistot
+
+Jos käytät Surgea tilauksella, sinun on määritettävä `General.tun-included-routes` ja `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swipt ei tarvitse asetusta `ipv6-vif = disabled`.
+
+Jos käytät muuta Surge-tyyppistä appia, jolla ei ole julkista dokumentaatiota, kysy sen kehittäjiltä, miten se määritetään.
 
 ## Automaattinen lukituksen avaus
 

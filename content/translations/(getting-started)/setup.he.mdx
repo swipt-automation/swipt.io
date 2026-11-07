@@ -31,7 +31,66 @@ title: הגדרה ראשונית
 
 ## VPN מסוג לולאה חוזרת
 
-כדי להתחבר לשירותי המפתחים, Swipt זקוק ל-VPN מסוג לולאה חוזרת. יש לפעול לפי ההוראות ביישום כדי להוריד ולהפעיל את [LocalDevVPN](https://apps.apple.com/app/id6755608044) או את [sing-box](https://sing-box.sagernet.org). עבור sing-box, יש לייבא את [הפרופיל לדוגמה](/setup/LocalDevVPN.json).
+כדי להתחבר לשירותי המפתחים, Swipt זקוק ל-VPN מסוג לולאה חוזרת. התוכנות הבאות נתמכות:
+
+#### LocalDevVPN
+
+יש להתקין מ-[App Store](https://apps.apple.com/app/id6755608044) ולהפעיל את ה-VPN.
+
+#### sing-box
+
+יש להתקין מ-[App Store](https://apps.apple.com/app/id6785326793), לכתוב תצורה נכונה ולהפעיל את ה-VPN.
+
+יש להגדיר את `tun.loopback_address` ואת `tun.route_address`.
+
+תצורה לדוגמה:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+פריסה של sing-box בשער רשת, כמו נתב, מאפשרת לו לפעול בכל הרשת המקומית.
+
+#### Clash
+
+יש להתקין מ-[App Store](https://apps.apple.com/app/id6794257189), לכתוב תצורה נכונה ולהפעיל את ה-VPN.
+
+יש להגדיר את `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### תוכנות בקוד סגור
+
+בעת שימוש ב-Surge עם מינוי, יש להגדיר את `General.tun-included-routes` ואת `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swipt לא דורש את `ipv6-vif = disabled`.
+
+עבור יישומים אחרים בסגנון Surge שאין להם תיעוד ציבורי, יש לפנות למפתחים שלהם כדי לברר כיצד להגדיר אותם.
 
 ## ביטול נעילה אוטומטי
 

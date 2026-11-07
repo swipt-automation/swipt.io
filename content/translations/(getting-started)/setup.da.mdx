@@ -31,7 +31,66 @@ Rapporter problemet til os, hvis parringen ikke kan fuldføres. Du kan også imp
 
 ## Loopback-VPN
 
-Swipt skal bruge et loopback-VPN for at oprette forbindelse til udviklertjenester. Følg instruktionerne i appen for at hente og aktivere [LocalDevVPN](https://apps.apple.com/app/id6755608044) eller [sing-box](https://sing-box.sagernet.org). Til sing-box skal du importere [eksempelprofilen](/setup/LocalDevVPN.json).
+Swipt skal bruge et loopback-VPN for at oprette forbindelse til udviklertjenester. Følgende software understøttes:
+
+#### LocalDevVPN
+
+Installer appen fra [App Store](https://apps.apple.com/app/id6755608044), og aktiver VPN.
+
+#### sing-box
+
+Installer appen fra [App Store](https://apps.apple.com/app/id6785326793), skriv en korrekt konfiguration, og aktiver VPN.
+
+Du skal konfigurere `tun.loopback_address` og `tun.route_address`.
+
+Eksempel på konfiguration:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Hvis du kører sing-box på en gateway, f.eks. en router, virker det for hele det lokale netværk.
+
+#### Clash
+
+Installer appen fra [App Store](https://apps.apple.com/app/id6794257189), skriv en korrekt konfiguration, og aktiver VPN.
+
+Du skal konfigurere `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Software med lukket kildekode
+
+Hvis du abonnerer på og bruger Surge, skal du konfigurere `General.tun-included-routes` og `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swipt kræver ikke `ipv6-vif = disabled`.
+
+Spørg udviklerne af andre Surge-lignende apps uden offentlig dokumentation om, hvordan de konfigureres.
 
 ## Automatisk oplåsning
 

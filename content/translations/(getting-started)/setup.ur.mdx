@@ -31,7 +31,66 @@ title: سیٹ اپ
 
 ## لوپ بیک VPN
 
-ڈیولپر سروسز سے کنکٹ ہونے کے لیے Swipt کو لوپ بیک VPN درکار ہے۔ ایپ میں دی گئی ہدایات پر عمل کرتے ہوئے [LocalDevVPN](https://apps.apple.com/app/id6755608044) یا [sing-box](https://sing-box.sagernet.org) ڈاؤنلوڈ کر کے آن کریں۔ sing-box کے لیے آپ کو [نمونہ پروفائل](/setup/LocalDevVPN.json) امپورٹ کرنا ہو گا۔
+ڈیولپر سروسز سے کنکٹ ہونے کے لیے Swipt کو لوپ بیک VPN درکار ہے۔ درج ذیل سافٹ ویئر سپورٹ کیے جاتے ہیں:
+
+#### LocalDevVPN
+
+[App Store](https://apps.apple.com/app/id6755608044) سے انسٹال کریں اور VPN آن کریں۔
+
+#### sing-box
+
+[App Store](https://apps.apple.com/app/id6785326793) سے انسٹال کریں، درست کنفیگریشن لکھیں اور VPN آن کریں۔
+
+آپ کو `tun.loopback_address` اور `tun.route_address` کنفیگر کرنے ہوں گے۔
+
+نمونہ کنفیگریشن:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+اسے راؤٹر جیسے کسی گیٹ وے پر چلانے سے یہ پورے مقامی نیٹ ورک کے لیے کام کرتا ہے۔
+
+#### Clash
+
+[App Store](https://apps.apple.com/app/id6794257189) سے انسٹال کریں، درست کنفیگریشن لکھیں اور VPN آن کریں۔
+
+آپ کو `tun.loopback-address` کنفیگر کرنا ہو گا:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### کلوزڈ سورس سافٹ ویئر
+
+اگر آپ سبسکرپشن کے ساتھ Surge استعمال کرتے ہیں تو آپ کو `General.tun-included-routes` اور `IP Rewrite` کنفیگر کرنے ہوں گے:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swipt کے لیے `ipv6-vif = disabled` ضروری نہیں ہے۔
+
+Surge جیسی دیگر ایپس کے لیے جن کی دستاویزات عوامی طور پر دستیاب نہیں ہیں، کنفیگریشن کا طریقہ ان کے ڈیولپرز سے معلوم کریں۔
 
 ## خودکار ان لاک
 

@@ -31,7 +31,66 @@ title: సెటప్
 
 ## లూప్‌బ్యాక్ VPN
 
-డెవలపర్ సర్వీస్‌లకు కనెక్ట్ కావడానికి Swiptకు లూప్‌బ్యాక్ VPN అవసరం. యాప్‌లోని సూచనలను అనుసరించి [LocalDevVPN](https://apps.apple.com/app/id6755608044) లేదా [sing-box](https://sing-box.sagernet.org) యాప్‌ను డౌన్‌లోడ్ చేసి ఆన్ చేయండి. sing-box కోసం [ఉదాహరణ ప్రొఫైల్‌ను](/setup/LocalDevVPN.json) ఇంపోర్ట్ చేయాలి.
+డెవలపర్ సర్వీస్‌లకు కనెక్ట్ కావడానికి Swiptకు లూప్‌బ్యాక్ VPN అవసరం. కింది సాఫ్ట్‌వేర్‌లకు సపోర్ట్ ఉంది:
+
+#### LocalDevVPN
+
+[App Store](https://apps.apple.com/app/id6755608044) నుండి ఇన్‌స్టాల్ చేసి, VPNను ఆన్ చేయండి.
+
+#### sing-box
+
+[App Store](https://apps.apple.com/app/id6785326793) నుండి ఇన్‌స్టాల్ చేసి, సరైన కాన్ఫిగరేషన్‌ను రాసి, VPNను ఆన్ చేయండి.
+
+మీరు `tun.loopback_address`, `tun.route_address`లను కాన్ఫిగర్ చేయాలి.
+
+ఉదాహరణ కాన్ఫిగరేషన్:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+రూటర్ వంటి గేట్‌వేలో దీన్ని డిప్లాయ్ చేస్తే, ఇది మొత్తం లోకల్ నెట్‌వర్క్‌కు పని చేస్తుంది.
+
+#### Clash
+
+[App Store](https://apps.apple.com/app/id6794257189) నుండి ఇన్‌స్టాల్ చేసి, సరైన కాన్ఫిగరేషన్‌ను రాసి, VPNను ఆన్ చేయండి.
+
+మీరు `tun.loopback-address`ను కాన్ఫిగర్ చేయాలి:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### క్లోజ్డ్ సోర్స్ సాఫ్ట్‌వేర్
+
+మీరు సబ్‌స్క్రిప్షన్‌తో Surgeను ఉపయోగిస్తుంటే, `General.tun-included-routes`, `IP Rewrite`లను కాన్ఫిగర్ చేయాలి:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Swiptకు `ipv6-vif = disabled` అవసరం లేదు.
+
+పబ్లిక్ డాక్యుమెంటేషన్ లేని, Surge లాంటి ఇతర యాప్‌లను ఎలా కాన్ఫిగర్ చేయాలో వాటి డెవలపర్‌లను అడగండి.
 
 ## ఆటోమేటిక్ అన్‌లాక్
 

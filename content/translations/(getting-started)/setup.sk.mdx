@@ -31,7 +31,66 @@ Ak sa spárovanie nedá dokončiť, nahláste nám problém. Prípadne môžete 
 
 ## Loopback VPN
 
-Apka Swipt potrebuje na pripojenie k vývojárskym službám loopback VPN. Podľa pokynov v apke si stiahnite a zapnite apku [LocalDevVPN](https://apps.apple.com/app/id6755608044) alebo [sing-box](https://sing-box.sagernet.org). Pri apke sing-box musíte importovať [vzorový profil](/setup/LocalDevVPN.json).
+Apka Swipt potrebuje na pripojenie k vývojárskym službám loopback VPN. Podporovaný je tento softvér:
+
+#### LocalDevVPN
+
+Nainštalujte si apku z [App Storu](https://apps.apple.com/app/id6755608044) a zapnite VPN.
+
+#### sing-box
+
+Nainštalujte si apku z [App Storu](https://apps.apple.com/app/id6785326793), napíšte správnu konfiguráciu a zapnite VPN.
+
+Musíte nastaviť `tun.loopback_address` a `tun.route_address`.
+
+Vzorová konfigurácia:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Ak sing-box nasadíte na bránu, napríklad router, bude fungovať v celej lokálnej sieti.
+
+#### Clash
+
+Nainštalujte si apku z [App Storu](https://apps.apple.com/app/id6794257189), napíšte správnu konfiguráciu a zapnite VPN.
+
+Musíte nastaviť `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Softvér s uzavretým zdrojovým kódom
+
+Ak máte predplatné apky Surge a používate ju, musíte nastaviť `General.tun-included-routes` a `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Apka Swipt nevyžaduje nastavenie `ipv6-vif = disabled`.
+
+Pri iných apkách podobných Surge, ktoré nemajú verejnú dokumentáciu, sa opýtajte ich vývojárov, ako to nastaviť.
 
 ## Automatické odomykanie
 

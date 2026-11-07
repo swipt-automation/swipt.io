@@ -31,7 +31,66 @@ title: Початкове налаштування
 
 ## VPN зворотної петлі
 
-Програмі Swipt потрібен VPN зворотної петлі, щоб підключатися до служб розробника. Дотримуйтеся вказівок у програмі, щоб завантажити й увімкнути [LocalDevVPN](https://apps.apple.com/app/id6755608044) або [sing-box](https://sing-box.sagernet.org). Для sing-box потрібно імпортувати [зразок профілю](/setup/LocalDevVPN.json).
+Програмі Swipt потрібен VPN зворотної петлі, щоб підключатися до служб розробника. Підтримується таке програмне забезпечення:
+
+#### LocalDevVPN
+
+Установіть програму з [App Store](https://apps.apple.com/app/id6755608044) і ввімкніть VPN.
+
+#### sing-box
+
+Установіть програму з [App Store](https://apps.apple.com/app/id6785326793), напишіть правильну конфігурацію й увімкніть VPN.
+
+Потрібно налаштувати `tun.loopback_address` і `tun.route_address`.
+
+Приклад конфігурації:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Якщо розгорнути sing-box на шлюзі, наприклад на маршрутизаторі, він працюватиме для всієї локальної мережі.
+
+#### Clash
+
+Установіть програму з [App Store](https://apps.apple.com/app/id6794257189), напишіть правильну конфігурацію й увімкніть VPN.
+
+Потрібно налаштувати `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Програмне забезпечення із закритим вихідним кодом
+
+Якщо ви користуєтеся Surge за передплатою, потрібно налаштувати `General.tun-included-routes` і `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+Програмі Swipt не потрібен параметр `ipv6-vif = disabled`.
+
+Щоб налаштувати іншу схожу на Surge програму без загальнодоступної документації, зверніться до її розробників.
 
 ## Автоматичне розмикання
 
