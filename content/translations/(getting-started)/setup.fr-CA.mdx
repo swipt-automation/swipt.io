@@ -6,7 +6,9 @@ title: Configuration
 
 L’app Swipt doit être jumelée avec votre appareil pour se connecter à ses services de développeur.
 
-Si vous avez installé l’app Swipt par chargement latéral avec Swipt CLI, le jumelage est configuré automatiquement. Sinon, suivez les instructions dans l’app pour effectuer le jumelage :
+Si vous avez installé l’app Swipt par chargement latéral avec Swipt CLI, le jumelage est configuré automatiquement. Sinon, suivez les instructions pour effectuer le jumelage :
+
+Si vous utilisez iOS/iPadOS 27, vous pouvez effectuer le jumelage sur l’appareil en suivant les instructions dans l’app :
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Si vous avez installé l’app Swipt par chargement latéral avec Swipt CLI, le 
   </div>
 </div>
 
-Si le jumelage ne peut pas être effectué, veuillez nous signaler le problème. Vous pouvez aussi importer un fichier de jumelage provenant d’un autre logiciel, notamment :
+Si le jumelage sur l’appareil échoue, veuillez ouvrir un ticket.
+
+Si vous utilisez une version antérieure d’iOS et que vous avez un Mac, vous pouvez quand même utiliser `swipt sideload setup` pour configurer le jumelage après avoir fait le chargement latéral manuellement. Sinon, vous devez effectuer le jumelage avec un autre logiciel.
+
+Vous pouvez importer des fichiers de jumelage créés par presque n’importe quel autre logiciel, notamment :
 
 - [Jitterbug](https://github.com/osy/Jitterbug) : `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice) : `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios) : `selfIdentity.plist`
+
+Voici la façon la plus courante d’obtenir un fichier de jumelage :
+
+1. Téléchargez et installez [iloader](https://iloader.app). Sous Windows, installez d’abord [iTunes](https://www.apple.com/itunes/download/win64). Sous Linux, installez `usbmuxd` s’il n’est pas déjà installé.
+2. Connectez votre iPhone ou iPad à votre ordinateur avec un câble USB. Si on vous le demande, faites confiance à l’ordinateur et entrez votre code d’accès.
+3. Ouvrez iloader et sélectionnez votre iPhone ou iPad.
+4. Sélectionnez « Manage Pairing File ».
+5. Sélectionnez « Export (Not Recommended) », puis « Confirm », et enregistrez le fichier de jumelage.
+6. Transférez le fichier de jumelage sur votre iPhone ou iPad, par exemple avec AirDrop ou iCloud Drive.
+
+Si vous avez déjà installé SideStore, vous avez fort probablement déjà un fichier de jumelage!
 
 ## VPN de bouclage
 

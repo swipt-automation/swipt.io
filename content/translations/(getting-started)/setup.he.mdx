@@ -6,7 +6,9 @@ title: הגדרה ראשונית
 
 כדי להתחבר לשירותי המפתחים של המכשיר, יש לקשר אותו ל-Swipt.
 
-אם Swipt הותקן בהתקנה צדדית באמצעות Swipt CLI, הקישור מוגדר אוטומטית. אחרת, כדי לבצע את הקישור יש לפעול לפי ההוראות ביישום:
+אם Swipt הותקן בהתקנה צדדית באמצעות Swipt CLI, הקישור מוגדר אוטומטית. אחרת, כדי לבצע את הקישור יש לפעול לפי ההוראות:
+
+אם המכשיר פועל עם iOS/iPadOS 27, אפשר לבצע את הקישור במכשיר עצמו לפי ההוראות ביישום:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ title: הגדרה ראשונית
   </div>
 </div>
 
-אם לא ניתן להשלים את הקישור, יש לדווח לנו על הבעיה. לחלופין, אפשר לייבא קובץ קישור מתוכנות אחרות, כולל:
+אם הקישור במכשיר נכשל, יש לפתוח דיווח על בעיה.
+
+אם המכשיר פועל עם גרסה מוקדמת יותר של iOS ויש ברשותך Mac, עדיין אפשר להשתמש ב-`swipt sideload setup` כדי להגדיר את הקישור לאחר התקנה צדדית ידנית. אחרת, יש לבצע את הקישור באמצעות תוכנה אחרת.
+
+אפשר לייבא קובצי קישור שנוצרו כמעט בכל תוכנה אחרת, כולל:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+זו הדרך הנפוצה ביותר להשיג קובץ קישור:
+
+1. יש להוריד ולהתקין את [iloader](https://iloader.app). ב-Windows, יש להתקין קודם את [iTunes](https://www.apple.com/itunes/download/win64). ב-Linux, יש להתקין את `usbmuxd` אם הוא לא מותקן מראש.
+2. יש לחבר את ה-iPhone או ה-iPad למחשב באמצעות כבל USB. אם תופיע בקשה, יש לבחור לסמוך על המחשב ולהזין את קוד הגישה.
+3. יש לפתוח את iloader ולבחור את ה-iPhone או ה-iPad.
+4. יש לבחור ב-"Manage Pairing File".
+5. יש לבחור ב-"Export (Not Recommended)", לאחר מכן לבחור ב-"Confirm" ולשמור את קובץ הקישור.
+6. יש להעביר את קובץ הקישור ל-iPhone או ל-iPad, למשל באמצעות AirDrop או iCloud Drive.
+
+אם SideStore הותקן בעבר, סביר מאוד שכבר יש לך קובץ קישור!
 
 ## VPN מסוג לולאה חוזרת
 

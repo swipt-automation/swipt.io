@@ -6,7 +6,9 @@ title: Configurazione
 
 Swipt deve essere abbinato al dispositivo per connettersi ai suoi servizi per sviluppatori.
 
-Se hai eseguito il sideloading di Swipt con Swipt CLI, l’abbinamento viene configurato automaticamente. In caso contrario, segui le istruzioni nell’app per eseguire l’abbinamento:
+Se hai eseguito il sideloading di Swipt con Swipt CLI, l’abbinamento viene configurato automaticamente. In caso contrario, segui le istruzioni per eseguire l’abbinamento:
+
+Se usi iOS/iPadOS 27, puoi eseguire l’abbinamento direttamente sul dispositivo seguendo le istruzioni nell’app:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Se hai eseguito il sideloading di Swipt con Swipt CLI, l’abbinamento viene con
   </div>
 </div>
 
-Se non riesci a completare l’abbinamento, segnalaci il problema. In alternativa, puoi importare un file di abbinamento da altri software, tra cui:
+Se l’abbinamento sul dispositivo non riesce, apri una segnalazione.
+
+Se usi una versione precedente di iOS e hai un Mac, puoi comunque usare `swipt sideload setup` per configurare l’abbinamento dopo aver eseguito manualmente il sideloading. In caso contrario, devi eseguire l’abbinamento con un altro software.
+
+Puoi importare file di abbinamento creati da quasi qualsiasi altro software, tra cui:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Ecco il modo più comune per ottenere un file di abbinamento:
+
+1. Scarica e installa [iloader](https://iloader.app). Su Windows, installa prima [iTunes](https://www.apple.com/itunes/download/win64). Su Linux, installa `usbmuxd` se non è preinstallato.
+2. Collega iPhone o iPad al computer con un cavo USB. Se richiesto, autorizza il computer e inserisci il codice.
+3. Apri iloader e seleziona il tuo iPhone o iPad.
+4. Seleziona “Manage Pairing File”.
+5. Seleziona “Export (Not Recommended)”, poi seleziona “Confirm” e salva il file di abbinamento.
+6. Trasferisci il file di abbinamento su iPhone o iPad, ad esempio con AirDrop o iCloud Drive.
+
+Se in passato hai installato SideStore, molto probabilmente hai già un file di abbinamento!
 
 ## VPN di loopback
 

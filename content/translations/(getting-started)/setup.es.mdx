@@ -6,7 +6,9 @@ title: Configuración inicial
 
 Swipt necesita enlazarse con tu dispositivo para conectarse a sus servicios de desarrollador.
 
-Si has instalado Swipt mediante carga lateral con Swipt CLI, el enlace se configura automáticamente. De lo contrario, sigue las instrucciones de la app para realizar el enlace:
+Si has instalado Swipt mediante carga lateral con Swipt CLI, el enlace se configura automáticamente. De lo contrario, sigue las instrucciones para realizar el enlace:
+
+Si usas iOS/iPadOS 27, puedes realizar el enlace en el dispositivo siguiendo las instrucciones de la app:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Si has instalado Swipt mediante carga lateral con Swipt CLI, el enlace se config
   </div>
 </div>
 
-Si no se puede completar el enlace, comunícanos el problema. También puedes importar un archivo de enlace de otro software, como los siguientes:
+Si el enlace en el dispositivo falla, abre una incidencia.
+
+Si usas una versión anterior de iOS y tienes un Mac, puedes seguir usando `swipt sideload setup` para configurar el enlace después de hacer la carga lateral manualmente. De lo contrario, necesitas realizar el enlace con otro software.
+
+Puedes importar archivos de enlace creados con casi cualquier otro software, como los siguientes:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Esta es la forma más habitual de obtener un archivo de enlace:
+
+1. Descarga e instala [iloader](https://iloader.app). En Windows, instala primero [iTunes](https://www.apple.com/itunes/download/win64). En Linux, instala `usbmuxd` si no viene preinstalado.
+2. Conecta el iPhone o iPad al ordenador con un cable USB. Si se te solicita, confía en el ordenador e introduce tu código.
+3. Abre iloader y selecciona el iPhone o iPad.
+4. Selecciona “Manage Pairing File”.
+5. Selecciona “Export (Not Recommended)”, después selecciona “Confirm” y guarda el archivo de enlace.
+6. Transfiere el archivo de enlace al iPhone o iPad, por ejemplo, con AirDrop o iCloud Drive.
+
+Si ya has instalado SideStore alguna vez, ¡lo más probable es que ya tengas un archivo de enlace!
 
 ## VPN de bucle invertido
 

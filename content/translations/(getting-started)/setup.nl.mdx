@@ -6,7 +6,9 @@ title: Configuratie
 
 Swipt moet met je apparaat koppelen om verbinding te maken met de ontwikkelaarsdiensten op het apparaat.
 
-Als je Swipt via sideloading met de Swipt CLI hebt geïnstalleerd, wordt de koppeling automatisch ingesteld. Volg anders de instructies in de app om te koppelen:
+Als je Swipt via sideloading met de Swipt CLI hebt geïnstalleerd, wordt de koppeling automatisch ingesteld. Volg anders de instructies om te koppelen:
+
+Gebruik je iOS/iPadOS 27, dan kun je op het apparaat zelf koppelen door de instructies in de app te volgen:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Als je Swipt via sideloading met de Swipt CLI hebt geïnstalleerd, wordt de kopp
   </div>
 </div>
 
-Als het koppelen niet lukt, meld het probleem dan bij ons. Je kunt ook een koppelbestand uit andere software importeren, waaronder:
+Als het koppelen op het apparaat mislukt, open dan een issue.
+
+Gebruik je een eerdere versie van iOS en heb je een Mac, dan kun je na handmatig sideloaden nog steeds `swipt sideload setup` gebruiken om de koppeling in te stellen. Anders moet je koppelen met andere software.
+
+Je kunt koppelbestanden importeren die met vrijwel elke andere software zijn aangemaakt, waaronder:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Dit is de meest gebruikelijke manier om een koppelbestand te krijgen:
+
+1. Download en installeer [iloader](https://iloader.app). Installeer op Windows eerst [iTunes](https://www.apple.com/itunes/download/win64). Installeer op Linux `usbmuxd` als dat nog niet vooraf is geïnstalleerd.
+2. Sluit je iPhone of iPad met een USB-kabel aan op je computer. Vertrouw de computer en voer je toegangscode in als daarom wordt gevraagd.
+3. Open iloader en selecteer je iPhone of iPad.
+4. Selecteer 'Manage Pairing File'.
+5. Selecteer 'Export (Not Recommended)', selecteer daarna 'Confirm' en bewaar het koppelbestand.
+6. Zet het koppelbestand over naar je iPhone of iPad, bijvoorbeeld met AirDrop of iCloud Drive.
+
+Heb je SideStore al eens geïnstalleerd, dan heb je waarschijnlijk al een koppelbestand!
 
 ## Loopback-VPN
 

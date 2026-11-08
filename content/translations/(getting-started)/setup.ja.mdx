@@ -6,7 +6,9 @@ title: セットアップ
 
 デバイスのデベロッパサービスに接続するには、Swiptをデバイスとペアリングする必要があります。
 
-Swipt CLIを使ってSwiptをサイドロードした場合、ペアリングは自動的に設定されます。それ以外の場合は、アプリ内の指示に従ってペアリングしてください:
+Swipt CLIを使ってSwiptをサイドロードした場合、ペアリングは自動的に設定されます。それ以外の場合は、次の手順に従ってペアリングしてください:
+
+iOS/iPadOS 27を使用している場合は、アプリ内の指示に従ってデバイス上でペアリングできます:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Swipt CLIを使ってSwiptをサイドロードした場合、ペアリングは
   </div>
 </div>
 
-ペアリングを完了できない場合は、問題をご報告ください。または、次のような他のソフトウェアのペアリングファイルを読み込むこともできます:
+デバイス上でのペアリングに失敗した場合は、Issueを作成してください。
+
+それより前のバージョンのiOSを使用していてMacをお持ちの場合は、手動でサイドロードした後でも`swipt sideload setup`を使ってペアリングを設定できます。それ以外の場合は、他のソフトウェアでペアリングする必要があります。
+
+他のほとんどのソフトウェアで作成されたペアリングファイルを読み込むことができます。次のようなものがあります:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+ペアリングファイルを入手する最も一般的な方法は次のとおりです:
+
+1. [iloader](https://iloader.app)をダウンロードしてインストールします。Windowsでは、先に[iTunes](https://www.apple.com/itunes/download/win64)をインストールしてください。Linuxでは、`usbmuxd`がプリインストールされていない場合はインストールしてください。
+2. USBケーブルでiPhoneまたはiPadをコンピュータに接続します。求められた場合は、コンピュータを信頼してパスコードを入力します。
+3. iloaderを開き、iPhoneまたはiPadを選択します。
+4. “Manage Pairing File”を選択します。
+5. “Export (Not Recommended)”を選択し、“Confirm”を選択してペアリングファイルを保存します。
+6. AirDropやiCloud Driveなどを使って、ペアリングファイルをiPhoneまたはiPadに転送します。
+
+以前にSideStoreをインストールしたことがある場合は、すでにペアリングファイルを持っている可能性が高いです！
 
 ## ループバックVPN
 

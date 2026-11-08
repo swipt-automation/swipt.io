@@ -6,7 +6,9 @@ title: Oppsett
 
 Swipt må kobles sammen med enheten for å kunne koble til utviklertjenestene på den.
 
-Sammenkoblingen konfigureres automatisk hvis du sidelastet Swipt med Swipt CLI. Hvis ikke, følger du instruksjonene i appen for å koble sammen:
+Sammenkoblingen konfigureres automatisk hvis du sidelastet Swipt med Swipt CLI. Hvis ikke, følger du instruksjonene for å koble sammen:
+
+Hvis du bruker iOS/iPadOS 27, kan du koble sammen på selve enheten ved å følge instruksjonene i appen:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Sammenkoblingen konfigureres automatisk hvis du sidelastet Swipt med Swipt CLI. 
   </div>
 </div>
 
-Rapporter problemet til oss hvis sammenkoblingen ikke kan fullføres. Du kan også importere en sammenkoblingsfil fra annen programvare, blant annet:
+Åpne en issue hvis sammenkoblingen på enheten mislykkes.
+
+Hvis du bruker en eldre versjon av iOS og har en Mac, kan du fortsatt bruke `swipt sideload setup` til å konfigurere sammenkoblingen etter å ha sidelastet manuelt. Hvis ikke, må du koble sammen med annen programvare.
+
+Du kan importere sammenkoblingsfiler opprettet av nesten all annen programvare, blant annet:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Dette er den vanligste måten å få tak i en sammenkoblingsfil på:
+
+1. Last ned og installer [iloader](https://iloader.app). På Windows må du installere [iTunes](https://www.apple.com/itunes/download/win64) først. På Linux må du installere `usbmuxd` hvis det ikke er forhåndsinstallert.
+2. Koble iPhone eller iPad til datamaskinen med en USB-kabel. Hvis du blir bedt om det, velger du å stole på datamaskinen og oppgir koden.
+3. Åpne iloader og velg iPhone eller iPad.
+4. Velg «Manage Pairing File».
+5. Velg «Export (Not Recommended)», velg deretter «Confirm» og lagre sammenkoblingsfilen.
+6. Overfør sammenkoblingsfilen til iPhone eller iPad, for eksempel med AirDrop eller iCloud Drive.
+
+Hvis du har installert SideStore før, har du mest sannsynlig allerede en sammenkoblingsfil!
 
 ## Loopback-VPN
 

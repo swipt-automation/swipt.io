@@ -6,7 +6,9 @@ title: Käyttöönotto
 
 Swiptin on tehtävä pari laitteen kanssa, jotta se voi muodostaa yhteyden laitteen kehittäjäpalveluihin.
 
-Jos asensit Swiptin sivulatauksella Swipt CLI:n avulla, pari määritetään automaattisesti. Muussa tapauksessa muodosta pari apin ohjeiden mukaan:
+Jos asensit Swiptin sivulatauksella Swipt CLI:n avulla, pari määritetään automaattisesti. Muussa tapauksessa muodosta pari ohjeiden mukaan:
+
+Jos käytössäsi on iOS/iPadOS 27, voit muodostaa parin laitteella apin ohjeiden mukaan:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Jos asensit Swiptin sivulatauksella Swipt CLI:n avulla, pari määritetään aut
   </div>
 </div>
 
-Jos parin muodostaminen ei onnistu, ilmoita ongelmasta meille. Voit myös tuoda parinmuodostustiedoston muista ohjelmistoista, kuten:
+Jos parin muodostaminen laitteella epäonnistuu, tee ongelmailmoitus.
+
+Jos käytössäsi on aiempi iOS-versio ja sinulla on Mac, voit silti määrittää parin komennolla `swipt sideload setup` manuaalisen sivulatauksen jälkeen. Muussa tapauksessa sinun on muodostettava pari muulla ohjelmistolla.
+
+Voit tuoda lähes minkä tahansa muun ohjelmiston luomia parinmuodostustiedostoja, kuten:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Yleisin tapa hankkia parinmuodostustiedosto:
+
+1. Lataa ja asenna [iloader](https://iloader.app). Asenna Windowsissa ensin [iTunes](https://www.apple.com/itunes/download/win64). Asenna Linuxissa `usbmuxd`, jos sitä ei ole esiasennettu.
+2. Liitä iPhone tai iPad tietokoneeseen USB-kaapelilla. Jos sinua pyydetään, luota tietokoneeseen ja syötä pääsykoodi.
+3. Avaa iloader ja valitse iPhone tai iPad.
+4. Valitse ”Manage Pairing File”.
+5. Valitse ”Export (Not Recommended)”, valitse sitten ”Confirm” ja tallenna parinmuodostustiedosto.
+6. Siirrä parinmuodostustiedosto iPhoneen tai iPadiin esimerkiksi AirDropilla tai iCloud Drivella.
+
+Jos olet asentanut SideStoren aiemmin, sinulla on todennäköisesti jo parinmuodostustiedosto!
 
 ## Loopback-VPN
 

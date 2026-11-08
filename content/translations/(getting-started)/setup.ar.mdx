@@ -6,7 +6,9 @@ title: الإعداد
 
 يحتاج Swipt إلى الإقران مع جهازك للاتصال بخدمات المطور عليه.
 
-إذا تم تحميل Swipt جانبيًا باستخدام Swipt CLI، فسيتم إعداد الإقران تلقائيًا. وإلا فيرجى اتباع التعليمات في التطبيق لإتمام الإقران:
+إذا تم تحميل Swipt جانبيًا باستخدام Swipt CLI، فسيتم إعداد الإقران تلقائيًا. وإلا فيرجى اتباع التعليمات لإتمام الإقران:
+
+إذا كنت تستخدم iOS/iPadOS 27، فيمكنك إجراء الإقران على الجهاز باتباع التعليمات في التطبيق:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ title: الإعداد
   </div>
 </div>
 
-إذا تعذر إكمال الإقران، فيرجى إبلاغنا بالمشكلة. وبدلاً من ذلك، يمكنك استيراد ملف إقران من برامج أخرى، منها:
+إذا فشل الإقران على الجهاز، فيرجى فتح مشكلة (issue).
+
+إذا كنت تستخدم إصدارًا أقدم من iOS ولديك Mac، فلا يزال بإمكانك استخدام `swipt sideload setup` لإعداد الإقران بعد التحميل الجانبي يدويًا. وإلا فستحتاج إلى الإقران باستخدام برامج أخرى.
+
+يمكنك استيراد ملفات الإقران التي أنشأتها أي برامج أخرى تقريبًا، منها:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+إليك الطريقة الأكثر شيوعًا للحصول على ملف إقران:
+
+1. نزّل [iloader](https://iloader.app) وثبّته. على Windows، ثبّت [iTunes](https://www.apple.com/itunes/download/win64) أولًا. على Linux، ثبّت `usbmuxd` إذا لم يكن مثبتًا مسبقًا.
+2. وصّل iPhone أو iPad بالكمبيوتر باستخدام كابل USB. إذا طُلب منك ذلك، فاختر الوثوق بالكمبيوتر وأدخل رمز الدخول.
+3. افتح iloader واختر iPhone أو iPad.
+4. اختر "Manage Pairing File".
+5. اختر "Export (Not Recommended)"، ثم اختر "Confirm" واحفظ ملف الإقران.
+6. انقل ملف الإقران إلى iPhone أو iPad، على سبيل المثال باستخدام AirDrop أو iCloud Drive.
+
+إذا سبق لك تثبيت SideStore، فمن المرجح جدًا أن لديك ملف إقران بالفعل!
 
 ## شبكة VPN للاسترجاع
 

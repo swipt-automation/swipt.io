@@ -6,7 +6,9 @@ title: Postavljanje
 
 Aplikacija Swipt mora se upariti s vašim uređajem kako bi se povezala s njegovim uslugama za programere.
 
-Ako ste aplikaciju Swipt instalirali bočnim učitavanjem pomoću alata Swipt CLI, uparivanje se postavlja automatski. U suprotnom slijedite upute u aplikaciji za uparivanje:
+Ako ste aplikaciju Swipt instalirali bočnim učitavanjem pomoću alata Swipt CLI, uparivanje se postavlja automatski. U suprotnom slijedite upute za uparivanje:
+
+Ako upotrebljavate iOS/iPadOS 27, uparivanje možete obaviti na samom uređaju prema uputama u aplikaciji:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Ako ste aplikaciju Swipt instalirali bočnim učitavanjem pomoću alata Swipt CL
   </div>
 </div>
 
-Ako uparivanje nije moguće dovršiti, prijavite nam problem. Možete i importirati datoteku za uparivanje iz drugog softvera, uključujući:
+Ako uparivanje na uređaju ne uspije, otvorite prijavu problema.
+
+Ako upotrebljavate stariju verziju iOS-a i imate Mac, i dalje možete upotrijebiti naredbu `swipt sideload setup` za postavljanje uparivanja nakon ručnog bočnog učitavanja. U suprotnom morate obaviti uparivanje pomoću drugog softvera.
+
+Možete importirati datoteke za uparivanje izrađene u gotovo bilo kojem drugom softveru, uključujući:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Ovo je najčešći način za dobivanje datoteke za uparivanje:
+
+1. Preuzmite i instalirajte [iloader](https://iloader.app). Na Windowsu najprije instalirajte [iTunes](https://www.apple.com/itunes/download/win64). Na Linuxu instalirajte `usbmuxd` ako nije unaprijed instaliran.
+2. Povežite iPhone ili iPad s računalom pomoću USB kabela. Ako se to od vas zatraži, vjerujte računalu i unesite šifru.
+3. Otvorite iloader i odaberite svoj iPhone ili iPad.
+4. Odaberite „Manage Pairing File“.
+5. Odaberite „Export (Not Recommended)“, zatim odaberite „Confirm“ i spremite datoteku za uparivanje.
+6. Prenesite datoteku za uparivanje na iPhone ili iPad, primjerice putem značajke AirDrop ili usluge iCloud Drive.
+
+Ako ste prije instalirali SideStore, najvjerojatnije već imate datoteku za uparivanje!
 
 ## VPN povratne petlje
 

@@ -6,7 +6,9 @@ title: Sąranka
 
 „Swipt” turi susisieti su jūsų įrenginiu, kad galėtų prisijungti prie jo kūrėjo paslaugų.
 
-Jei „Swipt” įdiegėte šoniniu įkėlimu naudodami „Swipt CLI”, susiejimas nustatomas automatiškai. Kitu atveju susiekite vykdydami programoje pateikiamus nurodymus:
+Jei „Swipt” įdiegėte šoniniu įkėlimu naudodami „Swipt CLI”, susiejimas nustatomas automatiškai. Kitu atveju susiekite vykdydami nurodymus:
+
+Jei naudojate „iOS/iPadOS 27”, galite susieti pačiame įrenginyje vykdydami programoje pateikiamus nurodymus:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Jei „Swipt” įdiegėte šoniniu įkėlimu naudodami „Swipt CLI”, susieji
   </div>
 </div>
 
-Jei susieti nepavyksta, praneškite mums apie problemą. Taip pat galite importuoti susiejimo failą iš kitos programinės įrangos, pavyzdžiui:
+Jei susieti įrenginyje nepavyksta, sukurkite pranešimą apie problemą („issue”).
+
+Jei naudojate ankstesnę „iOS” versiją ir turite „Mac” kompiuterį, įkėlę „Swipt” šoniniu būdu rankiniu būdu vis tiek galite nustatyti susiejimą naudodami `swipt sideload setup`. Kitu atveju turite susieti naudodami kitą programinę įrangą.
+
+Galite importuoti susiejimo failus, sukurtus beveik bet kokia kita programine įranga, pavyzdžiui:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Štai dažniausias būdas gauti susiejimo failą:
+
+1. Atsisiųskite ir įdiekite „[iloader](https://iloader.app)”. „Windows” sistemoje pirmiausia įdiekite „[iTunes](https://www.apple.com/itunes/download/win64)”. „Linux” sistemoje įdiekite `usbmuxd`, jei jis nėra iš anksto įdiegtas.
+2. Prijunkite „iPhone” arba „iPad” prie kompiuterio USB kabeliu. Jei būsite paraginti, pasitikėkite kompiuteriu ir įveskite slaptakodį.
+3. Atidarykite „iloader” ir pasirinkite savo „iPhone” arba „iPad”.
+4. Pasirinkite „Manage Pairing File”.
+5. Pasirinkite „Export (Not Recommended)”, tada pasirinkite „Confirm” ir išsaugokite susiejimo failą.
+6. Perkelkite susiejimo failą į „iPhone” arba „iPad”, pavyzdžiui, naudodami „AirDrop” arba „iCloud Drive”.
+
+Jei anksčiau esate įdiegę „SideStore”, greičiausiai jau turite susiejimo failą!
 
 ## Grįžtamojo ryšio VPN
 

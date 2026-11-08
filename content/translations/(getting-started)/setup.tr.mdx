@@ -6,7 +6,9 @@ title: Kurulum
 
 Aygıtınızın geliştirici servislerine bağlanabilmesi için Swipt’in aygıtınızla eşlenmesi gerekir.
 
-Swipt’i Swipt CLI ile yandan yüklediyseniz eşleme otomatik olarak ayarlanır. Aksi takdirde eşleme yapmak için uygulamadaki yönergeleri izleyin:
+Swipt’i Swipt CLI ile yandan yüklediyseniz eşleme otomatik olarak ayarlanır. Aksi takdirde eşleme yapmak için yönergeleri izleyin:
+
+iOS/iPadOS 27 kullanıyorsanız uygulamadaki yönergeleri izleyerek eşlemeyi doğrudan aygıt üzerinde yapabilirsiniz:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Swipt’i Swipt CLI ile yandan yüklediyseniz eşleme otomatik olarak ayarlanır
   </div>
 </div>
 
-Eşleme tamamlanamazsa sorunu bize bildirin. Alternatif olarak şunlar da dahil olmak üzere diğer yazılımlardan bir eşleme dosyasını içe aktarabilirsiniz:
+Aygıt üzerinde eşleme başarısız olursa lütfen bir issue açın.
+
+Daha eski bir iOS sürümü kullanıyorsanız ve bir Mac’iniz varsa, elle yandan yükledikten sonra eşlemeyi ayarlamak için yine de `swipt sideload setup` komutunu kullanabilirsiniz. Aksi takdirde başka bir yazılımla eşleme yapmanız gerekir.
+
+Şunlar da dahil olmak üzere neredeyse tüm diğer yazılımlarla oluşturulan eşleme dosyalarını içe aktarabilirsiniz:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Eşleme dosyası edinmenin en yaygın yolu şudur:
+
+1. [iloader](https://iloader.app) uygulamasını indirip yükleyin. Windows’ta önce [iTunes](https://www.apple.com/itunes/download/win64) uygulamasını yükleyin. Linux’ta `usbmuxd` önceden yüklü değilse onu yükleyin.
+2. iPhone’unuzu veya iPad’inizi USB kablosuyla bilgisayarınıza bağlayın. İstenirse bilgisayara güvenin ve parolanızı girin.
+3. iloader’ı açın ve iPhone’unuzu veya iPad’inizi seçin.
+4. “Manage Pairing File” seçeneğini seçin.
+5. “Export (Not Recommended)” seçeneğini seçin, ardından “Confirm” seçeneğini seçip eşleme dosyasını kaydedin.
+6. Eşleme dosyasını örneğin AirDrop veya iCloud Drive ile iPhone’unuza veya iPad’inize aktarın.
+
+Daha önce SideStore’u yüklediyseniz büyük olasılıkla zaten bir eşleme dosyanız vardır!
 
 ## Geri Döngü VPN’i
 

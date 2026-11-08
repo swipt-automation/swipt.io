@@ -6,7 +6,9 @@ title: Konfigurering
 
 Swipt måste parkopplas med enheten för att kunna ansluta till dess utvecklartjänster.
 
-Om du har sidladdat Swipt med Swipt CLI konfigureras parkopplingen automatiskt. Följ annars anvisningarna i appen för att parkoppla:
+Om du har sidladdat Swipt med Swipt CLI konfigureras parkopplingen automatiskt. Följ annars anvisningarna för att parkoppla:
+
+Om du använder iOS/iPadOS 27 kan du parkoppla direkt på enheten genom att följa anvisningarna i appen:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Om du har sidladdat Swipt med Swipt CLI konfigureras parkopplingen automatiskt. 
   </div>
 </div>
 
-Om det inte går att slutföra parkopplingen kan du rapportera problemet till oss. Du kan också importera en parkopplingsfil från annan programvara, till exempel:
+Om parkopplingen på enheten misslyckas ber vi dig skapa ett ärende.
+
+Om du använder en tidigare version av iOS och har en Mac kan du fortfarande använda `swipt sideload setup` för att konfigurera parkopplingen efter att ha sidladdat manuellt. Annars måste du parkoppla med annan programvara.
+
+Du kan importera parkopplingsfiler som har skapats av nästan vilken annan programvara som helst, till exempel:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Så här får du oftast tag på en parkopplingsfil:
+
+1. Ladda ned och installera [iloader](https://iloader.app). På Windows installerar du först [iTunes](https://www.apple.com/itunes/download/win64). På Linux installerar du `usbmuxd` om det inte redan är förinstallerat.
+2. Anslut din iPhone eller iPad till datorn med en USB-kabel. Om du uppmanas till det litar du på datorn och anger lösenkoden.
+3. Öppna iloader och välj din iPhone eller iPad.
+4. Välj ”Manage Pairing File”.
+5. Välj ”Export (Not Recommended)”, välj sedan ”Confirm” och spara parkopplingsfilen.
+6. För över parkopplingsfilen till din iPhone eller iPad, till exempel med AirDrop eller iCloud Drive.
+
+Om du har installerat SideStore tidigare har du troligen redan en parkopplingsfil!
 
 ## Loopback-VPN
 

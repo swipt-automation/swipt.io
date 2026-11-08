@@ -6,7 +6,9 @@ title: Einrichtung
 
 Swipt muss mit deinem Gerät gekoppelt werden, um sich mit dessen Entwicklerdiensten zu verbinden.
 
-Wenn du Swipt per Sideloading mit der Swipt CLI installiert hast, wird die Kopplung automatisch eingerichtet. Folge andernfalls den Anweisungen in der App, um die Kopplung durchzuführen:
+Wenn du Swipt per Sideloading mit der Swipt CLI installiert hast, wird die Kopplung automatisch eingerichtet. Folge andernfalls den Anweisungen, um die Kopplung durchzuführen:
+
+Wenn du iOS/iPadOS 27 verwendest, kannst du die Kopplung auf dem Gerät durchführen, indem du den Anweisungen in der App folgst:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Wenn du Swipt per Sideloading mit der Swipt CLI installiert hast, wird die Koppl
   </div>
 </div>
 
-Wenn die Kopplung nicht abgeschlossen werden kann, melde uns das Problem. Alternativ kannst du eine Kopplungsdatei aus anderer Software importieren, darunter:
+Wenn die Kopplung auf dem Gerät fehlschlägt, erstelle bitte ein Issue.
+
+Wenn du eine ältere iOS-Version verwendest und einen Mac hast, kannst du nach dem manuellen Sideloading trotzdem `swipt sideload setup` verwenden, um die Kopplung einzurichten. Andernfalls musst du die Kopplung mit anderer Software durchführen.
+
+Du kannst Kopplungsdateien importieren, die mit fast jeder anderen Software erstellt wurden, darunter:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+So kommst du am häufigsten an eine Kopplungsdatei:
+
+1. Lade [iloader](https://iloader.app) herunter und installiere es. Installiere unter Windows zuerst [iTunes](https://www.apple.com/itunes/download/win64). Installiere unter Linux `usbmuxd`, falls es nicht vorinstalliert ist.
+2. Verbinde dein iPhone oder iPad über ein USB-Kabel mit deinem Computer. Wenn du dazu aufgefordert wirst, vertraue dem Computer und gib deinen Code ein.
+3. Öffne iloader und wähle dein iPhone oder iPad aus.
+4. Wähle „Manage Pairing File“.
+5. Wähle „Export (Not Recommended)“, wähle dann „Confirm“ und sichere die Kopplungsdatei.
+6. Übertrage die Kopplungsdatei auf dein iPhone oder iPad, zum Beispiel mit AirDrop oder iCloud Drive.
+
+Wenn du SideStore schon einmal installiert hast, hast du höchstwahrscheinlich bereits eine Kopplungsdatei!
 
 ## Loopback-VPN
 

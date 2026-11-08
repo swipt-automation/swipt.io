@@ -6,7 +6,9 @@ title: 初始设置
 
 Swipt 需要与设备配对，才能连接其开发者服务。
 
-如果使用 Swipt CLI 完成了侧载，配对会自动完成；否则，请根据 App 内的指引完成配对：
+如果使用 Swipt CLI 完成了侧载，配对会自动完成；否则，请根据指引完成配对：
+
+如果使用的是 iOS/iPadOS 27，可以根据 App 内的指引在设备上完成配对：
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Swipt 需要与设备配对，才能连接其开发者服务。
   </div>
 </div>
 
-如果配对无法完成，请向我们报告问题。或者，也可以导入来自其他软件的配对文件，包括：
+如果在设备上配对失败，请提交 Issue。
+
+如果使用的是更早版本的 iOS 且有 Mac，仍然可以在手动侧载后使用 `swipt sideload setup` 设置配对；否则，需要通过其他软件进行配对。
+
+可以导入几乎任何其他软件创建的配对文件，包括：
 
 - [Jitterbug](https://github.com/osy/Jitterbug)：`.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice)：`ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios)：`selfIdentity.plist`
+
+获取配对文件最常用的方法如下：
+
+1. 下载并安装 [iloader](https://iloader.app)。在 Windows 上，请先安装 [iTunes](https://www.apple.com/itunes/download/win64)；在 Linux 上，如果未预装 `usbmuxd`，请安装它。
+2. 使用 USB 线将 iPhone 或 iPad 连接到电脑。如果出现提示，请信任此电脑并输入密码。
+3. 打开 iloader 并选择 iPhone 或 iPad。
+4. 选择“Manage Pairing File”。
+5. 选择“Export (Not Recommended)”，然后选择“Confirm”并保存配对文件。
+6. 将配对文件传输到 iPhone 或 iPad，例如通过 AirDrop 或 iCloud Drive。
+
+如果以前安装过 SideStore，很可能已经有配对文件了！
 
 ## 环回 VPN
 

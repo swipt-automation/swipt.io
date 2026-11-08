@@ -6,7 +6,9 @@ title: Konfiguracja
 
 Aplikacja Swipt musi sparować się z Twoim urządzeniem, aby łączyć się z jego usługami deweloperskimi.
 
-Jeśli aplikacja Swipt została zainstalowana przez sideloading za pomocą Swipt CLI, parowanie konfiguruje się automatycznie. W przeciwnym razie postępuj zgodnie z instrukcjami w aplikacji, aby wykonać parowanie:
+Jeśli aplikacja Swipt została zainstalowana przez sideloading za pomocą Swipt CLI, parowanie konfiguruje się automatycznie. W przeciwnym razie postępuj zgodnie z instrukcjami, aby wykonać parowanie:
+
+Jeśli używasz systemu iOS/iPadOS 27, możesz wykonać parowanie na urządzeniu, postępując zgodnie z instrukcjami w aplikacji:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Jeśli aplikacja Swipt została zainstalowana przez sideloading za pomocą Swipt
   </div>
 </div>
 
-Jeśli nie można ukończyć parowania, zgłoś nam problem. Możesz też zaimportować plik parowania z innego oprogramowania, na przykład:
+Jeśli parowanie na urządzeniu się nie powiedzie, utwórz zgłoszenie.
+
+Jeśli używasz starszej wersji systemu iOS i masz Maca, po ręcznym sideloadingu nadal możesz skonfigurować parowanie za pomocą polecenia `swipt sideload setup`. W przeciwnym razie musisz wykonać parowanie za pomocą innego oprogramowania.
+
+Możesz zaimportować pliki parowania utworzone przez niemal każde inne oprogramowanie, na przykład:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Oto najpopularniejszy sposób uzyskania pliku parowania:
+
+1. Pobierz i zainstaluj [iloader](https://iloader.app). W systemie Windows najpierw zainstaluj [iTunes](https://www.apple.com/itunes/download/win64). W systemie Linux zainstaluj `usbmuxd`, jeśli nie jest preinstalowany.
+2. Podłącz iPhone’a lub iPada do komputera kablem USB. Jeśli pojawi się monit, zaufaj komputerowi i wprowadź kod.
+3. Otwórz iloader i wybierz iPhone’a lub iPada.
+4. Wybierz „Manage Pairing File”.
+5. Wybierz „Export (Not Recommended)”, następnie wybierz „Confirm” i zapisz plik parowania.
+6. Przenieś plik parowania na iPhone’a lub iPada, na przykład przez AirDrop lub iCloud Drive.
+
+Jeśli wcześniej instalowano SideStore, najprawdopodobniej masz już plik parowania!
 
 ## VPN pętli zwrotnej
 

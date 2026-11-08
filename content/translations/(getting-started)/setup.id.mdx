@@ -6,7 +6,9 @@ title: Penyiapan
 
 Swipt perlu dipasangkan dengan perangkat Anda agar dapat terhubung ke layanan pengembangnya.
 
-Jika Anda melakukan sideload Swipt dengan Swipt CLI, pemasangan akan disiapkan secara otomatis. Jika tidak, ikuti instruksi di app untuk memasangkan:
+Jika Anda melakukan sideload Swipt dengan Swipt CLI, pemasangan akan disiapkan secara otomatis. Jika tidak, ikuti instruksi untuk memasangkan:
+
+Jika Anda menggunakan iOS/iPadOS 27, Anda dapat memasangkan langsung di perangkat dengan mengikuti instruksi di app:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Jika Anda melakukan sideload Swipt dengan Swipt CLI, pemasangan akan disiapkan s
   </div>
 </div>
 
-Jika pemasangan tidak dapat diselesaikan, laporkan masalahnya kepada kami. Atau, Anda dapat mengimpor file pemasangan dari perangkat lunak lain, termasuk:
+Jika pemasangan di perangkat gagal, silakan buka issue.
+
+Jika Anda menggunakan versi iOS yang lebih lama dan memiliki Mac, Anda tetap dapat menggunakan `swipt sideload setup` untuk menyiapkan pemasangan setelah melakukan sideload secara manual. Jika tidak, Anda perlu memasangkan dengan perangkat lunak lain.
+
+Anda dapat mengimpor file pemasangan yang dibuat oleh hampir semua perangkat lunak lain, termasuk:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Berikut cara paling umum untuk mendapatkan file pemasangan:
+
+1. Unduh dan instal [iloader](https://iloader.app). Di Windows, instal [iTunes](https://www.apple.com/itunes/download/win64) terlebih dahulu. Di Linux, instal `usbmuxd` jika belum terinstal sebelumnya.
+2. Hubungkan iPhone atau iPad Anda ke komputer menggunakan kabel USB. Jika diminta, percayai komputer tersebut dan masukkan kode sandi Anda.
+3. Buka iloader dan pilih iPhone atau iPad Anda.
+4. Pilih “Manage Pairing File”.
+5. Pilih “Export (Not Recommended)”, lalu pilih “Confirm” dan simpan file pemasangan.
+6. Transfer file pemasangan ke iPhone atau iPad Anda, misalnya dengan AirDrop atau iCloud Drive.
+
+Jika Anda pernah menginstal SideStore sebelumnya, kemungkinan besar Anda sudah memiliki file pemasangan!
 
 ## VPN Loopback
 

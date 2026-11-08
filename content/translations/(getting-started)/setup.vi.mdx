@@ -6,7 +6,9 @@ title: Thiết lập
 
 Swipt cần ghép đôi với thiết bị của bạn để kết nối với các dịch vụ nhà phát triển của thiết bị.
 
-Nếu bạn đã sideload Swipt bằng Swipt CLI, quá trình ghép đôi sẽ được thiết lập tự động. Nếu không, hãy làm theo hướng dẫn trong ứng dụng để ghép đôi:
+Nếu bạn đã sideload Swipt bằng Swipt CLI, quá trình ghép đôi sẽ được thiết lập tự động. Nếu không, hãy làm theo hướng dẫn để ghép đôi:
+
+Nếu bạn đang dùng iOS/iPadOS 27, bạn có thể ghép đôi ngay trên thiết bị bằng cách làm theo hướng dẫn trong ứng dụng:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Nếu bạn đã sideload Swipt bằng Swipt CLI, quá trình ghép đôi sẽ �
   </div>
 </div>
 
-Nếu không thể hoàn tất ghép đôi, vui lòng báo cáo sự cố cho chúng tôi. Ngoài ra, bạn có thể nhập tệp ghép đôi từ phần mềm khác, bao gồm:
+Nếu ghép đôi trên thiết bị không thành công, vui lòng mở một issue.
+
+Nếu bạn đang dùng phiên bản iOS cũ hơn và có máy Mac, bạn vẫn có thể dùng `swipt sideload setup` để thiết lập ghép đôi sau khi sideload thủ công. Nếu không, bạn cần ghép đôi bằng phần mềm khác.
+
+Bạn có thể nhập tệp ghép đôi được tạo bởi hầu hết mọi phần mềm khác, bao gồm:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Sau đây là cách phổ biến nhất để lấy tệp ghép đôi:
+
+1. Tải về và cài đặt [iloader](https://iloader.app). Trên Windows, hãy cài đặt [iTunes](https://www.apple.com/itunes/download/win64) trước. Trên Linux, hãy cài đặt `usbmuxd` nếu chưa được cài đặt sẵn.
+2. Kết nối iPhone hoặc iPad với máy tính bằng cáp USB. Nếu được nhắc, hãy tin cậy máy tính và nhập mật mã.
+3. Mở iloader và chọn iPhone hoặc iPad của bạn.
+4. Chọn “Manage Pairing File”.
+5. Chọn “Export (Not Recommended)”, sau đó chọn “Confirm” và lưu tệp ghép đôi.
+6. Chuyển tệp ghép đôi sang iPhone hoặc iPad, ví dụ bằng AirDrop hoặc iCloud Drive.
+
+Nếu bạn đã từng cài đặt SideStore, rất có thể bạn đã có sẵn tệp ghép đôi!
 
 ## VPN loopback
 

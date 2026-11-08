@@ -6,7 +6,9 @@ title: Configurare
 
 Aplicația Swipt trebuie să se asocieze cu dispozitivul pentru a se conecta la serviciile pentru dezvoltatori ale acestuia.
 
-Dacă ați instalat aplicația Swipt prin sideloading cu Swipt CLI, asocierea este configurată automat. În caz contrar, urmați instrucțiunile din aplicație pentru a realiza asocierea:
+Dacă ați instalat aplicația Swipt prin sideloading cu Swipt CLI, asocierea este configurată automat. În caz contrar, urmați instrucțiunile pentru a realiza asocierea:
+
+Dacă utilizați iOS/iPadOS 27, puteți realiza asocierea direct pe dispozitiv urmând instrucțiunile din aplicație:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Dacă ați instalat aplicația Swipt prin sideloading cu Swipt CLI, asocierea es
   </div>
 </div>
 
-Dacă asocierea nu poate fi finalizată, raportați-ne problema. Alternativ, puteți importa un fișier de asociere din alte programe, inclusiv:
+Dacă asocierea pe dispozitiv eșuează, deschideți un issue.
+
+Dacă utilizați o versiune anterioară de iOS și aveți un Mac, puteți folosi în continuare `swipt sideload setup` pentru a configura asocierea după instalarea manuală prin sideloading. În caz contrar, trebuie să realizați asocierea cu alte programe.
+
+Puteți importa fișiere de asociere create de aproape orice alt program, inclusiv:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Iată cea mai obișnuită metodă de a obține un fișier de asociere:
+
+1. Descărcați și instalați [iloader](https://iloader.app). Pe Windows, instalați mai întâi [iTunes](https://www.apple.com/itunes/download/win64). Pe Linux, instalați `usbmuxd` dacă nu este preinstalat.
+2. Conectați iPhone-ul sau iPad-ul la computer printr-un cablu USB. Dacă vi se solicită, acordați încredere computerului și introduceți codul de acces.
+3. Deschideți iloader și selectați iPhone-ul sau iPad-ul.
+4. Selectați „Manage Pairing File”.
+5. Selectați „Export (Not Recommended)”, apoi selectați „Confirm” și salvați fișierul de asociere.
+6. Transferați fișierul de asociere pe iPhone sau iPad, de exemplu prin AirDrop sau iCloud Drive.
+
+Dacă ați instalat anterior SideStore, cel mai probabil aveți deja un fișier de asociere!
 
 ## VPN de loopback
 

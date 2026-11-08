@@ -6,7 +6,9 @@ title: Configuração inicial
 
 O Swipt tem de emparelhar com o seu dispositivo para se ligar aos respetivos serviços de programador.
 
-Se tiver feito o sideload do Swipt com a Swipt CLI, o emparelhamento é configurado automaticamente. Caso contrário, siga as instruções na aplicação para emparelhar:
+Se tiver feito o sideload do Swipt com a Swipt CLI, o emparelhamento é configurado automaticamente. Caso contrário, siga as instruções para emparelhar:
+
+Se estiver a utilizar o iOS/iPadOS 27, pode emparelhar no próprio dispositivo seguindo as instruções na aplicação:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Se tiver feito o sideload do Swipt com a Swipt CLI, o emparelhamento é configur
   </div>
 </div>
 
-Se não for possível concluir o emparelhamento, comunique-nos o problema. Em alternativa, pode importar um ficheiro de emparelhamento de outro software, incluindo:
+Se o emparelhamento no dispositivo falhar, abra uma issue.
+
+Se estiver a utilizar uma versão anterior do iOS e tiver um Mac, pode continuar a utilizar `swipt sideload setup` para configurar o emparelhamento depois de fazer sideload manualmente. Caso contrário, tem de emparelhar com outro software.
+
+Pode importar ficheiros de emparelhamento criados por praticamente qualquer outro software, incluindo:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Eis a forma mais comum de obter um ficheiro de emparelhamento:
+
+1. Transfira e instale o [iloader](https://iloader.app). No Windows, instale primeiro o [iTunes](https://www.apple.com/itunes/download/win64). No Linux, instale o `usbmuxd` se não estiver pré-instalado.
+2. Ligue o iPhone ou iPad ao computador com um cabo USB. Se lhe for pedido, confie no computador e introduza o código.
+3. Abra o iloader e selecione o iPhone ou iPad.
+4. Selecione «Manage Pairing File».
+5. Selecione «Export (Not Recommended)», depois selecione «Confirm» e guarde o ficheiro de emparelhamento.
+6. Transfira o ficheiro de emparelhamento para o iPhone ou iPad, por exemplo, através do AirDrop ou do iCloud Drive.
+
+Se já instalou a SideStore anteriormente, é muito provável que já tenha um ficheiro de emparelhamento!
 
 ## VPN de loopback
 

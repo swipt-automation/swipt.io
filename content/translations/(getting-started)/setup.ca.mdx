@@ -6,7 +6,9 @@ title: Configuració inicial
 
 L’app Swipt s’ha d’enllaçar amb el teu dispositiu per connectar-se als seus serveis de desenvolupador.
 
-Si has instal·lat Swipt mitjançant càrrega lateral amb la Swipt CLI, l’enllaç es configura automàticament. Si no, segueix les instruccions de l’app per fer l’enllaç:
+Si has instal·lat Swipt mitjançant càrrega lateral amb la Swipt CLI, l’enllaç es configura automàticament. Si no, segueix les instruccions per fer l’enllaç:
+
+Si utilitzes l’iOS/iPadOS 27, pots fer l’enllaç al mateix dispositiu seguint les instruccions de l’app:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Si has instal·lat Swipt mitjançant càrrega lateral amb la Swipt CLI, l’enll
   </div>
 </div>
 
-Si no es pot completar l’enllaç, comunica’ns el problema. També pots importar un arxiu d’enllaç d’altre programari, com ara:
+Si l’enllaç al dispositiu falla, obre una incidència.
+
+Si utilitzes una versió anterior de l’iOS i tens un Mac, encara pots fer servir `swipt sideload setup` per configurar l’enllaç després de fer la càrrega lateral manualment. Si no, has de fer l’enllaç amb un altre programari.
+
+Pots importar arxius d’enllaç creats amb gairebé qualsevol altre programari, com ara:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Aquesta és la manera més habitual d’obtenir un arxiu d’enllaç:
+
+1. Descarrega i instal·la [iloader](https://iloader.app). Al Windows, instal·la primer l’[iTunes](https://www.apple.com/itunes/download/win64). Al Linux, instal·la `usbmuxd` si no està preinstal·lat.
+2. Connecta l’iPhone o l’iPad a l’ordinador amb un cable USB. Si se’t demana, confia en l’ordinador i introdueix el codi.
+3. Obre iloader i selecciona l’iPhone o l’iPad.
+4. Selecciona “Manage Pairing File”.
+5. Selecciona “Export (Not Recommended)”, després selecciona “Confirm” i desa l’arxiu d’enllaç.
+6. Transfereix l’arxiu d’enllaç a l’iPhone o l’iPad, per exemple, amb AirDrop o l’iCloud Drive.
+
+Si ja havies instal·lat SideStore abans, el més probable és que ja tinguis un arxiu d’enllaç!
 
 ## VPN de bucle local
 

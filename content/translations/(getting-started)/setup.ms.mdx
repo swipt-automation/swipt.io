@@ -6,7 +6,9 @@ title: Persediaan
 
 Swipt perlu berpasangan dengan peranti anda untuk menyambung ke perkhidmatan pembangunnya.
 
-Jika anda telah memuat sisi Swipt dengan Swipt CLI, perpasangan disediakan secara automatik. Jika tidak, ikuti arahan dalam app untuk berpasangan:
+Jika anda telah memuat sisi Swipt dengan Swipt CLI, perpasangan disediakan secara automatik. Jika tidak, ikuti arahan untuk berpasangan:
+
+Jika anda menggunakan iOS/iPadOS 27, anda boleh berpasangan pada peranti dengan mengikuti arahan dalam app:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Jika anda telah memuat sisi Swipt dengan Swipt CLI, perpasangan disediakan secar
   </div>
 </div>
 
-Jika perpasangan tidak dapat diselesaikan, sila laporkan isu ini kepada kami. Sebagai alternatif, anda boleh mengimport fail pasangan daripada perisian lain, termasuk:
+Jika perpasangan pada peranti gagal, sila buka isu.
+
+Jika anda menggunakan versi iOS yang lebih awal dan mempunyai Mac, anda masih boleh menggunakan `swipt sideload setup` untuk menyediakan perpasangan selepas memuat sisi secara manual. Jika tidak, anda perlu berpasangan dengan perisian lain.
+
+Anda boleh mengimport fail pasangan yang dicipta oleh hampir mana-mana perisian lain, termasuk:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Berikut ialah cara paling biasa untuk mendapatkan fail pasangan:
+
+1. Muat turun dan pasang [iloader](https://iloader.app). Pada Windows, pasang [iTunes](https://www.apple.com/itunes/download/win64) terlebih dahulu. Pada Linux, pasang `usbmuxd` jika ia belum diprapasang.
+2. Sambungkan iPhone atau iPad anda ke komputer menggunakan kabel USB. Jika digesa, percayai komputer tersebut dan masukkan kod laluan anda.
+3. Buka iloader dan pilih iPhone atau iPad anda.
+4. Pilih “Manage Pairing File”.
+5. Pilih “Export (Not Recommended)”, kemudian pilih “Confirm” dan simpan fail pasangan.
+6. Pindahkan fail pasangan ke iPhone atau iPad anda, contohnya dengan AirDrop atau iCloud Drive.
+
+Jika anda pernah memasang SideStore sebelum ini, kemungkinan besar anda sudah mempunyai fail pasangan!
 
 ## VPN Gelung Balik
 

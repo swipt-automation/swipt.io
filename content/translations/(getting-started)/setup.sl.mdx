@@ -6,7 +6,9 @@ title: Začetna nastavitev
 
 Aplikacija Swipt se mora seznaniti z vašo napravo, da se lahko poveže z njenimi storitvami za razvijalce.
 
-Če ste aplikacijo Swipt stransko naložili z orodjem Swipt CLI, se seznanjanje nastavi samodejno. V nasprotnem primeru za seznanjanje upoštevajte navodila v aplikaciji:
+Če ste aplikacijo Swipt stransko naložili z orodjem Swipt CLI, se seznanjanje nastavi samodejno. V nasprotnem primeru za seznanjanje upoštevajte navodila:
+
+Če uporabljate iOS/iPadOS 27, lahko seznanjanje opravite kar v napravi, tako da upoštevate navodila v aplikaciji:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Aplikacija Swipt se mora seznaniti z vašo napravo, da se lahko poveže z njenim
   </div>
 </div>
 
-Če seznanjanja ni mogoče dokončati, nam sporočite težavo. Lahko pa uvozite datoteko za seznanjanje iz druge programske opreme, na primer:
+Če seznanjanje v napravi ne uspe, odprite zahtevek (issue).
+
+Če uporabljate starejšo različico sistema iOS in imate Mac, lahko po ročnem stranskem nalaganju za nastavitev seznanjanja še vedno uporabite `swipt sideload setup`. V nasprotnem primeru morate seznanjanje opraviti z drugo programsko opremo.
+
+Uvozite lahko datoteke za seznanjanje, ki jih ustvari skoraj katera koli druga programska oprema, na primer:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Najpogostejši način za pridobitev datoteke za seznanjanje:
+
+1. Prenesite in namestite [iloader](https://iloader.app). V sistemu Windows najprej namestite [iTunes](https://www.apple.com/itunes/download/win64). V sistemu Linux namestite `usbmuxd`, če ni že vnaprej nameščen.
+2. Povežite iPhone ali iPad z računalnikom s kablom USB. Če se prikaže poziv, zaupajte računalniku in vnesite kodo.
+3. Odprite iloader in izberite iPhone ali iPad.
+4. Izberite „Manage Pairing File“.
+5. Izberite „Export (Not Recommended)“, nato izberite „Confirm“ in shranite datoteko za seznanjanje.
+6. Prenesite datoteko za seznanjanje v iPhone ali iPad, na primer prek storitve AirDrop ali iCloud Drive.
+
+Če ste SideStore že kdaj namestili, najverjetneje že imate datoteko za seznanjanje!
 
 ## VPN povratne zanke
 

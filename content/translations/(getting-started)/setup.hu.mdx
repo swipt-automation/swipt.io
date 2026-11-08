@@ -6,7 +6,9 @@ title: Kezdeti beállítás
 
 A Swipt appot párosítani kell az eszközzel, hogy csatlakozhasson annak fejlesztői szolgáltatásaihoz.
 
-Ha a Swipt appot a Swipt CLI-vel telepítette oldalról, a rendszer automatikusan beállítja a párosítást. Ellenkező esetben kövesse az appban megjelenő utasításokat a párosításhoz:
+Ha a Swipt appot a Swipt CLI-vel telepítette oldalról, a rendszer automatikusan beállítja a párosítást. Ellenkező esetben kövesse az utasításokat a párosításhoz:
+
+Ha iOS/iPadOS 27-et használ, az appban megjelenő utasításokat követve magán az eszközön is elvégezheti a párosítást:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Ha a Swipt appot a Swipt CLI-vel telepítette oldalról, a rendszer automatikusa
   </div>
 </div>
 
-Ha a párosítás nem hajtható végre, jelezze nekünk a problémát. Másik lehetőségként importálhat párosítási fájlt más szoftverekből, például:
+Ha az eszközön végzett párosítás sikertelen, kérjük, nyisson hibajegyet.
+
+Ha az iOS egy korábbi verzióját használja, és van egy Macje, a kézi oldalról telepítés után továbbra is használhatja a `swipt sideload setup` parancsot a párosítás beállításához. Ellenkező esetben más szoftverrel kell elvégeznie a párosítást.
+
+Szinte bármely más szoftverrel létrehozott párosítási fájlt importálhat, például:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Párosítási fájlt leggyakrabban a következő módon szerezhet be:
+
+1. Töltse le és telepítse az [iloader](https://iloader.app) alkalmazást. Windows rendszeren először telepítse az [iTunes](https://www.apple.com/itunes/download/win64) alkalmazást. Linuxon telepítse a `usbmuxd` csomagot, ha nincs előre telepítve.
+2. Csatlakoztassa iPhone-ját vagy iPadjét a számítógéphez USB-kábellel. Ha a rendszer kéri, jelölje megbízhatónak a számítógépet, és adja meg a jelkódját.
+3. Nyissa meg az iloadert, és válassza ki iPhone-ját vagy iPadjét.
+4. Válassza a „Manage Pairing File” lehetőséget.
+5. Válassza az „Export (Not Recommended)” lehetőséget, majd a „Confirm” lehetőséget, és mentse a párosítási fájlt.
+6. Vigye át a párosítási fájlt iPhone-jára vagy iPadjére, például AirDroppal vagy iCloud Drive-val.
+
+Ha korábban már telepítette a SideStore-t, nagy valószínűséggel már van párosítási fájlja!
 
 ## Visszacsatolási VPN
 

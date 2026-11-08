@@ -6,7 +6,9 @@ title: 초기 설정
 
 기기의 개발자 서비스에 연결하려면 Swipt가 기기와 페어링해야 합니다.
 
-Swipt CLI로 Swipt를 사이드로드한 경우 페어링이 자동으로 설정됩니다. 그렇지 않은 경우 앱 내 안내에 따라 페어링하십시오.
+Swipt CLI로 Swipt를 사이드로드한 경우 페어링이 자동으로 설정됩니다. 그렇지 않은 경우 안내에 따라 페어링하십시오.
+
+iOS/iPadOS 27을 사용하는 경우 앱 내 안내에 따라 기기에서 페어링할 수 있습니다.
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Swipt CLI로 Swipt를 사이드로드한 경우 페어링이 자동으로 설정
   </div>
 </div>
 
-페어링을 완료할 수 없는 경우 문제를 저희에게 알려 주십시오. 또는 다음을 포함한 다른 소프트웨어에서 페어링 파일을 가져올 수 있습니다.
+기기에서 페어링하지 못한 경우 이슈를 등록해 주십시오.
+
+이전 버전의 iOS를 사용하고 있고 Mac이 있다면, 수동으로 사이드로드한 후에도 `swipt sideload setup`을 사용하여 페어링을 설정할 수 있습니다. 그렇지 않은 경우 다른 소프트웨어로 페어링해야 합니다.
+
+다음을 포함하여 거의 모든 다른 소프트웨어에서 생성한 페어링 파일을 가져올 수 있습니다.
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+페어링 파일을 얻는 가장 일반적인 방법은 다음과 같습니다.
+
+1. [iloader](https://iloader.app)를 다운로드하여 설치하십시오. Windows에서는 먼저 [iTunes](https://www.apple.com/itunes/download/win64)를 설치하십시오. Linux에서는 `usbmuxd`가 사전 설치되어 있지 않은 경우 설치하십시오.
+2. USB 케이블로 iPhone 또는 iPad를 컴퓨터에 연결하십시오. 메시지가 표시되면 컴퓨터를 신뢰하고 암호를 입력하십시오.
+3. iloader를 열고 iPhone 또는 iPad를 선택하십시오.
+4. ‘Manage Pairing File’을 선택하십시오.
+5. ‘Export (Not Recommended)’를 선택한 다음 ‘Confirm’을 선택하고 페어링 파일을 저장하십시오.
+6. AirDrop 또는 iCloud Drive 등을 사용하여 페어링 파일을 iPhone 또는 iPad로 전송하십시오.
+
+이전에 SideStore를 설치한 적이 있다면 이미 페어링 파일이 있을 가능성이 높습니다!
 
 ## 루프백 VPN
 

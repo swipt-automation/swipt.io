@@ -6,7 +6,9 @@ title: Úvodné nastavenie
 
 Apka Swipt sa musí spárovať s vaším zariadením, aby sa mohla pripojiť k jeho vývojárskym službám.
 
-Ak ste apku Swipt nainštalovali sideloadingom pomocou Swipt CLI, spárovanie sa nastaví automaticky. V opačnom prípade vykonajte spárovanie podľa pokynov v apke:
+Ak ste apku Swipt nainštalovali sideloadingom pomocou Swipt CLI, spárovanie sa nastaví automaticky. V opačnom prípade vykonajte spárovanie podľa pokynov:
+
+Ak používate iOS/iPadOS 27, môžete spárovanie vykonať priamo v zariadení podľa pokynov v apke:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Ak ste apku Swipt nainštalovali sideloadingom pomocou Swipt CLI, spárovanie sa
   </div>
 </div>
 
-Ak sa spárovanie nedá dokončiť, nahláste nám problém. Prípadne môžete importovať párovací súbor z iného softvéru, napríklad:
+Ak spárovanie v zariadení zlyhá, vytvorte issue.
+
+Ak používate staršiu verziu iOS a máte Mac, po ručnom sideloadingu môžete spárovanie stále nastaviť pomocou `swipt sideload setup`. V opačnom prípade musíte spárovanie vykonať pomocou iného softvéru.
+
+Môžete importovať párovacie súbory vytvorené takmer akýmkoľvek iným softvérom, napríklad:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Najbežnejší spôsob, ako získať párovací súbor:
+
+1. Stiahnite si a nainštalujte [iloader](https://iloader.app). V systéme Windows najskôr nainštalujte [iTunes](https://www.apple.com/itunes/download/win64). V systéme Linux nainštalujte `usbmuxd`, ak nie je predinštalovaný.
+2. Pripojte iPhone alebo iPad k počítaču pomocou USB kábla. Ak sa zobrazí výzva, dôverujte počítaču a zadajte kód.
+3. Otvorte iloader a vyberte svoj iPhone alebo iPad.
+4. Vyberte „Manage Pairing File“.
+5. Vyberte „Export (Not Recommended)“, potom vyberte „Confirm“ a uložte párovací súbor.
+6. Preneste párovací súbor do iPhonu alebo iPadu, napríklad cez AirDrop alebo iCloud Drive.
+
+Ak ste už predtým inštalovali SideStore, s najväčšou pravdepodobnosťou už párovací súbor máte!
 
 ## Loopback VPN
 

@@ -6,7 +6,9 @@ title: Opsætning
 
 Swipt skal danne par med din enhed for at oprette forbindelse til enhedens udviklertjenester.
 
-Parringen konfigureres automatisk, hvis du har sideloadet Swipt med Swipt CLI. Følg ellers instruktionerne i appen for at danne par:
+Parringen konfigureres automatisk, hvis du har sideloadet Swipt med Swipt CLI. Følg ellers instruktionerne for at danne par:
+
+Hvis du bruger iOS/iPadOS 27, kan du danne par på enheden ved at følge instruktionerne i appen:
 
 <div className="not-prose my-6 flex items-start gap-4">
   <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
@@ -23,11 +25,26 @@ Parringen konfigureres automatisk, hvis du har sideloadet Swipt med Swipt CLI. F
   </div>
 </div>
 
-Rapporter problemet til os, hvis parringen ikke kan fuldføres. Du kan også importere en parringsfil fra anden software, herunder:
+Opret et issue, hvis parring på enheden mislykkes.
+
+Hvis du bruger en tidligere version af iOS og har en Mac, kan du stadig bruge `swipt sideload setup` til at konfigurere parringen, efter du har sideloadet manuelt. Ellers skal du danne par med anden software.
+
+Du kan importere parringsfiler, der er oprettet med næsten al anden software, herunder:
 
 - [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
 - [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
 - [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+Her er den mest almindelige måde at få en parringsfil på:
+
+1. Hent og installer [iloader](https://iloader.app). På Windows skal du først installere [iTunes](https://www.apple.com/itunes/download/win64). På Linux skal du installere `usbmuxd`, hvis det ikke er forudinstalleret.
+2. Slut din iPhone eller iPad til computeren med et USB-kabel. Hvis du bliver bedt om det, skal du stole på computeren og indtaste din kode.
+3. Åbn iloader, og vælg din iPhone eller iPad.
+4. Vælg “Manage Pairing File”.
+5. Vælg “Export (Not Recommended)”, vælg derefter “Confirm”, og gem parringsfilen.
+6. Overfør parringsfilen til din iPhone eller iPad, f.eks. med AirDrop eller iCloud Drive.
+
+Hvis du har installeret SideStore før, har du højst sandsynligt allerede en parringsfil!
 
 ## Loopback-VPN
 
